@@ -1,7 +1,13 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { FOOTER_LINKS, SITE } from "@/lib/content/site";
 
 export function Footer() {
+  const pathname = usePathname();
+  if (pathname.startsWith("/fr/v2")) return null;
+
   return (
     <footer className="bg-inverse-surface text-white pt-20">
       <div className="mx-auto grid max-w-[1440px] grid-cols-1 gap-12 border-b border-white/15 px-6 pb-16 sm:px-10 md:grid-cols-3 lg:px-16">

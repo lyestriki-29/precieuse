@@ -17,6 +17,7 @@ export function Nav() {
   const pathname = usePathname();
   const onHero = HERO_FULLSCREEN_ROUTES.includes(pathname);
   const showLight = onHero && !scrolled;
+  const isV2 = pathname.startsWith("/fr/v2");
 
   useEffect(() => {
     let frame = 0;
@@ -40,6 +41,8 @@ export function Nav() {
       document.body.style.overflow = "";
     };
   }, [open]);
+
+  if (isV2) return null;
 
   return (
     <>
