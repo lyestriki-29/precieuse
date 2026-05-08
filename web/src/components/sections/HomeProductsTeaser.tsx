@@ -28,9 +28,9 @@ export function HomeProductsTeaser() {
           href={`/fr/collection/${featured.slug}`}
           className="group col-span-12 overflow-hidden bg-surface-container-low md:col-span-7"
         >
-          <div className="relative aspect-[4/3] overflow-hidden">
+          <div className="relative aspect-[4/3] overflow-hidden bg-surface-dim">
             <Image
-              src="/images/stitch/collection-solis-arch.jpg"
+              src={featured.image}
               alt={featured.imageAlt}
               fill
               sizes="(min-width: 768px) 58vw, 100vw"

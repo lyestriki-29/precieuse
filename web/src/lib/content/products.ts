@@ -24,7 +24,7 @@ export const PRODUCTS: Product[] = [
       "Or 19kt (jaune, blanc ou rose) · Diamants pavés GVS certifiés · Pierre centrale au choix",
     story:
       "Inspirée des bagues de transmission familiale, Joséphine incarne le lien entre générations. Son design épuré mais généreux en matière fait ressentir la qualité du savoir-faire — chaque pavage est positionné pour maximiser la lumière.",
-    image: "/images/bijoux/josephine.jpg",
+    image: "/images/bijoux-officiels/josephine.jpg",
     imageAlt: "Bague Joséphine — entourage diamants",
   },
   {
@@ -37,7 +37,7 @@ export const PRODUCTS: Product[] = [
     materials: "Or 19kt · Diamant central GVS certifié · Anneau 1,8mm",
     story:
       "Le premier modèle dessiné après une nuit blanche, en pensant à toutes celles qui veulent une bague qui ne s'oublie jamais — sans jamais se faire remarquer.",
-    image: "/images/bijoux/aurore.jpg",
+    image: "/images/bijoux-officiels/aurore.jpg",
     imageAlt: "Bague Aurore — solitaire diamant",
   },
   {
@@ -51,9 +51,8 @@ export const PRODUCTS: Product[] = [
       "Or 19kt · Trois diamants gradués GVS · Possibilité saphir, rubis ou émeraude central",
     story:
       "Pensée pour célébrer un cap — un anniversaire, une décennie, une étape. Chaque pierre raconte un moment, et l'ensemble fait récit.",
-    image: "/images/bijoux/eugenie.jpg",
-    imageAlt: "Bague Eugénie — trilogie diamants",
-    imagePosition: "center 35%",
+    image: "/images/bijoux-officiels/eugenie.png",
+    imageAlt: "Bague Eugénie — dessin original",
   },
   {
     slug: "thelma",
@@ -66,7 +65,7 @@ export const PRODUCTS: Product[] = [
       "Or 19kt · Pierre centrale 1ct minimum (diamant ou couleur) · Pavage optionnel",
     story:
       "Née d'une commande pour une femme qui voulait « une bague qu'on remarque sans qu'elle hurle ». Le résultat : une pièce ample, mais portée au quotidien sans accroche.",
-    image: "/images/bijoux/thelma.jpg",
+    image: "/images/bijoux-officiels/thelma.jpg",
     imageAlt: "Bague Thelma — pierre centrale sculptée",
   },
   {
@@ -80,9 +79,8 @@ export const PRODUCTS: Product[] = [
       "Or 19kt · Pavage demi-tour diamants GVS · Largeur 2 ou 3mm au choix",
     story:
       "Le modèle le plus discret de la collection, et pourtant celui qui revient le plus souvent dans les commandes — la preuve que l'évidence ne se démode pas.",
-    image: "/images/bijoux/louise.jpg",
+    image: "/images/bijoux-officiels/louise.jpg",
     imageAlt: "Bague Louise — alliance pavée",
-    imagePosition: "70% 70%",
   },
 ];
 
