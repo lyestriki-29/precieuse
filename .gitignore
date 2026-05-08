@@ -35,3 +35,4 @@ archive/v0-templates/*.zip
 # Tests
 coverage/
 .nyc_output/
+.claude/worktrees/
