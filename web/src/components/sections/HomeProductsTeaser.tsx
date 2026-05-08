@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Container, Heading, Reveal, Section } from "@/components/luxe";
+import { Container, Heading, LuxeImage, Reveal, Section } from "@/components/luxe";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { PRODUCTS } from "@/lib/content/products";
@@ -21,13 +21,20 @@ export function HomeProductsTeaser() {
                 href={`/fr/collection/${product.slug}`}
                 className="group block"
               >
-                <div className="aspect-[3/4] w-full overflow-hidden rounded-md border border-black/5 bg-white">
-                  <div className="bg-gold-whisper/20 flex h-full w-full items-center justify-center">
-                    <span className="font-heading text-foreground/30 text-2xl">
-                      {product.name}
-                    </span>
-                  </div>
-                </div>
+                <LuxeImage
+                  src={product.image}
+                  alt={product.imageAlt}
+                  width={900}
+                  height={1200}
+                  aspect="portrait"
+                  wrapperClassName="rounded-md border border-black/5 bg-white"
+                  className="transition-transform duration-700 group-hover:scale-[1.03]"
+                  style={
+                    product.imagePosition
+                      ? { objectPosition: product.imagePosition }
+                      : undefined
+                  }
+                />
                 <h3 className="font-heading group-hover:text-raspberry mt-5 text-2xl transition-colors">
                   {product.name}
                 </h3>

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Container, Heading, Reveal, Section } from "@/components/luxe";
+import { Container, Heading, LuxeImage, Reveal, Section } from "@/components/luxe";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { BESPOKE_PROCESS } from "@/lib/content/process";
@@ -24,18 +24,37 @@ export default function BespokePage() {
   return (
     <>
       <Section spacing="default" tone="cream">
-        <Container size="narrow">
-          <Reveal>
-            <Heading as="h1" size="display" overline="Création sur-mesure">
-              Un projet intime.
-            </Heading>
-          </Reveal>
-          <Reveal delay={0.15}>
-            <p className="text-foreground/70 mt-8 text-lg leading-relaxed font-light">
-              Pour marquer une histoire, un moment. Une création pensée
-              ensemble, de la première esquisse au bijou final.
-            </p>
-          </Reveal>
+        <Container>
+          <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
+            <div>
+              <Reveal>
+                <Heading
+                  as="h1"
+                  size="display"
+                  overline="Création sur-mesure"
+                >
+                  Un projet intime.
+                </Heading>
+              </Reveal>
+              <Reveal delay={0.15}>
+                <p className="text-foreground/70 mt-8 text-lg leading-relaxed font-light">
+                  Pour marquer une histoire, un moment. Une création pensée
+                  ensemble, de la première esquisse au bijou final.
+                </p>
+              </Reveal>
+            </div>
+            <Reveal delay={0.2}>
+              <LuxeImage
+                src="/images/atelier/esquisses-amethyste.jpg"
+                alt="Esquisses de bijoux et améthyste brute sur l'établi"
+                width={1080}
+                height={1440}
+                aspect="portrait"
+                priority
+                wrapperClassName="rounded-md"
+              />
+            </Reveal>
+          </div>
         </Container>
       </Section>
 
@@ -67,36 +86,52 @@ export default function BespokePage() {
       </Section>
 
       <Section spacing="default" tone="cream">
-        <Container size="narrow">
-          <Reveal>
-            <Heading as="h2" size="md" overline="Cas réel">
-              La bague de Sandrine
-            </Heading>
-          </Reveal>
-          <Reveal delay={0.15}>
-            <div className="text-foreground/75 mt-10 space-y-6 text-lg leading-relaxed font-light">
-              <p>
-                « Ce modèle ou rien ! » — voilà ce qu&apos;elle m&apos;a dit en
-                rentrant dans l&apos;atelier. Sandrine savait ce qu&apos;elle
-                voulait, depuis longtemps. Une monture épurée, une pierre
-                centrale généreuse, des diamants pavés pour scintiller.
-              </p>
-              <p>
-                J&apos;ai recyclé son or et ses diamants hérités pour lui
-                fabriquer la bague de ses rêves. Le résultat : une serpentine
-                or blanc avec pavage diamants, intemporelle et personnelle.
-              </p>
-              <blockquote className="border-raspberry/30 border-l-2 pl-6 text-base italic">
-                « Très contente de votre création. Très professionnelle,
-                agréable, sympathique. »
-              </blockquote>
-              <p>
-                C&apos;est cela, pour moi, le sur-mesure : transformer une
-                intention vague en bijou qui vous ressemble, qui porte votre
-                histoire.
-              </p>
+        <Container>
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-[2fr_3fr] lg:gap-16">
+            <Reveal>
+              <LuxeImage
+                src="/images/atelier/dessin-aquarelle.jpg"
+                alt="Dessin aquarelle original — bijou sur-mesure"
+                width={1080}
+                height={1920}
+                aspect="portrait"
+                wrapperClassName="rounded-md"
+              />
+            </Reveal>
+            <div>
+              <Reveal>
+                <Heading as="h2" size="md" overline="Cas réel">
+                  La bague de Sandrine
+                </Heading>
+              </Reveal>
+              <Reveal delay={0.15}>
+                <div className="text-foreground/75 mt-10 space-y-6 text-lg leading-relaxed font-light">
+                  <p>
+                    « Ce modèle ou rien ! » — voilà ce qu&apos;elle m&apos;a
+                    dit en rentrant dans l&apos;atelier. Sandrine savait ce
+                    qu&apos;elle voulait, depuis longtemps. Une monture épurée,
+                    une pierre centrale généreuse, des diamants pavés pour
+                    scintiller.
+                  </p>
+                  <p>
+                    J&apos;ai recyclé son or et ses diamants hérités pour lui
+                    fabriquer la bague de ses rêves. Le résultat : une
+                    serpentine or blanc avec pavage diamants, intemporelle et
+                    personnelle.
+                  </p>
+                  <blockquote className="border-raspberry/30 border-l-2 pl-6 text-base italic">
+                    « Très contente de votre création. Très professionnelle,
+                    agréable, sympathique. »
+                  </blockquote>
+                  <p>
+                    C&apos;est cela, pour moi, le sur-mesure : transformer une
+                    intention vague en bijou qui vous ressemble, qui porte
+                    votre histoire.
+                  </p>
+                </div>
+              </Reveal>
             </div>
-          </Reveal>
+          </div>
         </Container>
       </Section>
 

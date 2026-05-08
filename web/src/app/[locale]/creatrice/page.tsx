@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Container, Heading, Reveal, Section } from "@/components/luxe";
+import { Container, Heading, LuxeImage, Reveal, Section } from "@/components/luxe";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -16,13 +16,16 @@ export default function CreatricePage() {
         <Container>
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-[2fr_3fr] lg:gap-20">
             <Reveal>
-              <div className="aspect-[3/4] w-full overflow-hidden rounded-md border border-black/5 bg-white">
-                <div className="bg-gold-whisper/20 flex h-full w-full items-center justify-center">
-                  <span className="font-heading text-foreground/30 text-2xl">
-                    Eméline
-                  </span>
-                </div>
-              </div>
+              <LuxeImage
+                src="/images/emeline/emeline-atelier.jpg"
+                alt="Eméline, joaillière artisanale, dans son atelier"
+                width={1080}
+                height={1440}
+                aspect="portrait"
+                grayscale
+                priority
+                wrapperClassName="rounded-md border border-black/5 bg-white"
+              />
             </Reveal>
 
             <Reveal delay={0.15}>
@@ -42,26 +45,41 @@ export default function CreatricePage() {
       </Section>
 
       <Section spacing="default" tone="white">
-        <Container size="narrow">
-          <Reveal>
-            <Heading as="h2" size="md" overline="Le parcours">
-              De la formation à l&apos;atelier
-            </Heading>
-          </Reveal>
-          <Reveal delay={0.15}>
-            <div className="text-foreground/75 mt-10 space-y-6 text-lg leading-relaxed font-light">
-              <p>
-                Formation en joaillerie, puis douze années à pratiquer chaque
-                technique au quotidien — fonte à cire perdue, sertissage,
-                polissage main. Chaque bague que je crée passe par mes mains,
-                du dessin initial au polissage final.
-              </p>
-              <p>
-                C&apos;est exigeant, c&apos;est précis, c&apos;est lent. Et
-                c&apos;est ce qui rend chaque pièce unique et pérenne.
-              </p>
+        <Container>
+          <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
+            <Reveal>
+              <LuxeImage
+                src="/images/atelier/bague-en-fabrication.jpg"
+                alt="Bague en cours de fabrication sur l'établi"
+                width={1200}
+                height={1600}
+                aspect="portrait"
+                grayscale
+                wrapperClassName="rounded-md"
+              />
+            </Reveal>
+            <div>
+              <Reveal>
+                <Heading as="h2" size="md" overline="Le parcours">
+                  De la formation à l&apos;atelier
+                </Heading>
+              </Reveal>
+              <Reveal delay={0.15}>
+                <div className="text-foreground/75 mt-10 space-y-6 text-lg leading-relaxed font-light">
+                  <p>
+                    Formation en joaillerie, puis douze années à pratiquer
+                    chaque technique au quotidien — fonte à cire perdue,
+                    sertissage, polissage main. Chaque bague que je crée passe
+                    par mes mains, du dessin initial au polissage final.
+                  </p>
+                  <p>
+                    C&apos;est exigeant, c&apos;est précis, c&apos;est lent. Et
+                    c&apos;est ce qui rend chaque pièce unique et pérenne.
+                  </p>
+                </div>
+              </Reveal>
             </div>
-          </Reveal>
+          </div>
         </Container>
       </Section>
 

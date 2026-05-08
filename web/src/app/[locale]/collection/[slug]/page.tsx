@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Container, Heading, Reveal, Section } from "@/components/luxe";
+import { Container, Heading, LuxeImage, Reveal, Section } from "@/components/luxe";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { PRODUCTS, getProduct } from "@/lib/content/products";
@@ -43,13 +43,20 @@ export default async function ProductPage({
         <Container>
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-20">
             <Reveal>
-              <div className="aspect-[3/4] w-full overflow-hidden rounded-md border border-black/5 bg-white">
-                <div className="bg-gold-whisper/20 flex h-full w-full items-center justify-center">
-                  <span className="font-heading text-foreground/30 text-3xl">
-                    {product.name}
-                  </span>
-                </div>
-              </div>
+              <LuxeImage
+                src={product.image}
+                alt={product.imageAlt}
+                width={1200}
+                height={1600}
+                aspect="portrait"
+                priority
+                wrapperClassName="rounded-md border border-black/5 bg-white"
+                style={
+                  product.imagePosition
+                    ? { objectPosition: product.imagePosition }
+                    : undefined
+                }
+              />
             </Reveal>
 
             <Reveal delay={0.15}>
