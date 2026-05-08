@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed": "#241a00",
+                    "on-secondary-fixed": "#1f1635",
+                    "on-surface-variant": "#494551",
+                    "surface-bright": "#fdf7ff",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-container": "#503d00",
+                    "tertiary-container": "#c9a74d",
+                    "error": "#ba1a1a",
+                    "tertiary-fixed-dim": "#e7c365",
+                    "surface-variant": "#e6e0e9",
+                    "primary-container": "#6750a4",
+                    "on-error-container": "#93000a",
+                    "on-background": "#1d1b20",
+                    "primary-fixed-dim": "#cfbcff",
+                    "on-secondary-container": "#645a7d",
+                    "secondary-fixed": "#e9ddff",
+                    "primary-fixed": "#e9ddff",
+                    "on-tertiary-fixed-variant": "#594400",
+                    "on-error": "#ffffff",
+                    "inverse-on-surface": "#f5eff7",
+                    "outline": "#7a7582",
+                    "on-primary-fixed": "#22005d",
+                    "surface-container-low": "#f8f2fa",
+                    "surface-tint": "#6750a4",
+                    "surface-dim": "#ded8e0",
+                    "on-primary-container": "#e0d2ff",
+                    "secondary-fixed-dim": "#cdc0e9",
+                    "primary": "#4f378a",
+                    "on-surface": "#1d1b20",
+                    "surface-container-highest": "#e6e0e9",
+                    "surface-container": "#f2ecf4",
+                    "on-primary": "#ffffff",
+                    "tertiary": "#765b00",
+                    "tertiary-fixed": "#ffdf93",
+                    "on-primary-fixed-variant": "#4f378a",
+                    "inverse-surface": "#322f35",
+                    "background": "#fdf7ff",
+                    "surface-container-high": "#ece6ee",
+                    "on-secondary-fixed-variant": "#4b4263",
+                    "inverse-primary": "#cfbcff",
+                    "on-secondary": "#ffffff",
+                    "secondary": "#63597c",
+                    "secondary-container": "#e1d4fd",
+                    "outline-variant": "#cbc4d2",
+                    "surface": "#fdf7ff",
+                    "raspberry": "#BD0762"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1440px",
+                    "gutter": "32px",
+                    "sm": "12px",
+                    "md": "24px",
+                    "xl": "80px",
+                    "lg": "48px",
+                    "xs": "4px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Bodoni Moda"],
+                    "technical-label": ["JetBrains Mono"],
+                    "subheading-sm": ["JetBrains Mono"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "display-xl": ["Bodoni Moda"],
+                    "cta-label": ["Inter"],
+                    "headline-md": ["Bodoni Moda"]
+            },
+            "fontSize": {
+                    "display-lg": ["60px", {"lineHeight": "68px", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+                    "technical-label": ["11px", {"lineHeight": "14px", "fontWeight": "400"}],
+                    "subheading-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.15em", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "display-xl": ["84px", {"lineHeight": "92px", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                    "cta-label": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .paper-grain {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.04;
+            pointer-events: none;
+        }
+        .molten-gold { color: #c9a74d; }
+    </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface selection:bg-tertiary-container selection:text-on-tertiary-container relative">
+<div class="fixed inset-0 paper-grain z-50"></div>
+<!-- Navigation Shell -->
+<nav class="fixed top-0 w-full z-[60] bg-surface/90 dark:bg-surface-dim/90 backdrop-blur-md flex justify-between items-center px-lg py-md max-w-container-max mx-auto border-b border-outline-variant/30">
+<div class="font-display-lg text-headline-md tracking-tighter text-on-surface dark:text-surface-bright">Précieuse</div>
+<div class="hidden md:flex gap-lg items-center">
+<a class="font-subheading-sm text-subheading-sm uppercase tracking-widest text-primary border-b border-primary" href="#">Collections</a>
+<a class="font-subheading-sm text-subheading-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-opacity duration-300" href="#">Workshop</a>
+<a class="font-subheading-sm text-subheading-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-opacity duration-300" href="#">Journal</a>
+<a class="font-subheading-sm text-subheading-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-opacity duration-300" href="#">Sur-Mesure</a>
+</div>
+<div class="flex items-center gap-md">
+<button class="material-symbols-outlined text-primary" data-icon="shopping_bag"></button>
+</div>
+</nav>
+<main class="pt-0">
+<!-- HERO SECTION -->
+<section class="relative h-screen w-full flex items-end overflow-hidden bg-surface-dim">
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent z-10"></div>
+<img alt="" class="absolute inset-0 w-full h-full object-cover" data-alt="A high-contrast cinematic photograph of a master jeweler's workbench at dusk. The scene is lit by a warm, focused lamp that casts long shadows across unrefined gold grains, a vintage jeweler's loupe, and delicate hand tools. The atmosphere is quiet and archival, reflecting a raw-luxe aesthetic with deep charcoal shadows and shimmering metallic gold highlights. The visual style is documentary and prestigious, emphasizing the tactile intimacy of heritage craftsmanship." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJhNB_OPNq3oaAgn6hXldCNK6LqwthzlbE7t5pb059mGnPhLPkVNIltnqiRg4s4G6shfKK_6O9f2I2la1KwhR1ECcQl_zw6iqpjBz3hCB4d_jlB7D9h7N33IgF8siWPrUMqgXtcZ9ApjY0UkuvdJRfvGS7jDdp5MyGhtcuUbnDD7Z2jNAyoKCtb_h44Md5rb6Kc9lkFzWoK2OTMZZ96PaAdv4m78PuduepRKzc4Q7rbhOLKCyckEUVhG2fo1KXMcxvsNXzDg_hTJjm"/>
+<div class="relative z-20 w-full max-w-container-max mx-auto px-xl pb-xl flex justify-between items-end">
+<h1 class="font-display-xl text-display-xl text-white max-w-2xl leading-none italic">
+                    Le geste juste.<br/>La matière vraie.
+                </h1>
+<div class="flex flex-col items-end gap-xs pb-md">
+<span class="font-technical-label text-white/80 [writing-mode:vertical-rl] uppercase tracking-[0.2em]">EST. LISBONNE — 19KT — RJC</span>
+</div>
+</div>
+</section>
+<!-- TRUST BAR -->
+<section class="bg-surface-container-highest py-md border-b border-outline-variant/30">
+<div class="max-w-container-max mx-auto px-lg flex justify-between items-center text-on-surface-variant opacity-70">
+<span class="font-technical-label tracking-widest">RJC CERTIFIED COUNCEL</span>
+<div class="h-1 w-1 bg-outline-variant rounded-full"></div>
+<span class="font-technical-label tracking-widest">GIA GRADED DIAMONDS</span>
+<div class="h-1 w-1 bg-outline-variant rounded-full"></div>
+<span class="font-technical-label tracking-widest">HRD ANTWERP</span>
+<div class="h-1 w-1 bg-outline-variant rounded-full"></div>
+<span class="font-technical-label tracking-widest">MADE IN PORTUGAL</span>
+</div>
+</section>
+<!-- COLLECTION GRID -->
+<section class="py-xl max-w-container-max mx-auto px-lg">
+<div class="flex justify-between items-baseline mb-lg">
+<h2 class="font-display-lg text-headline-md italic">The Archival Collection</h2>
+<a class="font-technical-label uppercase border-b border-on-surface" href="#">Explore all</a>
+</div>
+<div class="grid grid-cols-12 gap-gutter">
+<!-- Main Featured Card -->
+<div class="col-span-12 md:col-span-7 bg-surface-container-low group overflow-hidden">
+<div class="relative aspect-[4/3] overflow-hidden">
+<img alt="" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A minimalist overhead shot of a heavy 19kt gold signet ring resting on a slab of raw, textured grey concrete. The lighting is cold and architectural, creating sharp shadows that emphasize the ring's unrefined edges and mirror-polished top surface. The composition is clean and editorial, using a sophisticated palette of bone white, charcoal, and warm gold." src="https://lh3.googleusercontent.com/aida-public/AB6AXuByBtAhzBliHYv34qs_1eviUDsbkk5IN3E6JYWJk8VuFE2lE4QTWAyjOeW-dPMspOKFDitTtLmIIDOD7QHCzM4kDVxb-NcRSBe7NGtfKzEDPBoR_TOnWGBOuKj-hdGJUgAGsjXbqdsILVL6vHhjJIdOsmXsUureMV08jUvW3lJ5uUhgpGc2Jms_EEkk0MYo17IK1UbtZnb-QNwwI2Hp1sRwmofIWPYyAvxDIEmEt5apq-5lCGk1WIX1UGLww3R-_qnkCUbh1CkW7jqo"/>
+</div>
+<div class="p-md flex flex-col gap-xs">
+<div class="flex justify-between items-center">
+<h3 class="font-display-lg text-headline-md">Solis Arch 01</h3>
+<span class="font-technical-label bg-surface-variant px-sm py-xs">ID: PR-092-24</span>
+</div>
+<div class="flex gap-lg mt-sm">
+<span class="font-technical-label opacity-60">Weight: 14.2g</span>
+<span class="font-technical-label opacity-60">Gold: 19kt Matte</span>
+<span class="font-technical-label opacity-60">Stone: GVS Diamond</span>
+</div>
+</div>
+</div>
+<!-- Secondary Cards -->
+<div class="col-span-12 md:col-span-5 grid grid-cols-1 gap-gutter">
+<div class="bg-surface-container-low p-md flex gap-md">
+<div class="w-1/3 aspect-square bg-surface-dim overflow-hidden">
+<img alt="" class="w-full h-full object-cover" data-alt="A close-up of a raw-textured gold band with an irregular, hand-hammered surface. The ring is shown in a studio setting with soft side-lighting that catches the golden facets against a neutral bone-white background. The aesthetic is tactile and refined, emphasizing the craftsmanship and the natural beauty of the 19kt gold." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrmRZD5xWJbHyTu7mhrdfhvWw4zpO4H3UBOIPttYU_hPtkutIGYZBE9dnnI7Q9T-3hgfMQjvq3ahFQzhBpJr2N7AbWTDCM57UMU7dhhq2U99O4cqLxCInrWhMKySm7DDzHEl6Qw_ppVJ79lOUwMxcrzIKof4hLrXMDY8c6P9lCGjLX5zft8xceavflx4VfCCCeV1IttYC1tiiDonfsbb8dafXManR5cSCDfk_i58MbOFbU9uOJv5zjQizxaua5ozUcdY-lzUjKIyf-"/>
+</div>
+<div class="flex-1 flex flex-col justify-between py-xs">
+<div>
+<h4 class="font-display-lg text-body-lg italic">Fissure Band</h4>
+<p class="font-technical-label opacity-60 mt-1">Weight: 6.8g / 19kt Gold</p>
+</div>
+<span class="font-technical-label text-tertiary">AVAILABLE UPON REQUEST</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-md flex gap-md">
+<div class="w-1/3 aspect-square bg-surface-dim overflow-hidden">
+<img alt="" class="w-full h-full object-cover" data-alt="A macro shot of a delicate gold ring with a single GVS diamond set in a minimalist four-prong mount. The lighting is bright and high-key, creating a clean, modern look. The diamond sparkles intensely against the warm glow of the gold, presented as a precious artifact in a museum-like display." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwmCXrIjWfVvOh_BlSoD5Voy0Pv9mVs-s8zlFhGiT1ORPXzosAGCIRYxiA169dhZiJZHVNp2QUWIyhOTB_QEwXRuDMqqEl8mUcxQGhBzYNWm32IIoMEGcDd6G8uM5h1UYlnTevPkdXbwBcrM92f3HizDMc1Gg3xYG_nbno-ujiQveTY-_HV18IRwyG9kwp-kFxq2Vx--rOrdZdPRwYIoZtyJJOVF8Q_INgbEZm9RdlHm23ESXNlkBLV9wlwCZoGu2qUbzZ34p9VPFe"/>
+</div>
+<div class="flex-1 flex flex-col justify-between py-xs">
+<div>
+<h4 class="font-display-lg text-body-lg italic">Nidus Solitaire</h4>
+<p class="font-technical-label opacity-60 mt-1">Carat: 0.42ct / GVS</p>
+</div>
+<span class="font-technical-label text-tertiary">VIEW SPECIFICATIONS</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- PROCESS SECTION: CIRE PERDUE -->
+<section class="py-xl bg-inverse-surface text-surface-bright overflow-hidden">
+<div class="max-w-container-max mx-auto px-lg">
+<div class="mb-xl max-w-xl">
+<span class="font-technical-label uppercase tracking-widest text-tertiary mb-md block">The Methodology</span>
+<h2 class="font-display-xl text-display-lg leading-tight">L'archéologie du futur : La cire perdue.</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-6 gap-md relative">
+<!-- Steps -->
+<div class="flex flex-col gap-sm border-t border-surface-variant/20 pt-md">
+<span class="font-technical-label text-tertiary">01 — DESSIN</span>
+<p class="font-body-md text-surface-variant/60">Conceptualization of the object's soul.</p>
+</div>
+<div class="flex flex-col gap-sm border-t border-surface-variant/20 pt-md">
+<span class="font-technical-label text-tertiary">02 — CIRE</span>
+<p class="font-body-md text-surface-variant/60">Sculpting the transient wax model.</p>
+</div>
+<div class="flex flex-col gap-sm border-t border-surface-variant/20 pt-md">
+<span class="font-technical-label text-tertiary">03 — MOULE</span>
+<p class="font-body-md text-surface-variant/60">Creating the refractory plaster vessel.</p>
+</div>
+<div class="flex flex-col gap-sm border-t border-surface-variant/20 pt-md">
+<span class="font-technical-label text-tertiary">04 — FONTE</span>
+<p class="font-body-md text-surface-variant/60">The molten gold displaces the wax.</p>
+</div>
+<div class="flex flex-col gap-sm border-t border-surface-variant/20 pt-md">
+<span class="font-technical-label text-tertiary">05 — SERTISSAGE</span>
+<p class="font-body-md text-surface-variant/60">Precision mounting of the artifacts.</p>
+</div>
+<div class="flex flex-col gap-sm border-t border-surface-variant/20 pt-md">
+<span class="font-technical-label text-tertiary">06 — POLISSAGE</span>
+<p class="font-body-md text-surface-variant/60">The final reveal of the light.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- MATÉRIAUX SECTION -->
+<section class="py-xl max-w-container-max mx-auto px-lg">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-xl">
+<div class="flex flex-col gap-md">
+<div class="h-[300px] bg-surface-dim overflow-hidden mb-md">
+<img alt="" class="w-full h-full object-cover" data-alt="A macro photograph of raw, unrefined gold nuggets placed on a piece of dark, rough volcanic rock. The lighting is dramatic and moody, highlighting the natural textures and the intense yellow color of the 19kt gold. The composition follows a high-end editorial style with generous negative space and a focus on material purity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHJ3vabCqV-YGhGZYhINrPPVi18yRWkwqfNxSKyqJtZngcpizIZsUkYO15PuxySkpm295OGrFdNqkNBB48QLOVj2lQ_8aGJIMVQO0aX70A__SJcr_uq7OcDFQx6Rw3sEnx5mxuU1lAlI1expDmiFusEsBGzlBoJgvI-Yw2lGeV5FjuebKvUCDT6AO58r6Po0v5TG6Kv6GUjYCIs_S_8ovywTcmlWEzdR0Th0cOWA9dULhSlrqh2mLK6-sVq-zQyhvG2kcGTDHpLtQm"/>
+</div>
+<h3 class="font-display-lg text-headline-md italic">L’Or 19KT</h3>
+<p class="font-body-md text-on-surface-variant leading-relaxed">A Portuguese tradition. This high-purity alloy offers a unique depth of color and superior durability for heritage pieces meant to outlast time.</p>
+</div>
+<div class="flex flex-col gap-md">
+<div class="h-[300px] bg-surface-dim overflow-hidden mb-md">
+<img alt="" class="w-full h-full object-cover" data-alt="A scattering of brilliant-cut diamonds across a piece of textured grey paper. The diamonds catch the light, creating sharp, prismatic reflections. The scene is bright and minimalist, conveying a sense of transparency, ethical sourcing, and uncompromising quality in a luxury archival context." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCurwRUjwb3B7yzEmOJpRFtG88ib_WxA8gErbcdxx_jncX6gjgwk8mW3sFk0nTqBCTAN4PBYlKps8rZ3JmjDrDLN9rI8G_P2bmTrGLz8Y8qbj9VC1BIzOP8ykAOh2HRuxzni-sMG4-CbnYkxf8_VkXr6bPs5pm1Ii08PsNRfBULukO34TnXalWCeRAxvOoCz5qT-xp95rU7YuNL55SkzxN9s4hCTqGVKAzmReNJgEkX-Gf4xk10OQp16I0TZ80iNtZWr6T8LMad1dpi"/>
+</div>
+<h3 class="font-display-lg text-headline-md italic">GVS Diamonds</h3>
+<p class="font-body-md text-on-surface-variant leading-relaxed">We select diamonds based on character, not just metrics. Every stone is hand-picked for its fire and structural integrity within the setting.</p>
+</div>
+<div class="flex flex-col gap-md">
+<div class="h-[300px] bg-surface-dim overflow-hidden mb-md">
+<img alt="" class="w-full h-full object-cover" data-alt="A moody, atmospheric shot of an old leather-bound logbook opened on a wooden table, with a hand-written entry and a wax seal. Beside it sits a small compass and a rough mineral specimen. The lighting is soft and warm, evoking a sense of historical journey, ethical traceability, and the story behind every material." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUe2KQfcKRGWMJ92gIA6BrV3NemTqG3v838OnLfUfgWqObV1QCw_0bRkgwlDofYC8I35nCzr6cexcaAk3o9C1W8T9c_5w2PCpG5oZ0qQ6A1jkzuT0Ybmkqc4fBcxRGNdPgMqkFZavpiSv7QcxoxwRvvhMobMKoO2Aw3flmToHqgaiA-brBGDXhpYZLUUAOHbAxsrBvqwF7TEBzrkodD-nxsXKgqqQ8gYm3EMkrq-TvkH9JdViq8e6nf8kJhNkI8_jrkhbL873TR54P"/>
+</div>
+<h3 class="font-display-lg text-headline-md italic">Traceability</h3>
+<p class="font-body-md text-on-surface-variant leading-relaxed">The Kimberly Process is our baseline. Our commitment extends to knowing the exact mine and the hands that handled the raw stones.</p>
+</div>
+</div>
+</section>
+<!-- SUR-MESURE SECTION -->
+<section class="py-xl bg-surface-container-low border-y border-outline-variant/30">
+<div class="max-w-container-max mx-auto px-lg grid grid-cols-1 md:grid-cols-2 gap-xl items-center">
+<div class="order-2 md:order-1">
+<span class="font-technical-label uppercase tracking-[0.3em] text-tertiary mb-md block">Unique Commission</span>
+<h2 class="font-display-xl text-display-lg mb-lg leading-tight">Une idée, un projet ? Parlons-en.</h2>
+<p class="font-body-lg text-on-surface-variant mb-xl max-w-md">Our atelier is open for bespoke creations. Together, we translate your personal history into a permanent object of weight and significance.</p>
+<button class="bg-raspberry text-white px-xl py-md font-cta-label uppercase tracking-widest hover:opacity-90 transition-opacity">
+                        Démarrer un projet sur-mesure
+                    </button>
+</div>
+<div class="order-1 md:order-2 relative">
+<div class="aspect-[3/4] overflow-hidden">
+<img alt="" class="w-full h-full object-cover grayscale" data-alt="A portrait of Eméline, the founder, at work in her atelier. She is focused, leaning over a workbench with jeweler's glasses, holding a delicate wax model. The background is blurred, showing the organized chaos of a high-end jewelry workshop. The image is in black and white, conveying a sense of timeless craftsmanship and professional dedication." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7MiZsSWaWn-jcvv6qfzIIX34M5IyeuCdwRj2OThuizon454N30Dapjjb-TlW2c2Jt5Tn6fb5Hnvfpozuu_LuM04OF9kFdd_VkL1z7Wq2vwbo8cgPlrqdTI-DhRymjqTSc0viFRr4qaTszzg1ctIiru3aF60BLntBJvEYa59QoBkOVMTeevTsRwKyM2bpHtUwPBEkWw8k2oIYfgBjqjunPLAMFZ2-GsR9Re6bbMptpyCs9xlQ2KsRb086UoxJSm_w-_fWTkq6p0waN"/>
+</div>
+<div class="absolute -bottom-base -right-base p-md bg-surface border border-outline-variant shadow-sm max-w-xs">
+<p class="font-technical-label italic">"Every custom piece begins with a conversation about light and legacy."</p>
+</div>
+</div>
+</div>
+</section>
+<!-- LA CRÉATRICE -->
+<section class="py-xl max-w-container-max mx-auto px-lg">
+<div class="grid grid-cols-12 gap-gutter items-center">
+<div class="col-span-12 md:col-span-5">
+<div class="aspect-square bg-surface-dim overflow-hidden grayscale">
+<img alt="" class="w-full h-full object-cover" data-alt="A black-and-white editorial portrait of Eméline. She has a quiet, confident expression, wearing a simple linen shirt and a single bold gold piece from her collection. The lighting is soft and natural, emphasizing her features and the archival, documentary feel of the brand. The aesthetic is one of tactile intimacy and quiet heritage." src="https://lh3.googleusercontent.com/aida-public/AB6AXuALYajpHHEGAdlBo8O9I4QF5PLKJV0MwppXEdWtzBZVuTEQC-5AEoRpM7odVKRDF_N1rVd21sgYF-tJaHiJ-Kyg0n2YDDAg5fSgCJcgXgQDG7zQ20AhNcsxnJi8TW6CHjDltu_7dBh2qXF1AEuoroRCBUCU5lT5R4cx5EVF3nAT9P4Yrm7XYhdKPe8zGkZgjInYMc8DRC2v_KaGkqvMXyZdMH8D3FPZybKky3Gss7qcmYdH9k82QEUoj0TSnGUxo0kCU3Q_UzMzhelg"/>
+</div>
+</div>
+<div class="col-span-12 md:col-span-6 md:col-start-7 flex flex-col gap-lg">
+<div class="flex flex-col gap-xs">
+<h2 class="font-display-xl text-display-lg italic">Eméline</h2>
+<span class="font-technical-label tracking-widest text-on-surface-variant">FOUNDER &amp; MASTER GOLDSMITH</span>
+</div>
+<div class="flex flex-col gap-md font-body-lg text-on-surface-variant">
+<p>After years in the traditional houses of Paris, Eméline founded Précieuse to return to the raw essence of jewelry: the intersection of fire, metal, and time.</p>
+<p>Her philosophy is one of restraint. Only what is necessary is kept; only what is true is celebrated.</p>
+</div>
+<div class="grid grid-cols-2 gap-md pt-lg border-t border-outline-variant/30">
+<div class="flex flex-col">
+<span class="font-technical-label text-tertiary">EDUCATION</span>
+<span class="font-technical-label mt-xs uppercase">Ecole Boulle, Paris</span>
+</div>
+<div class="flex flex-col">
+<span class="font-technical-label text-tertiary">EXPERTISE</span>
+<span class="font-technical-label mt-xs uppercase">Lost Wax Specialist</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- TÉMOIGNAGES -->
+<section class="py-xl bg-surface-container-low">
+<div class="max-w-4xl mx-auto px-lg text-center">
+<span class="material-symbols-outlined text-tertiary text-display-lg" data-icon="format_quote"></span>
+<p class="font-display-lg text-headline-md italic mt-md leading-relaxed">
+                    "Une pièce Précieuse n'est pas seulement un bijou, c'est une présence. Elle a un poids, une texture, une âme que l'on ressent dès qu'on la porte."
+                </p>
+<div class="mt-lg flex flex-col items-center">
+<span class="font-technical-label tracking-widest uppercase">Claire M. — Lisbonne</span>
+<span class="font-technical-label opacity-40 mt-1 uppercase">Custom Signet Ring, 2023</span>
+</div>
+</div>
+</section>
+<!-- JOURNAL -->
+<section class="py-xl max-w-container-max mx-auto px-lg">
+<div class="flex justify-between items-baseline mb-lg">
+<h2 class="font-display-lg text-headline-md italic">Journal d’Atelier</h2>
+<a class="font-technical-label uppercase border-b border-on-surface" href="#">View Journal</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-xl">
+<div class="group cursor-pointer">
+<div class="aspect-video bg-surface-dim overflow-hidden mb-md">
+<img alt="" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A documentary-style photo of molten gold being poured into a mold. Bright sparks and an intense orange glow contrast with the dark, textured environment of the foundry. The image captures the raw power and heat of the casting process, presented in a high-end, artistic way that aligns with the brand's 'Raw Luxe' narrative." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdFEnl5fVsUVDavDI08A_auOfQyELvQA4rw0PpMrlaj9OmmzBUXQ-kB0NKBULyux_vp3BefqSXprFS5PuYjEdEwEz3T66AyzMSNkDNGD3gbeeeosgIjUshddkX4WPIRhJWEL1BT6tUnRHTqfrue2wEsjA5_IrrCa9QsMUiGru99fk4-OIe7X4KwEOOG6kuohQdO_V3otkikIA4uID6CJQtN0M9A9Ow5Gx2txJaXjaxmR7w3tm6XKWnyA955B4w4ZSBY0BlVzSQ5uAI"/>
+</div>
+<span class="font-technical-label text-tertiary">24 AVRIL 2024</span>
+<h3 class="font-display-lg text-headline-md mt-sm group-hover:underline">The Alchemy of 19kt: Why Portuguese Gold is Different</h3>
+<p class="font-body-md text-on-surface-variant mt-md">An exploration of the history and chemical properties that give our gold its legendary depth and longevity...</p>
+</div>
+<div class="group cursor-pointer">
+<div class="aspect-video bg-surface-dim overflow-hidden mb-md">
+<img alt="" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="An overhead flat-lay of a collection of sketches, technical drawings, and metal scraps on a wooden workbench. The scene is lit with natural daylight, creating soft shadows. The composition is artistic and disorganized in a curated way, reflecting the creative chaos of the design process and the brand's focus on material truth and artisanal heritage." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzzKomUDqwsaD4-d_ZKqJ_G_5PA03XXkVy1pdez8TDHN-uqIWYbEnL641qLOk3e4_0dxDLvCvMlYJsbEc-mD1wVQ7w8Z9cgwiWTLT43g6296tVcAhVCYKfxWIyftKVhsQDyZ6-_j6wl55fxHcVKITjSAAJQiKEF5jzzyWOOvVA2LH3eP2TubNTwhjy_SkorC_IHhj1FxGwgCLW71vZbpv7RSpzfxrlQoMV3vDEFbVPBT9bBoDJPpo5MY4Ls9JhY7l4IwLYPVovA1Za"/>
+</div>
+<span class="font-technical-label text-tertiary">12 MARS 2024</span>
+<h3 class="font-display-lg text-headline-md mt-sm group-hover:underline">From Sketch to Artifact: The Evolution of a Design</h3>
+<p class="font-body-md text-on-surface-variant mt-md">Tracing the journey of the Nidus collection from its first charcoal lines on paper to the final polished stone...</p>
+</div>
+</div>
+</section>
+</main>
+<!-- FOOTER -->
+<footer class="bg-inverse-surface text-surface-bright pt-xl">
+<div class="max-w-container-max mx-auto px-lg pb-xl grid grid-cols-1 md:grid-cols-3 gap-xl border-b border-outline-variant/20">
+<div class="flex flex-col gap-lg">
+<div class="font-display-lg text-headline-md text-surface-bright">Précieuse</div>
+<p class="font-technical-label opacity-60 leading-relaxed uppercase">
+                    Lisbonne Atelier / Portugal<br/>
+                    Rua de São Bento, 452<br/>
+                    1200-819 Lisboa
+                </p>
+<div class="flex gap-md">
+<a class="font-technical-label hover:text-tertiary transition-colors" href="#">INSTAGRAM</a>
+<a class="font-technical-label hover:text-tertiary transition-colors" href="#">PINTEREST</a>
+<a class="font-technical-label hover:text-tertiary transition-colors" href="#">JOURNAL</a>
+</div>
+</div>
+<div class="flex flex-col gap-md">
+<span class="font-technical-label text-tertiary uppercase">Information</span>
+<nav class="flex flex-col gap-xs font-technical-label uppercase text-surface-variant/60">
+<a class="hover:text-surface-bright transition-colors" href="#">RJC Certification</a>
+<a class="hover:text-surface-bright transition-colors" href="#">Ethical Sourcing</a>
+<a class="hover:text-surface-bright transition-colors" href="#">Shipping &amp; Returns</a>
+<a class="hover:text-surface-bright transition-colors" href="#">Privacy Policy</a>
+</nav>
+</div>
+<div class="flex flex-col gap-md">
+<span class="font-technical-label text-tertiary uppercase">Subscribe</span>
+<p class="font-body-md text-surface-variant/60">Receive archival updates and early access to unique commissions.</p>
+<form class="mt-md flex border-b border-outline">
+<input class="bg-transparent border-none font-technical-label text-surface-bright focus:ring-0 w-full placeholder:text-surface-variant/30" placeholder="EMAIL ADDRESS" type="email"/>
+<button class="p-xs hover:text-tertiary transition-colors" type="submit">
+<span class="material-symbols-outlined" data-icon="arrow_forward"></span>
+</button>
+</form>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-lg py-md flex justify-between items-center text-surface-variant/30 font-technical-label uppercase">
+<span>© 2024 PRÉCIEUSE. ARCHIVAL CRAFTSMANSHIP. ALL RIGHTS RESERVED.</span>
+<span>PORTUGAL / LISBON</span>
+</div>
+</footer>
+</body></html>

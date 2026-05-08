@@ -1,0 +1,102 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import '@fontsource/dm-serif-display/400.css';
+@import '@fontsource/dm-serif-display/400-italic.css';
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/jetbrains-mono/400.css';
+@import '@fontsource/jetbrains-mono/500.css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Précieuse Brand Colors */
+  --background: #F2EDE6; /* warm bone white */
+  --foreground: #1A1614; /* charcoal text */
+  --card: #F2EDE6;
+  --card-foreground: #1A1614;
+  --popover: #F2EDE6;
+  --popover-foreground: #1A1614;
+  --primary: #BD0762; /* raspberry for CTAs */
+  --primary-foreground: #F2EDE6;
+  --secondary: #6B6560; /* concrete grey */
+  --secondary-foreground: #F2EDE6;
+  --muted: #DAC8C8; /* dusty rose */
+  --muted-foreground: #6B6560;
+  --accent: #B8924E; /* molten gold */
+  --accent-foreground: #1A1614;
+  --destructive: #BD0762;
+  --destructive-foreground: #F2EDE6;
+  --border: #DAC8C8;
+  --input: #DAC8C8;
+  --ring: #B8924E;
+  --radius: 0.25rem;
+  
+  /* Custom brand tokens */
+  --bone: #F2EDE6;
+  --concrete: #6B6560;
+  --charcoal: #1A1614;
+  --gold: #B8924E;
+  --rose: #DAC8C8;
+  --raspberry: #BD0762;
+  --slate: #2A2522;
+}
+
+@theme inline {
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-serif: 'DM Serif Display', Georgia, serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+  --radius-xl: calc(var(--radius) + 4px);
+  
+  /* Brand color utilities */
+  --color-bone: var(--bone);
+  --color-concrete: var(--concrete);
+  --color-charcoal: var(--charcoal);
+  --color-gold: var(--gold);
+  --color-rose: var(--rose);
+  --color-raspberry: var(--raspberry);
+  --color-slate: var(--slate);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom selection color */
+::selection {
+  background-color: var(--gold);
+  color: var(--charcoal);
+}
