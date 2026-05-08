@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Reveal } from "@/components/luxe";
 import { PRODUCTS } from "@/lib/content/products";
 
 const FEATURED_SLUG = "josephine";
@@ -10,15 +11,17 @@ export function HomeProductsTeaser() {
 
   return (
     <section className="mx-auto max-w-[1440px] px-6 py-20 sm:px-10 sm:py-28 lg:px-16">
-      <div className="mb-12 flex items-baseline justify-between gap-4">
-        <h2 className="font-display-lg italic">La Collection</h2>
-        <Link
-          href="/fr/collection"
-          className="font-technical-label uppercase tracking-[0.15em] border-b border-foreground hover:text-raspberry hover:border-raspberry transition-colors"
-        >
-          Voir tout
-        </Link>
-      </div>
+      <Reveal>
+        <div className="mb-12 flex items-baseline justify-between gap-4">
+          <h2 className="font-display-lg italic">La Collection</h2>
+          <Link
+            href="/fr/collection"
+            className="font-technical-label uppercase tracking-[0.15em] border-b border-foreground hover:text-raspberry hover:border-raspberry transition-colors"
+          >
+            Voir tout
+          </Link>
+        </div>
+      </Reveal>
 
       <div className="grid grid-cols-12 gap-6 lg:gap-8">
         <Link

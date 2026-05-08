@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Reveal } from "@/components/luxe";
 
 const MATERIALS = [
   {
@@ -25,8 +26,13 @@ export function HomeMaterials() {
   return (
     <section className="mx-auto max-w-[1440px] px-6 py-20 sm:px-10 sm:py-28 lg:px-16">
       <div className="grid grid-cols-1 gap-12 md:grid-cols-3 md:gap-10 lg:gap-16">
-        {MATERIALS.map((m) => (
-          <article key={m.title} className="flex flex-col gap-5">
+        {MATERIALS.map((m, i) => (
+          <Reveal
+            as="article"
+            key={m.title}
+            delay={i * 0.1}
+            className="flex flex-col gap-5"
+          >
             <div className="relative h-[300px] overflow-hidden bg-surface-dim">
               <Image
                 src={m.image}
@@ -42,7 +48,7 @@ export function HomeMaterials() {
             <p className="font-body-lg text-on-surface-variant">
               {m.body}
             </p>
-          </article>
+          </Reveal>
         ))}
       </div>
     </section>

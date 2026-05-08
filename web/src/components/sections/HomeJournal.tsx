@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Reveal } from "@/components/luxe";
 
 const ARTICLES = [
   {
@@ -22,19 +23,26 @@ const ARTICLES = [
 export function HomeJournal() {
   return (
     <section className="mx-auto max-w-[1440px] px-6 py-20 sm:px-10 sm:py-28 lg:px-16">
-      <div className="mb-12 flex items-baseline justify-between gap-4">
-        <h2 className="font-display-lg italic">Journal d&apos;atelier</h2>
-        <a
-          href="#"
-          className="font-technical-label uppercase tracking-[0.15em] border-b border-foreground hover:text-raspberry hover:border-raspberry transition-colors"
-        >
-          Voir le journal
-        </a>
-      </div>
+      <Reveal>
+        <div className="mb-12 flex items-baseline justify-between gap-4">
+          <h2 className="font-display-lg italic">Journal d&apos;atelier</h2>
+          <a
+            href="#"
+            className="font-technical-label uppercase tracking-[0.15em] border-b border-foreground hover:text-raspberry hover:border-raspberry transition-colors"
+          >
+            Voir le journal
+          </a>
+        </div>
+      </Reveal>
 
       <div className="grid grid-cols-1 gap-12 md:grid-cols-2 md:gap-10 lg:gap-16">
-        {ARTICLES.map((article) => (
-          <article key={article.title} className="group cursor-pointer">
+        {ARTICLES.map((article, i) => (
+          <Reveal
+            as="article"
+            key={article.title}
+            delay={i * 0.1}
+            className="group cursor-pointer"
+          >
             <div className="relative mb-5 aspect-video overflow-hidden bg-surface-dim">
               <Image
                 src={article.image}
@@ -53,7 +61,7 @@ export function HomeJournal() {
             <p className="font-body-lg mt-4 text-on-surface-variant">
               {article.excerpt}
             </p>
-          </article>
+          </Reveal>
         ))}
       </div>
     </section>

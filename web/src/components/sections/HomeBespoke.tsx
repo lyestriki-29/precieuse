@@ -1,11 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Reveal } from "@/components/luxe";
 
 export function HomeBespoke() {
   return (
     <section className="border-y border-outline-variant/30 bg-surface-container-low py-20 sm:py-28">
       <div className="mx-auto grid max-w-[1440px] grid-cols-1 items-center gap-16 px-6 sm:px-10 md:grid-cols-2 lg:gap-20 lg:px-16">
-        <div className="order-2 md:order-1">
+        <Reveal className="order-2 md:order-1">
           <span className="font-technical-label mb-4 block tracking-[0.3em] uppercase text-tertiary">
             Pièce unique
           </span>
@@ -23,9 +24,9 @@ export function HomeBespoke() {
           >
             Démarrer un projet sur-mesure
           </Link>
-        </div>
+        </Reveal>
 
-        <div className="relative order-1 md:order-2">
+        <Reveal delay={0.15} className="relative order-1 md:order-2">
           <div className="relative aspect-[3/4] overflow-hidden">
             <Image
               src="/images/stitch/sur-mesure-emeline-atelier.jpg"
@@ -41,7 +42,7 @@ export function HomeBespoke() {
               lumière et l&apos;héritage. »
             </p>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

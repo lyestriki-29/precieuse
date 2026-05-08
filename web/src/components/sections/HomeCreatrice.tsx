@@ -1,10 +1,11 @@
 import Image from "next/image";
+import { Reveal } from "@/components/luxe";
 
 export function HomeCreatrice() {
   return (
     <section className="mx-auto max-w-[1440px] px-6 py-20 sm:px-10 sm:py-28 lg:px-16">
       <div className="grid grid-cols-12 items-center gap-8 lg:gap-12">
-        <div className="col-span-12 md:col-span-5">
+        <Reveal className="col-span-12 md:col-span-5">
           <div className="relative aspect-square overflow-hidden bg-surface-dim">
             <Image
               src="/images/stitch/creatrice-emeline-portrait.jpg"
@@ -14,9 +15,12 @@ export function HomeCreatrice() {
               className="object-cover grayscale"
             />
           </div>
-        </div>
+        </Reveal>
 
-        <div className="col-span-12 flex flex-col gap-8 md:col-span-6 md:col-start-7">
+        <Reveal
+          delay={0.15}
+          className="col-span-12 flex flex-col gap-8 md:col-span-6 md:col-start-7"
+        >
           <div className="flex flex-col gap-2">
             <h2 className="font-display-xl italic">Eméline</h2>
             <span className="font-technical-label tracking-[0.2em] uppercase text-on-surface-variant">
@@ -54,7 +58,7 @@ export function HomeCreatrice() {
               </dd>
             </div>
           </dl>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

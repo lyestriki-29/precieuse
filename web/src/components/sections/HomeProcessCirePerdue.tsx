@@ -1,3 +1,5 @@
+import { Reveal } from "@/components/luxe";
+
 const STEPS = [
   { n: "01", title: "DESSIN", body: "Conceptualisation de l'âme du bijou." },
   { n: "02", title: "CIRE", body: "Sculpture du modèle en cire perdue." },
@@ -11,19 +13,22 @@ export function HomeProcessCirePerdue() {
   return (
     <section className="overflow-hidden bg-inverse-surface py-20 text-white sm:py-28">
       <div className="mx-auto max-w-[1440px] px-6 sm:px-10 lg:px-16">
-        <div className="mb-16 max-w-2xl">
-          <span className="font-technical-label mb-4 block tracking-[0.2em] uppercase text-tertiary">
-            La Méthode
-          </span>
-          <h2 className="font-display-xl leading-tight">
-            L&apos;archéologie du futur : la cire perdue.
-          </h2>
-        </div>
+        <Reveal>
+          <div className="mb-16 max-w-2xl">
+            <span className="font-technical-label mb-4 block tracking-[0.2em] uppercase text-tertiary">
+              La Méthode
+            </span>
+            <h2 className="font-display-xl leading-tight">
+              L&apos;archéologie du futur : la cire perdue.
+            </h2>
+          </div>
+        </Reveal>
 
         <div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-6 lg:gap-4">
-          {STEPS.map((step) => (
-            <div
+          {STEPS.map((step, i) => (
+            <Reveal
               key={step.n}
+              delay={i * 0.05}
               className="flex flex-col gap-2 border-t border-white/15 pt-5"
             >
               <span className="font-technical-label tracking-[0.1em] text-tertiary">
@@ -32,7 +37,7 @@ export function HomeProcessCirePerdue() {
               <p className="text-sm leading-relaxed text-white/55">
                 {step.body}
               </p>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>
