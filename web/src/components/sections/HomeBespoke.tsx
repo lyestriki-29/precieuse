@@ -1,59 +1,48 @@
+import Image from "next/image";
 import Link from "next/link";
-import { Container, Heading, LuxeImage, Reveal, Section } from "@/components/luxe";
-import { buttonVariants } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
 
 export function HomeBespoke() {
   return (
-    <Section spacing="default" tone="white">
-      <Container>
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
-          <Reveal>
-            <LuxeImage
-              src="/images/atelier/esquisses-amethyste.jpg"
-              alt="Esquisses de bijoux et améthyste brute sur établi"
-              width={1080}
-              height={1440}
-              aspect="portrait"
-              wrapperClassName="rounded-md"
+    <section className="border-y border-outline-variant/30 bg-surface-container-low py-20 sm:py-28">
+      <div className="mx-auto grid max-w-[1440px] grid-cols-1 items-center gap-16 px-6 sm:px-10 md:grid-cols-2 lg:gap-20 lg:px-16">
+        <div className="order-2 md:order-1">
+          <span className="font-technical-label mb-4 block tracking-[0.3em] uppercase text-tertiary">
+            Pièce unique
+          </span>
+          <h2 className="font-display-xl mb-8 leading-tight">
+            Une idée, un projet ? Parlons-en.
+          </h2>
+          <p className="font-body-lg mb-10 max-w-md text-on-surface-variant">
+            L&apos;atelier est ouvert aux créations sur-mesure. Ensemble, nous
+            transformons votre histoire personnelle en un objet permanent, doté
+            de poids et de sens.
+          </p>
+          <Link
+            href="/fr/sur-mesure"
+            className="inline-block bg-raspberry px-10 py-4 text-white font-technical-label uppercase tracking-[0.15em] hover:opacity-90 transition-opacity"
+          >
+            Démarrer un projet sur-mesure
+          </Link>
+        </div>
+
+        <div className="relative order-1 md:order-2">
+          <div className="relative aspect-[3/4] overflow-hidden">
+            <Image
+              src="/images/stitch/sur-mesure-emeline-atelier.jpg"
+              alt="Eméline travaillant à l'établi sur un modèle en cire"
+              fill
+              sizes="(min-width: 768px) 45vw, 100vw"
+              className="object-cover grayscale"
             />
-          </Reveal>
-
-          <div className="text-center lg:text-left">
-            <Reveal>
-              <Heading
-                as="h2"
-                size="lg"
-                overline="Création sur-mesure"
-                className="mx-auto lg:mx-0"
-              >
-                Un projet intime.
-              </Heading>
-            </Reveal>
-
-            <Reveal delay={0.15}>
-              <p className="text-foreground/70 mx-auto mt-8 max-w-xl text-lg leading-relaxed font-light lg:mx-0">
-                Pour marquer une histoire, un moment. Une création pensée
-                ensemble, de la première esquisse au bijou final.
-              </p>
-            </Reveal>
-
-            <Reveal delay={0.3}>
-              <div className="mt-10">
-                <Link
-                  href="/fr/sur-mesure"
-                  className={cn(
-                    buttonVariants({ size: "lg" }),
-                    "rounded-full px-6 h-auto py-3",
-                  )}
-                >
-                  Imaginer mon bijou
-                </Link>
-              </div>
-            </Reveal>
+          </div>
+          <div className="absolute -bottom-3 -right-3 max-w-xs border border-outline-variant bg-cream p-5 shadow-sm">
+            <p className="font-technical-label italic leading-relaxed">
+              « Chaque pièce sur-mesure commence par une conversation sur la
+              lumière et l&apos;héritage. »
+            </p>
           </div>
         </div>
-      </Container>
-    </Section>
+      </div>
+    </section>
   );
 }

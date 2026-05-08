@@ -1,65 +1,32 @@
-import Link from "next/link";
-import { Container, Heading, Reveal, Section } from "@/components/luxe";
-import { buttonVariants } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-
-const ctaPrimary = cn(buttonVariants({ size: "lg" }), "rounded-full px-6 h-auto py-3");
-const ctaGhost = cn(
-  buttonVariants({ variant: "ghost", size: "lg" }),
-  "rounded-full px-6 h-auto py-3",
-);
+import Image from "next/image";
 
 export function HomeHero() {
   return (
-    <Section spacing="loose" tone="cream">
-      <Container>
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-16">
-          <div className="lg:col-span-7 text-center lg:text-left">
-            <Reveal>
-              <Heading
-                as="h1"
-                size="display"
-                overline="Joaillière artisanale · Portugal"
-                className="mx-auto lg:mx-0"
-              >
-                Des bijoux intemporels, à porter comme une seconde peau.
-              </Heading>
-            </Reveal>
+    <section className="relative -mt-16 flex h-screen w-full items-end overflow-hidden bg-surface-dim">
+      <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/55 via-black/15 to-transparent" />
 
-            <Reveal delay={0.15}>
-              <p className="text-foreground/70 mx-auto mt-8 max-w-md text-lg leading-relaxed font-light lg:mx-0">
-                Précieuse, c&apos;est moi. Des pièces que je dessine et fabrique
-                moi-même, en petites séries ou pièces uniques.
-              </p>
-            </Reveal>
+      <Image
+        src="/images/stitch/hero-atelier-dusk.jpg"
+        alt="Atelier de joaillière au crépuscule — or brut, loupe et outils"
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover"
+      />
 
-            <Reveal delay={0.3}>
-              <div className="mt-12 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4 lg:justify-start">
-                <Link href="/fr/collection" className={ctaPrimary}>
-                  Découvrir la collection
-                </Link>
-                <Link href="/fr/sur-mesure" className={ctaGhost}>
-                  Créer un bijou sur-mesure
-                </Link>
-              </div>
-            </Reveal>
-          </div>
+      <div className="relative z-20 mx-auto flex w-full max-w-[1440px] items-end justify-between gap-8 px-6 pb-20 sm:px-10 lg:px-16">
+        <h1 className="font-display-xl max-w-2xl leading-none text-white italic">
+          Le geste juste.
+          <br />
+          La matière vraie.
+        </h1>
 
-          <Reveal delay={0.2} className="lg:col-span-5">
-            <div className="relative aspect-[3/4] w-full overflow-hidden rounded-md">
-              <video
-                src="/images/video/hero-dessin-bijoux.mp4"
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="metadata"
-                className="luxe-grayscale absolute inset-0 h-full w-full object-cover"
-              />
-            </div>
-          </Reveal>
+        <div className="hidden flex-col items-end gap-1 pb-3 sm:flex">
+          <span className="font-technical-label uppercase text-white/80 [writing-mode:vertical-rl] tracking-[0.2em]">
+            EST. LISBONNE — 19KT — RJC
+          </span>
         </div>
-      </Container>
-    </Section>
+      </div>
+    </section>
   );
 }

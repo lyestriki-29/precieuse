@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { cn } from "@/lib/utils";
@@ -8,9 +9,14 @@ import { NAV_LINKS, SITE } from "@/lib/content/site";
 
 const links = NAV_LINKS;
 
+const HERO_FULLSCREEN_ROUTES = ["/fr", "/fr/"];
+
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const onHero = HERO_FULLSCREEN_ROUTES.includes(pathname);
+  const showLight = onHero && !scrolled;
 
   useEffect(() => {
     let frame = 0;
@@ -39,27 +45,27 @@ export function Nav() {
     <>
       <header
         className={cn(
-          "fixed inset-x-0 top-0 z-50 transition-[background-color,border-color,backdrop-filter] duration-300",
-          scrolled
-            ? "bg-cream/85 border-b border-black/5 backdrop-blur-md"
-            : "border-b border-transparent bg-transparent",
+          "fixed inset-x-0 top-0 z-50 transition-[background-color,border-color,backdrop-filter,color] duration-300",
+          showLight
+            ? "border-b border-transparent bg-transparent text-white"
+            : "bg-cream/90 border-b border-black/5 backdrop-blur-md text-foreground",
         )}
       >
-        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 sm:px-8 lg:px-12">
+        <div className="mx-auto flex h-16 max-w-[1440px] items-center justify-between px-6 sm:px-10 lg:px-16">
           <Link
             href="/fr"
-            className="font-heading text-xl tracking-tight"
+            className="font-display text-xl italic tracking-tight"
             onClick={() => setOpen(false)}
           >
             {SITE.brand}
           </Link>
 
-          <nav className="hidden gap-10 md:flex">
+          <nav className="hidden gap-8 md:flex">
             {links.map((l) => (
               <Link
                 key={l.href}
                 href={l.href}
-                className="hover:text-raspberry text-sm font-light tracking-wide transition-colors"
+                className="font-technical-label uppercase tracking-[0.15em] hover:text-tertiary transition-colors"
               >
                 {l.label}
               </Link>
