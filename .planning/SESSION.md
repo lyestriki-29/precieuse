@@ -1,34 +1,35 @@
-# Session State — 2026-05-08 (fin transition main-only)
+# Session State — 2026-05-08 (fin Phase 2)
 
 ## Branch
-`main` (Phase 0 mergée directement, sans PR — nouvelle convention « tout sur main »)
+`main`
 
 ## Completed This Session
-- Skill `/token-saver` durci (`~/.claude/skills/token-saver/SKILL.md`) : règle « toutes sessions sur main », check de branche au début/fin, push vers main uniquement
-- Plan Phase 1 rédigé : `~/.claude/plans/debut-peaceful-sedgewick.md`
-- Phase 0 mergée sur main → `web/` désormais accessible depuis main
+- **Phase 1** mergée sur main : design system luxe (Container, Section, Heading, Reveal, LuxeImage), Nav (transparente→solide, burger mobile via portail), Footer, page QA `/dev/components`. Code review : 2 fixs (React namespace, portail overlay).
+- **Phase 2** livrée : routing `/[locale]/` (FR seul), middleware redirect, 8 pages (home + collection + 5 fiches produit + créatrice + sur-mesure + contact + 3 légales), data layer `lib/content/*`, form contact (zod + react-hook-form + Sonner, submit mocké). Code review : 3 fixs (middleware redirect locales inconnues, try/catch form, erreur topic). Dette Phase 5 commentée (locale-aware links + html lang).
 
 ## Next Task
-**Phase 1 — Design system & layout (~2 jours, 1 session).**
-Plan complet : `~/.claude/plans/debut-peaceful-sedgewick.md`
+**Phase 3 — Sanity CMS (~2 jours, 1 session).**
 
-À créer dans `web/src/components/luxe/` : `Container`, `Section`, `Heading`, `Reveal` (framer-motion fade-in), `LuxeImage` (next/image + filtre N&B). Dans `web/src/components/layout/` : `Nav` (transparent→solide au scroll), `Footer` (3 colonnes). Page QA `web/src/app/dev/components/page.tsx`. Migrer la home pour utiliser le DS.
+À créer dans `web/sanity/schemas/` : `product`, `testimonial`, `page` (sections modulaires), `settings` (nav, footer, contact). Studio embarqué `/studio` avec auth Sanity. Migration progressive du copy hardcodé (`lib/content/*`) vers GROQ + ISR (revalidate 60s) pour produits, témoignages, contenu home modifiable.
 
-**Démarrer par `cd web && pnpm install && pnpm typecheck`** pour valider la base avant de coder.
+**Démarrer par** : créer projet Sanity (sanity.io/manage), récupérer `projectId` + `dataset`, ajouter env vars, scaffolding studio via `npx sanity init` ou config manuelle dans `sanity.config.ts`.
 
 ## Blockers
-- Photos manquantes (Annabelle N&B + 4 packshots) → placeholders Phase 1
-- Validation Eméline mapping IG (suspectées IA A1/A2)
-- Schéma webhook Propul'seo CRM
-- Domaine `precieuse.fr` à confirmer/acheter
+- Photos manquantes : portrait Annabelle N&B + 4 packshots (Aurore, Eugénie, Thelma, Louise) → placeholders en place jusqu'à Phase 6
+- Validation copy bio Eméline + suspicion photos IA (A1/A2)
+- Schéma webhook Propul'seo CRM (Phase 4)
+- Email officiel Eméline + numéro WhatsApp (placeholders dans `lib/content/site.ts`)
+- Domaine `precieuse.fr` à confirmer/acheter (Phase 6)
 - Logo SVG HD vectoriel
 - ⚠️ Clé Stitch API à régénérer
-- Décision EN/PT en v1 ou v1.1
-- Worktrees à nettoyer : `claude/busy-murdock-47e042` (local + remote) et `claude/condescending-albattani-0cb9d9` (remote)
+- Décision EN/PT en v1 ou v1.1 (Phase 5)
 
 ## Key Context
-- Stack : Next.js 16.2.6 + Tailwind v4 + shadcn/ui (new-york/stone) + Sanity + Brevo + next-intl + Vercel
+- Stack : Next.js 16.2.6 + Tailwind v4 + shadcn (style **base-nova** — `Button` n'a PAS `asChild`, utiliser `buttonVariants()` sur `<Link>`/`<a>` via `cn()`) + Sanity + Brevo + next-intl + Vercel
 - Direction visuelle : **S1 « L'Art de la Lumière »** (cream `#FBF8F5`, raspberry, gold whisper, Playfair + Inter Light, photos N&B)
 - Modèle : lead-gen v1 (pas de checkout), 5 modèles 1000-7000€, lancement mi-juillet 2026
 - Plan E2E : `~/.claude/plans/debut-delegated-twilight.md`
-- **Convention** : toutes sessions sur `main`, pas de branches/worktrees. Au prochain `/token-saver début`, rouvrir Claude Code depuis `/Users/trikilyes/Desktop/Prive1/Precieuse/` (PAS depuis un worktree).
+- Plan Phase 1 : `~/.claude/plans/debut-peaceful-sedgewick.md` (consommé)
+- **Pattern Next.js 16** : `params` est async (`Promise<{...}>`). Utiliser `LayoutProps<"/[route]">` / `PageProps<"/[route]">` globaux générés par `pnpm exec next typegen` (re-générer si nouvelle route dynamique).
+- **Convention** : toutes sessions sur `main`, pas de branches/worktrees.
+- Routes statiques générées : 12 (home + 5 produits + 5 pages + dev/components) + middleware Proxy.
