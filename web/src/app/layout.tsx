@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
+import { Toaster } from "@/components/ui/sonner";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -29,6 +30,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    // TODO Phase 5 : `lang` deviendra dynamique via next-intl quand EN/PT seront actifs.
     <html
       lang="fr"
       className={`${playfair.variable} ${inter.variable} h-full antialiased`}
@@ -37,6 +39,7 @@ export default function RootLayout({
         <Nav />
         <main className="flex flex-1 flex-col pt-16">{children}</main>
         <Footer />
+        <Toaster richColors position="bottom-right" />
       </body>
     </html>
   );

@@ -1,17 +1,12 @@
 import Link from "next/link";
-
-const navLinks = [
-  { href: "/mentions-legales", label: "Mentions légales" },
-  { href: "/cgv", label: "CGV" },
-  { href: "/contact", label: "Contact" },
-];
+import { FOOTER_LINKS, SITE } from "@/lib/content/site";
 
 export function Footer() {
   return (
     <footer className="border-t border-black/5">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 py-16 sm:px-8 lg:grid-cols-3 lg:px-12">
         <div>
-          <p className="font-heading text-2xl">Précieuse</p>
+          <p className="font-heading text-2xl">{SITE.brand}</p>
           <p className="text-foreground/60 mt-3 max-w-xs text-sm leading-relaxed font-light">
             Joaillerie artisanale, dessinée et fabriquée à la main au Portugal.
           </p>
@@ -21,7 +16,7 @@ export function Footer() {
           aria-label="Liens utiles"
           className="flex flex-col gap-3 text-sm font-light"
         >
-          {navLinks.map((l) => (
+          {FOOTER_LINKS.map((l) => (
             <Link
               key={l.href}
               href={l.href}
@@ -34,7 +29,7 @@ export function Footer() {
 
         <div className="flex flex-col gap-3 text-sm font-light">
           <a
-            href="https://instagram.com/precieuse"
+            href={SITE.instagram}
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-raspberry w-fit transition-colors"
@@ -42,10 +37,10 @@ export function Footer() {
             Instagram
           </a>
           <a
-            href="mailto:contact@precieuse.fr"
+            href={`mailto:${SITE.email}`}
             className="hover:text-raspberry w-fit transition-colors"
           >
-            contact@precieuse.fr
+            {SITE.email}
           </a>
           <p className="text-foreground/40 mt-2 text-xs tracking-wider uppercase">
             Newsletter — bientôt
@@ -55,7 +50,7 @@ export function Footer() {
 
       <div className="mx-auto max-w-7xl px-6 pb-10 sm:px-8 lg:px-12">
         <p className="text-foreground/40 text-xs tracking-wider uppercase">
-          © {new Date().getFullYear()} Précieuse · Tous droits réservés
+          © {new Date().getFullYear()} {SITE.brand} · Tous droits réservés
         </p>
       </div>
     </footer>

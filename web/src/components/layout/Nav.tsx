@@ -4,12 +4,9 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { cn } from "@/lib/utils";
+import { NAV_LINKS, SITE } from "@/lib/content/site";
 
-const links = [
-  { href: "/collection", label: "Collection" },
-  { href: "/atelier", label: "Atelier" },
-  { href: "/contact", label: "Contact" },
-] as const;
+const links = NAV_LINKS;
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -50,11 +47,11 @@ export function Nav() {
       >
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 sm:px-8 lg:px-12">
           <Link
-            href="/"
+            href="/fr"
             className="font-heading text-xl tracking-tight"
             onClick={() => setOpen(false)}
           >
-            Précieuse
+            {SITE.brand}
           </Link>
 
           <nav className="hidden gap-10 md:flex">
