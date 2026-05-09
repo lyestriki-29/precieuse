@@ -60,11 +60,11 @@ export function V4CHeroE2() {
           aria-label="Précieuse"
           className={`${garamond} italic leading-[0.78] tracking-[-0.04em] text-center select-none`}
           style={{
-            fontSize: "clamp(120px, 22vw, 360px)",
+            fontSize: "clamp(80px, 14vw, 220px)",
             backgroundImage:
               "linear-gradient(180deg, rgba(245,210,138,0.5), rgba(245,210,138,0)), url(/images/gemmyo.jpg)",
-            backgroundSize: "100% 100%, 130% auto",
-            backgroundPosition: "center, center 38%",
+            backgroundSize: "100% 100%, 100% auto",
+            backgroundPosition: "center, center 40%",
             WebkitBackgroundClip: "text",
             backgroundClip: "text",
             color: "transparent",
