@@ -61,7 +61,7 @@ export function V4CLettresA() {
             </p>
             {LETTRES.map((l, i) => (
               <button
-                key={i}
+                key={l.auteur}
                 type="button"
                 onClick={() => setActive(i)}
                 aria-pressed={active === i}

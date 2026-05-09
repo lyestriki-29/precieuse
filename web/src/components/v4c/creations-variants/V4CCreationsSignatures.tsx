@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { SIGNATURES, FONT } from "./data";
 
 const { garamond, caveat, inter } = FONT;
@@ -93,13 +94,13 @@ export function V4CCreationsSignatures() {
                     </dd>
                   </dl>
 
-                  <a
+                  <Link
                     href="/fr/sur-mesure"
                     className={`${garamond} italic text-[15px] text-[var(--site-text)] inline-flex items-center gap-2 border-b border-[var(--site-accent)] pb-1 hover:gap-3 transition-all duration-300`}
                   >
                     Discuter d&apos;une pièce dans cet esprit
                     <span aria-hidden>→</span>
-                  </a>
+                  </Link>
                 </div>
               </article>
             );

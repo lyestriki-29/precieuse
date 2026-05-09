@@ -44,7 +44,7 @@ export function V4CFooterH() {
             <p className={`${caveat} text-[20px] text-[var(--site-bg)] leading-tight`}>
               {FOOTER_DATA.address.street}, {FOOTER_DATA.address.zip} {FOOTER_DATA.address.city}
             </p>
-            <p className={`${caveat} text-[14px] text-[var(--site-accent)] mt-1`}>
+            <p className={`${caveat} text-[14px] text-[var(--site-bg)]/80 mt-1`}>
               {FOOTER_DATA.hours} · {FOOTER_DATA.email}
             </p>
           </div>
@@ -57,7 +57,7 @@ export function V4CFooterH() {
             <span className={`${caveat} text-[12px] text-[var(--site-bg)]/55 italic block`}>
               tenu par —
             </span>
-            <span className={`${caveat} text-[40px] text-[var(--site-accent)] leading-none block`}>
+            <span className={`${caveat} text-[40px] text-[var(--site-bg)] leading-none block`}>
               {FOOTER_DATA.founder}
             </span>
             <span className={`${garamond} italic text-[10px] tracking-[0.3em] text-[var(--site-bg)]/50 block`}>

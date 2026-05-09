@@ -85,8 +85,8 @@ export function V4CEtabliE() {
 
   return (
     <section className="relative bg-[var(--site-bg)]">
-      {/* Grain overlay */}
-      <div className="pointer-events-none fixed inset-0 z-[1] opacity-[0.06] mix-blend-overlay bg-[url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22><filter id=%22n%22><feTurbulence baseFrequency=%221%22/></filter><rect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22/></svg>')]" />
+      {/* Grain overlay scoped à la section pour éviter les composites layers en scroll */}
+      <div className="pointer-events-none absolute inset-0 z-[1] opacity-[0.06] mix-blend-overlay bg-[url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22><filter id=%22n%22><feTurbulence baseFrequency=%221%22/></filter><rect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22/></svg>')]" />
 
       {/* En-tête */}
       <header className="relative px-8 lg:px-16 pt-24 pb-16">
@@ -225,7 +225,7 @@ export function V4CEtabliE() {
               onClick={() => stepRefs.current[idx]?.scrollIntoView({ behavior: "smooth", block: "center" })}
               className="group relative flex items-center gap-3"
               aria-label={`Aller à ${s.title}`}
-              aria-current={active === idx}
+              aria-current={active === idx ? "step" : undefined}
             >
               <span
                 className={`${garamond} italic text-[12px] tracking-widest transition-all duration-500 ${
