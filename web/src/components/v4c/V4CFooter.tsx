@@ -1,75 +1,85 @@
-import Link from "next/link";
+"use client";
+
+import { useState } from "react";
+import { V4CFooterA } from "./footer-variants/V4CFooterA";
+import { V4CFooterB } from "./footer-variants/V4CFooterB";
+import { V4CFooterC } from "./footer-variants/V4CFooterC";
+import { V4CFooterD } from "./footer-variants/V4CFooterD";
+import { V4CFooterE } from "./footer-variants/V4CFooterE";
+import { V4CFooterF } from "./footer-variants/V4CFooterF";
+import { V4CFooterG } from "./footer-variants/V4CFooterG";
+import { V4CFooterH } from "./footer-variants/V4CFooterH";
 
 const garamond = "font-[family-name:var(--font-eb-garamond)]";
 const caveat = "font-[family-name:var(--font-caveat)]";
 
-function TamponSVG() {
-  return (
-    <svg
-      aria-hidden
-      viewBox="0 0 180 180"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className="w-[120px] h-[120px] opacity-30"
-    >
-      <circle cx="90" cy="90" r="82" stroke="#3d2817" strokeWidth="2" />
-      <circle cx="90" cy="90" r="72" stroke="#3d2817" strokeWidth="0.8" />
-      <path id="arc-top-v4" d="M 20 90 A 70 70 0 0 1 160 90" fill="none" />
-      <text fontSize="11" fill="#3d2817" letterSpacing="3" fontFamily="serif" fontStyle="italic">
-        <textPath href="#arc-top-v4" startOffset="5%">Précieuse · Lisboa</textPath>
-      </text>
-      <path id="arc-bot-v4" d="M 20 90 A 70 70 0 0 0 160 90" fill="none" />
-      <text fontSize="11" fill="#3d2817" letterSpacing="5" fontFamily="serif">
-        <textPath href="#arc-bot-v4" startOffset="30%">MMXXVI</textPath>
-      </text>
-      <path d="M90 68 L93 82 L107 82 L96 91 L100 105 L90 97 L80 105 L84 91 L73 82 L87 82Z"
-        stroke="#3d2817" strokeWidth="0.8" fill="none" opacity="0.6" />
-    </svg>
-  );
-}
+type Key = "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H";
+
+const VARIANTS: { key: Key; label: string; sub: string }[] = [
+  { key: "A", label: "Colophon", sub: "fin de livre · fleuron central" },
+  { key: "B", label: "Lettre signée", sub: "manifeste + signature Caveat XL" },
+  { key: "C", label: "Sceau & cachet", sub: "wax seal P + 3 colonnes" },
+  { key: "D", label: "Carte postale", sub: "recto/verso + cachet circulaire" },
+  { key: "E", label: "Magazine", sub: "4 colonnes éditoriales structurées" },
+  { key: "F", label: "Atelier photo", sub: "image arrière-plan cinématique" },
+  { key: "G", label: "Baroque", sub: "ornements ❦ ❖ ✦ + capitales" },
+  { key: "H", label: "Carnet d'adresses", sub: "carte SVG Lisbonne + signature" },
+];
+
+const COMPONENTS: Record<Key, React.ReactNode> = {
+  A: <V4CFooterA />,
+  B: <V4CFooterB />,
+  C: <V4CFooterC />,
+  D: <V4CFooterD />,
+  E: <V4CFooterE />,
+  F: <V4CFooterF />,
+  G: <V4CFooterG />,
+  H: <V4CFooterH />,
+};
 
 export function V4CFooter() {
+  const [active, setActive] = useState<Key>("A");
+  const current = VARIANTS.find((v) => v.key === active)!;
+
   return (
-    <footer className="relative bg-[var(--site-text)] py-20 px-8 lg:px-16">
-      <div className="mx-auto max-w-[1440px]">
-        <div className="text-center mb-12">
-          <span className={`${garamond} italic text-[14px] text-[var(--site-accent)]`}>
-            p. 14 — fin du chapitre II
+    <div className="relative">
+      {/* Switcher pastille — top-right */}
+      <div className="absolute top-4 right-4 lg:top-6 lg:right-8 z-30 bg-[var(--site-bg)]/10 backdrop-blur-md border border-[var(--site-accent)]/40 px-3 py-2.5 max-w-[260px]">
+        <div className="flex items-center justify-between mb-2">
+          <span className={`${caveat} italic text-[12px] text-[var(--site-accent)]`}>
+            preview footer —
+          </span>
+          <span className={`${garamond} italic text-[11px] tracking-widest text-[var(--site-bg)]/80`}>
+            {active}
           </span>
         </div>
-
-        <div className="flex flex-col items-center gap-6 mb-16">
-          <TamponSVG />
-          <span className={`${caveat} text-[32px] text-[var(--site-bg)]/70`}>Eméline</span>
-          <address className={`${caveat} text-[16px] text-[var(--site-bg)]/50 not-italic text-center`}>
-            Rua da Boavista, 84 — 1200-070 Lisboa<br />
-            sur rendez-vous · mardi–samedi
-          </address>
+        <div className="grid grid-cols-8 gap-1">
+          {VARIANTS.map((v) => (
+            <button
+              key={v.key}
+              type="button"
+              onClick={() => setActive(v.key)}
+              aria-pressed={active === v.key}
+              title={`${v.label} — ${v.sub}`}
+              className={`${garamond} italic text-[11px] py-1 transition-all duration-200 ${
+                active === v.key
+                  ? "text-[var(--site-bg)] border-b border-[var(--site-accent)]"
+                  : "text-[var(--site-bg)]/50 hover:text-[var(--site-bg)] border-b border-transparent"
+              }`}
+            >
+              {v.key}
+            </button>
+          ))}
         </div>
-
-        <div className="border-t border-double border-[var(--site-bg)]/10 mb-8" />
-
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          <span className="font-[family-name:var(--font-inter)] text-[11px] font-light text-[var(--site-bg)]/30">
-            © Précieuse MMXXVI — Joaillerie artisanale, Portugal
+        <p className={`${garamond} italic text-[11px] text-[var(--site-bg)]/85 mt-2 leading-snug`}>
+          {current.label}
+          <span className={`${caveat} text-[11px] text-[var(--site-accent)]/90 italic block`}>
+            {current.sub}
           </span>
-          <nav className="flex gap-6">
-            {[
-              { label: "Mentions légales", href: "/fr/mentions-legales" },
-              { label: "Confidentialité", href: "/fr/confidentialite" },
-              { label: "CGV", href: "/fr/cgv" },
-            ].map((l) => (
-              <Link
-                key={l.label}
-                href={l.href}
-                className="font-[family-name:var(--font-inter)] text-[11px] font-light text-[var(--site-bg)]/30 hover:text-[var(--site-bg)]/60 transition-colors"
-              >
-                {l.label}
-              </Link>
-            ))}
-          </nav>
-        </div>
+        </p>
       </div>
-    </footer>
+
+      {COMPONENTS[active]}
+    </div>
   );
 }
