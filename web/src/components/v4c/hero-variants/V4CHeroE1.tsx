@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const garamond = "font-[family-name:var(--font-eb-garamond)]";
 const caveat = "font-[family-name:var(--font-caveat)]";
@@ -17,14 +18,14 @@ export function V4CHeroE1() {
           sizes="100vw"
           priority
           className="object-cover"
-          style={{ filter: "blur(34px) saturate(1.15) brightness(0.95)", transform: "scale(1.1)" }}
+          style={{ filter: "blur(20px) saturate(1.25) brightness(0.92)", transform: "scale(1.1)" }}
         />
-        {/* Voile coloré pour adoucir et renforcer le contraste avec le mask net */}
+        {/* Voile coloré — top léger, bottom marqué pour lisibilité du sous-titre */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(180deg, rgba(0,0,0,0.18) 0%, rgba(0,0,0,0.05) 35%, rgba(0,0,0,0.05) 65%, rgba(0,0,0,0.25) 100%)",
+              "linear-gradient(180deg, rgba(0,0,0,0.22) 0%, rgba(0,0,0,0.04) 30%, rgba(0,0,0,0.10) 55%, rgba(0,0,0,0.55) 100%)",
           }}
         />
       </div>
@@ -58,8 +59,8 @@ export function V4CHeroE1() {
           style={{
             fontSize: "clamp(80px, 14vw, 220px)",
             backgroundImage: "url(/images/gemmyo.jpg)",
-            backgroundSize: "280% auto",
-            backgroundPosition: "center 42%",
+            backgroundSize: "220% auto",
+            backgroundPosition: "30% 42%",
             WebkitBackgroundClip: "text",
             backgroundClip: "text",
             color: "transparent",
@@ -70,6 +71,15 @@ export function V4CHeroE1() {
           Précieuse
         </h1>
         <span className="sr-only">Précieuse — joaillerie artisanale, Lisboa</span>
+
+        {/* CTA réel sous le titre */}
+        <Link
+          href="/fr/v4c/preview/collection"
+          className={`${garamond} italic absolute bottom-6 left-1/2 -translate-x-1/2 inline-flex items-center gap-3 text-[15px] lg:text-[17px] text-white px-6 py-2.5 border border-white/40 backdrop-blur-[3px] bg-white/5 hover:bg-white/15 hover:border-white transition-all duration-300`}
+        >
+          <span>Découvrir le carnet</span>
+          <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
+        </Link>
       </div>
 
       {/* Sous-titre */}
