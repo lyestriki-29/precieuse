@@ -30,11 +30,11 @@ function SignatureSVG() {
 
 export function V4CAvantPropos() {
   return (
-    <section className="relative bg-[#f4ede0] py-24 px-8 lg:px-16">
-      <div className="absolute top-0 left-0 right-0 border-t-2 border-double border-[#3d2817]/15" />
+    <section className="relative bg-[var(--site-bg)] py-24 px-8 lg:px-16">
+      <div className="absolute top-0 left-0 right-0 border-t-2 border-double border-[var(--site-text)]/15" />
 
       <div className="mx-auto max-w-[1440px]">
-        <h2 className={`${garamond} italic text-[32px] text-[#a08552] mb-12 text-center tracking-wide`}>
+        <h2 className={`${garamond} italic text-[32px] text-[var(--site-accent)] mb-12 text-center tracking-wide`}>
           Avant-propos
         </h2>
 
@@ -42,7 +42,7 @@ export function V4CAvantPropos() {
         <div className="mx-auto max-w-[1100px] grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
           {/* Portrait Eméline */}
           <div className="relative mx-auto md:mx-0 -rotate-1 hover:rotate-0 transition-transform duration-500">
-            <div className="relative w-full max-w-[260px] aspect-[3/4] border-4 border-[#f4ede0] shadow-md">
+            <div className="relative w-full max-w-[260px] aspect-[3/4] border-4 border-[var(--site-bg)] shadow-md">
               <Image
                 src="/images/stitch-v3/creatrice-emeline-portrait.jpg"
                 alt="Portrait d'Eméline, créatrice de Précieuse"
@@ -61,18 +61,18 @@ export function V4CAvantPropos() {
                   stroke="#3d2817" strokeWidth="0.8" strokeDasharray="3 7" strokeOpacity="0.3" />
               </svg>
             </div>
-            <span className={`${caveat} text-[14px] text-[#1e3a5f] block text-center mt-2 opacity-70`}>
+            <span className={`${caveat} text-[14px] text-[var(--site-caveat)] block text-center mt-2 opacity-70`}>
               Eméline, Lisboa
             </span>
           </div>
 
           {/* Colonne 1 */}
-          <p className={`${caveat} text-[22px] text-[#1e3a5f] leading-[1.6]`}>
+          <p className={`${caveat} text-[22px] text-[var(--site-caveat)] leading-[1.6]`}>
             Ce carnet est né d&apos;une envie simple : montrer ce qui se passe vraiment ici, entre ces murs blanchis à la chaux, avec la lumière de novembre qui entre en biais par la fenêtre.
           </p>
 
           {/* Colonne 2 */}
-          <p className={`${caveat} text-[22px] text-[#1e3a5f] leading-[1.6]`}>
+          <p className={`${caveat} text-[22px] text-[var(--site-caveat)] leading-[1.6]`}>
             Chaque dessin, chaque hésitation, chaque pièce fondue trop vite — tout est là, consigné sans filtre. C&apos;est le travail, honnêtement.
           </p>
         </div>
@@ -81,18 +81,18 @@ export function V4CAvantPropos() {
         <div className="mt-10 flex justify-end max-w-[1100px] mx-auto">
           <div className="flex flex-col items-end gap-1">
             <SignatureSVG />
-            <span className={`${garamond} italic text-[15px] text-[#6b4423]`}>
+            <span className={`${garamond} italic text-[15px] text-[var(--site-text)]/80`}>
               Eméline Bastos
             </span>
           </div>
         </div>
 
         <div className="mt-12 flex justify-end">
-          <span className={`${garamond} italic text-[13px] text-[#a08552]`}>p. 02</span>
+          <span className={`${garamond} italic text-[13px] text-[var(--site-accent)]`}>p. 02</span>
         </div>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 border-t-2 border-double border-[#3d2817]/15" />
+      <div className="absolute bottom-0 left-0 right-0 border-t-2 border-double border-[var(--site-text)]/15" />
     </section>
   );
 }

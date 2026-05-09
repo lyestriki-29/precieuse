@@ -16,11 +16,11 @@ export function V4CNav() {
   const pathname = usePathname();
 
   return (
-    <header className="fixed top-0 z-50 w-full bg-[#f4ede0]/95 backdrop-blur-sm border-b border-[#3d2817]/20">
+    <header className="fixed top-0 z-50 w-full bg-[var(--site-bg)]/95 backdrop-blur-sm border-b border-[var(--site-text)]/20">
       <nav className="mx-auto flex max-w-[1440px] items-center justify-between px-8 py-3 lg:px-16">
         <Link
           href="/fr/v4c"
-          className={`${garamond} italic text-[28px] text-[#3d2817] leading-none transition-opacity hover:opacity-70`}
+          className={`${garamond} italic text-[28px] text-[var(--site-text)] leading-none transition-opacity hover:opacity-70`}
         >
           Précieuse
         </Link>
@@ -30,8 +30,8 @@ export function V4CNav() {
             <Link
               key={l.label}
               href={l.href}
-              className={`${garamond} italic text-[14px] text-[#3d2817]/70 transition-colors hover:text-[#3d2817] ${
-                pathname.startsWith(l.href) ? "text-[#3d2817]" : ""
+              className={`${garamond} italic text-[14px] text-[var(--site-text)]/70 transition-colors hover:text-[var(--site-text)] ${
+                pathname.startsWith(l.href) ? "text-[var(--site-text)]" : ""
               }`}
             >
               {l.label}
@@ -39,7 +39,7 @@ export function V4CNav() {
           ))}
         </div>
 
-        <span className={`${caveat} text-[16px] text-[#1e3a5f] hidden md:block`}>
+        <span className={`${caveat} text-[16px] text-[var(--site-caveat)] hidden md:block`}>
           Numéro II · MMXXVI
         </span>
       </nav>

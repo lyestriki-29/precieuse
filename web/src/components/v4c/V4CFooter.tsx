@@ -30,27 +30,27 @@ function TamponSVG() {
 
 export function V4CFooter() {
   return (
-    <footer className="relative bg-[#3d2817] py-20 px-8 lg:px-16">
+    <footer className="relative bg-[var(--site-text)] py-20 px-8 lg:px-16">
       <div className="mx-auto max-w-[1440px]">
         <div className="text-center mb-12">
-          <span className={`${garamond} italic text-[14px] text-[#a08552]`}>
+          <span className={`${garamond} italic text-[14px] text-[var(--site-accent)]`}>
             p. 14 — fin du chapitre II
           </span>
         </div>
 
         <div className="flex flex-col items-center gap-6 mb-16">
           <TamponSVG />
-          <span className={`${caveat} text-[32px] text-[#f4ede0]/70`}>Eméline</span>
-          <address className={`${caveat} text-[16px] text-[#f4ede0]/50 not-italic text-center`}>
+          <span className={`${caveat} text-[32px] text-[var(--site-bg)]/70`}>Eméline</span>
+          <address className={`${caveat} text-[16px] text-[var(--site-bg)]/50 not-italic text-center`}>
             Rua da Boavista, 84 — 1200-070 Lisboa<br />
             sur rendez-vous · mardi–samedi
           </address>
         </div>
 
-        <div className="border-t border-double border-[#f4ede0]/10 mb-8" />
+        <div className="border-t border-double border-[var(--site-bg)]/10 mb-8" />
 
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          <span className="font-[family-name:var(--font-inter)] text-[11px] font-light text-[#f4ede0]/30">
+          <span className="font-[family-name:var(--font-inter)] text-[11px] font-light text-[var(--site-bg)]/30">
             © Précieuse MMXXVI — Joaillerie artisanale, Portugal
           </span>
           <nav className="flex gap-6">
@@ -62,7 +62,7 @@ export function V4CFooter() {
               <Link
                 key={l.label}
                 href={l.href}
-                className="font-[family-name:var(--font-inter)] text-[11px] font-light text-[#f4ede0]/30 hover:text-[#f4ede0]/60 transition-colors"
+                className="font-[family-name:var(--font-inter)] text-[11px] font-light text-[var(--site-bg)]/30 hover:text-[var(--site-bg)]/60 transition-colors"
               >
                 {l.label}
               </Link>

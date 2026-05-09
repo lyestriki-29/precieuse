@@ -90,7 +90,7 @@ export function V4CSeriesF() {
 
   return (
     <section
-      className="relative bg-[#f4ede0] py-14 overflow-hidden outline-none focus-visible:ring-2 focus-visible:ring-[#3d2817]"
+      className="relative bg-[var(--site-bg)] py-14 overflow-hidden outline-none focus-visible:ring-2 focus-visible:ring-[var(--site-text)]"
       aria-roledescription="carousel"
       aria-label="Collection — Coverflow premium"
       tabIndex={0}
@@ -105,14 +105,14 @@ export function V4CSeriesF() {
         {/* En-tête */}
         <div className="mb-8 px-8 lg:px-0 flex items-end justify-between">
           <div>
-            <h2 className={`${garamond} italic text-[40px] text-[#3d2817] leading-none mb-1`}>
+            <h2 className={`${garamond} italic text-[40px] text-[var(--site-text)] leading-none mb-1`}>
               La Collection
             </h2>
-            <p className={`${caveat} text-[18px] text-[#1e3a5f]`}>
+            <p className={`${caveat} text-[18px] text-[var(--site-caveat)]`}>
               — cliquer ou swiper pour explorer
             </p>
           </div>
-          <span className={`${garamond} italic text-[13px] text-[#a08552] hidden md:block`}>
+          <span className={`${garamond} italic text-[13px] text-[var(--site-accent)] hidden md:block`}>
             p. 04
           </span>
         </div>
@@ -133,7 +133,7 @@ export function V4CSeriesF() {
           {/* Annotation marginale — à droite du wrapper */}
           <div className="hidden lg:flex absolute right-2 top-1/2 -translate-y-1/2 flex-col items-center gap-1 z-30 pointer-events-none">
             <span
-              className={`${caveat} text-[13px] text-[#1e3a5f] [writing-mode:vertical-rl] rotate-180 tracking-wide`}
+              className={`${caveat} text-[13px] text-[var(--site-caveat)] [writing-mode:vertical-rl] rotate-180 tracking-wide`}
             >
               — pièce {annotationNum} / {N}
             </span>
@@ -146,7 +146,7 @@ export function V4CSeriesF() {
             <button
               onClick={handleGoPrev}
               aria-label="Pièce précédente"
-              className={`${caveat} w-8 h-8 flex items-center justify-center text-[#1e3a5f] hover:opacity-70 transition-opacity`}
+              className={`${caveat} w-8 h-8 flex items-center justify-center text-[var(--site-caveat)] hover:opacity-70 transition-opacity`}
             >
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>
                 <polyline points="10,2 4,8 10,14" stroke="#1e3a5f" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -164,8 +164,8 @@ export function V4CSeriesF() {
                   onClick={() => handleGoTo(i)}
                   className={`w-2 h-2 rounded-full transition-all duration-300 ${
                     i === current
-                      ? "bg-[#a08552] w-5"
-                      : "bg-[#cbb898] hover:bg-[#a08552]/60"
+                      ? "bg-[var(--site-accent)] w-5"
+                      : "bg-[#cbb898] hover:bg-[var(--site-accent)]/60"
                   }`}
                 />
               ))}
@@ -174,7 +174,7 @@ export function V4CSeriesF() {
             <button
               onClick={handleGoNext}
               aria-label="Pièce suivante"
-              className={`${caveat} w-8 h-8 flex items-center justify-center text-[#1e3a5f] hover:opacity-70 transition-opacity`}
+              className={`${caveat} w-8 h-8 flex items-center justify-center text-[var(--site-caveat)] hover:opacity-70 transition-opacity`}
             >
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>
                 <polyline points="6,2 12,8 6,14" stroke="#1e3a5f" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -184,7 +184,7 @@ export function V4CSeriesF() {
         </div>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 border-t-2 border-double border-[#3d2817]/15" />
+      <div className="absolute bottom-0 left-0 right-0 border-t-2 border-double border-[var(--site-text)]/15" />
     </section>
   );
 }

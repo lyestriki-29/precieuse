@@ -13,6 +13,7 @@ import { V4CTrustStrip } from "@/components/v4c/V4CTrustStrip";
 import { V4CJournal } from "@/components/v4c/V4CJournal";
 import { V4CFooter } from "@/components/v4c/V4CFooter";
 import { V4CReveal } from "@/components/v4c/V4CReveal";
+import { V4CSiteTheme } from "@/components/v4c/V4CSiteTheme";
 
 export const metadata = {
   title: "Le Carnet — Précieuse · Joaillerie artisanale, Lisboa",
@@ -22,55 +23,56 @@ export const metadata = {
 
 export default function V4CPage() {
   return (
-    <div className="-mt-16 bg-[#f4ede0] text-[#3d2817] antialiased">
-      <V4CNav />
-      <main>
-        {/* Hero above-fold : pas de reveal */}
-        <V4CHero />
+    <V4CSiteTheme>
+      <div className="-mt-16 antialiased">
+        <V4CNav />
+        <main>
+          <V4CHero />
 
-        <V4CReveal>
-          <V4CAvantPropos />
-        </V4CReveal>
+          <V4CReveal>
+            <V4CAvantPropos />
+          </V4CReveal>
 
-        <V4CReveal delay={60}>
-          <V4CSeriesF />
-        </V4CReveal>
+          <V4CReveal delay={60}>
+            <V4CSeriesF />
+          </V4CReveal>
 
-        <V4CMatieresFull />
+          <V4CMatieresFull />
 
-        <V4CReveal delay={60}>
-          <V4CEtabli />
-        </V4CReveal>
+          <V4CReveal delay={60}>
+            <V4CEtabli />
+          </V4CReveal>
 
-        <V4CReveal delay={60}>
-          <V4CLettres />
-        </V4CReveal>
+          <V4CReveal delay={60}>
+            <V4CLettres />
+          </V4CReveal>
 
-        <V4CReveal delay={60}>
-          <V4CDuCahier />
-        </V4CReveal>
+          <V4CReveal delay={60}>
+            <V4CDuCahier />
+          </V4CReveal>
 
-        <V4CReveal delay={60}>
-          <V4CMaisonEngagements />
-        </V4CReveal>
+          <V4CReveal delay={60}>
+            <V4CMaisonEngagements />
+          </V4CReveal>
 
-        <V4CReveal delay={60}>
-          <V4CVisite />
-        </V4CReveal>
+          <V4CReveal delay={60}>
+            <V4CVisite />
+          </V4CReveal>
 
-        <V4CReveal delay={60}>
-          <V4CSurMesure />
-        </V4CReveal>
+          <V4CReveal delay={60}>
+            <V4CSurMesure />
+          </V4CReveal>
 
-        <V4CReveal delay={40}>
-          <V4CTrustStrip />
-        </V4CReveal>
+          <V4CReveal delay={40}>
+            <V4CTrustStrip />
+          </V4CReveal>
 
-        <V4CReveal delay={60}>
-          <V4CJournal />
-        </V4CReveal>
-      </main>
-      <V4CFooter />
-    </div>
+          <V4CReveal delay={60}>
+            <V4CJournal />
+          </V4CReveal>
+        </main>
+        <V4CFooter />
+      </div>
+    </V4CSiteTheme>
   );
 }

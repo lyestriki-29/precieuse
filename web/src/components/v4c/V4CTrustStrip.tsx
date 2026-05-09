@@ -63,19 +63,19 @@ const ITEMS: TrustItem[] = [
 
 export function V4CTrustStrip() {
   return (
-    <section className="relative bg-[#f4ede0] py-14 px-8 lg:px-16 border-t-2 border-double border-[#3d2817]/15">
+    <section className="relative bg-[var(--site-bg)] py-14 px-8 lg:px-16 border-t-2 border-double border-[var(--site-text)]/15">
       <div className="mx-auto max-w-[1440px]">
-        <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-[#3d2817]/10">
+        <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-[var(--site-text)]/10">
           {ITEMS.map((item) => (
             <div key={item.titre} className="flex flex-col items-center gap-3 py-8 md:py-0 md:px-12 text-center">
               {item.icon}
-              <span className={`${garamond} text-[11px] tracking-[0.2em] text-[#3d2817] uppercase`}>
+              <span className={`${garamond} text-[11px] tracking-[0.2em] text-[var(--site-text)] uppercase`}>
                 {item.titre}
               </span>
-              <span className="font-[family-name:var(--font-inter)] text-[13px] font-light text-[#6b4423]">
+              <span className="font-[family-name:var(--font-inter)] text-[13px] font-light text-[var(--site-text)]/80">
                 {item.corps}
               </span>
-              <span className={`${caveat} text-[14px] text-[#1e3a5f]`}>
+              <span className={`${caveat} text-[14px] text-[var(--site-caveat)]`}>
                 {item.annotation}
               </span>
             </div>

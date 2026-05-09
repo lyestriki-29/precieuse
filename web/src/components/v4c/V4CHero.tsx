@@ -5,7 +5,7 @@ const caveat = "font-[family-name:var(--font-caveat)]";
 
 export function V4CHero() {
   return (
-    <section className="relative min-h-screen bg-[#f4ede0] flex items-center overflow-hidden pt-16">
+    <section className="relative min-h-screen bg-[var(--site-bg)] flex items-center overflow-hidden pt-16">
       {/* Texture grain papier vélin */}
       <div
         aria-hidden
@@ -20,25 +20,25 @@ export function V4CHero() {
       <div className="relative mx-auto grid max-w-[1440px] grid-cols-1 gap-12 px-8 py-20 lg:grid-cols-2 lg:gap-0 lg:px-16 lg:py-32">
         {/* Texte gauche */}
         <div className="flex flex-col justify-center">
-          <span className={`${caveat} text-[18px] text-[#1e3a5f] mb-6 block`}>
+          <span className={`${caveat} text-[18px] text-[var(--site-caveat)] mb-6 block`}>
             — ouverture du carnet, printemps 2026
           </span>
 
           <h1
-            className={`${garamond} italic text-[#3d2817] leading-[0.9] mb-8 text-[72px] sm:text-[96px] lg:text-[120px]`}
+            className={`${garamond} italic text-[var(--site-text)] leading-[0.9] mb-8 text-[72px] sm:text-[96px] lg:text-[120px]`}
           >
             Le Carnet
           </h1>
 
-          <p className={`${caveat} text-[22px] text-[#1e3a5f] mb-4 leading-relaxed`}>
+          <p className={`${caveat} text-[22px] text-[var(--site-caveat)] mb-4 leading-relaxed`}>
             — macro, détail, lumière
           </p>
 
-          <p className="font-[family-name:var(--font-inter)] text-[15px] font-light text-[#6b4423] leading-relaxed max-w-sm mt-4">
+          <p className="font-[family-name:var(--font-inter)] text-[15px] font-light text-[var(--site-text)]/80 leading-relaxed max-w-sm mt-4">
             Chaque pièce naît ici, sur cet établi, dans la lumière de Lisbonne. Ce carnet en garde la mémoire.
           </p>
 
-          <span className={`${garamond} italic text-[13px] text-[#a08552] mt-16 block`}>
+          <span className={`${garamond} italic text-[13px] text-[var(--site-accent)] mt-16 block`}>
             p. 01
           </span>
         </div>
@@ -82,12 +82,12 @@ export function V4CHero() {
 
           {/* Liseret séparateur gauche */}
           <div className="absolute -left-6 top-1/4 hidden h-1/2 flex-col justify-center lg:flex">
-            <div className="w-px h-full border-l-2 border-double border-[#3d2817]/20" />
+            <div className="w-px h-full border-l-2 border-double border-[var(--site-text)]/20" />
           </div>
         </div>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 border-t-2 border-double border-[#3d2817]/15" />
+      <div className="absolute bottom-0 left-0 right-0 border-t-2 border-double border-[var(--site-text)]/15" />
     </section>
   );
 }

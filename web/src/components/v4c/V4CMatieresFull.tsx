@@ -47,25 +47,25 @@ export function V4CMatieresFull() {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full bg-[#f4ede0] py-20 sm:py-28"
+      className="relative w-full bg-[var(--site-bg)] py-20 sm:py-28"
     >
-      <div className="absolute top-0 left-0 right-0 border-t-2 border-double border-[#3d2817]/15" />
+      <div className="absolute top-0 left-0 right-0 border-t-2 border-double border-[var(--site-text)]/15" />
 
       <div
         className={`${titleAnim} mx-auto mb-14 sm:mb-16 max-w-[1440px] px-6 sm:px-10 lg:px-16 flex items-end justify-between`}
       >
         <div>
           <h2
-            className={`${garamond} italic text-[48px] sm:text-[56px] lg:text-[64px] text-[#3d2817] leading-none mb-3`}
+            className={`${garamond} italic text-[48px] sm:text-[56px] lg:text-[64px] text-[var(--site-text)] leading-none mb-3`}
           >
             Nos Matières
           </h2>
-          <p className={`${caveat} text-[20px] sm:text-[22px] text-[#1e3a5f]`}>
+          <p className={`${caveat} text-[20px] sm:text-[22px] text-[var(--site-caveat)]`}>
             — choisies une à une, avec intention
           </p>
         </div>
         <span
-          className={`${caveat} text-[13px] text-[#1e3a5f]/40 hidden md:block -rotate-[0.5deg]`}
+          className={`${caveat} text-[13px] text-[var(--site-caveat)]/40 hidden md:block -rotate-[0.5deg]`}
         >
           aucun compromis sur la matière
         </span>
@@ -75,9 +75,9 @@ export function V4CMatieresFull() {
         {MATIERES.map((m) => (
           <article
             key={m.slug}
-            className={`${cardAnim} group flex h-full flex-col border-r border-b border-[#3d2817]/10 last:border-r-0`}
+            className={`${cardAnim} group flex h-full flex-col border-r border-b border-[var(--site-text)]/10 last:border-r-0`}
           >
-            <div className="relative aspect-[3/4] w-full overflow-hidden bg-[#ede4d5]">
+            <div className="relative aspect-[3/4] w-full overflow-hidden bg-[var(--site-surface)]">
               <Image
                 src={m.image}
                 alt={m.image_alt}
@@ -86,7 +86,7 @@ export function V4CMatieresFull() {
                 className="object-cover transition-transform duration-1000 ease-out group-hover:scale-[1.04]"
               />
               <span
-                className={`${garamond} italic text-[12px] text-[#ede4d5]/85 absolute bottom-3 right-4 drop-shadow-[0_1px_2px_rgba(0,0,0,0.4)]`}
+                className={`${garamond} italic text-[12px] text-[var(--site-surface)]/85 absolute bottom-3 right-4 drop-shadow-[0_1px_2px_rgba(0,0,0,0.4)]`}
               >
                 {m.page}
               </span>
@@ -94,20 +94,20 @@ export function V4CMatieresFull() {
 
             <div className="flex flex-col gap-3 p-6 lg:p-8 flex-1">
               <h3
-                className={`${garamond} italic text-[30px] lg:text-[34px] text-[#3d2817] leading-none`}
+                className={`${garamond} italic text-[30px] lg:text-[34px] text-[var(--site-text)] leading-none`}
               >
                 {m.nom}
               </h3>
-              <p className={`${caveat} text-[18px] text-[#1e3a5f]`}>
+              <p className={`${caveat} text-[18px] text-[var(--site-caveat)]`}>
                 {m.sous_titre}
               </p>
               <p
-                className={`${inter} text-[13px] font-light text-[#6b4423] leading-relaxed mt-1`}
+                className={`${inter} text-[13px] font-light text-[var(--site-text)]/80 leading-relaxed mt-1`}
               >
                 {m.description_courte}
               </p>
               <span
-                className={`${caveat} text-[13px] text-[#1e3a5f]/55 mt-auto pt-4 -rotate-[0.5deg]`}
+                className={`${caveat} text-[13px] text-[var(--site-caveat)]/55 mt-auto pt-4 -rotate-[0.5deg]`}
               >
                 — {m.annotation_caveat}
               </span>

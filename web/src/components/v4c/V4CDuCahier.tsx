@@ -42,14 +42,14 @@ const ARTICLES: Article[] = [
 
 export function V4CDuCahier() {
   return (
-    <section className="relative bg-[#ede4d5] py-24 px-8 lg:px-16">
-      <div className="absolute top-0 left-0 right-0 border-t-2 border-double border-[#3d2817]/15" />
+    <section className="relative bg-[var(--site-surface)] py-24 px-8 lg:px-16">
+      <div className="absolute top-0 left-0 right-0 border-t-2 border-double border-[var(--site-text)]/15" />
 
       <div className="mx-auto max-w-[1440px]">
-        <h2 className={`${garamond} italic text-[42px] text-[#3d2817] mb-4`}>
+        <h2 className={`${garamond} italic text-[42px] text-[var(--site-text)] mb-4`}>
           Du Cahier
         </h2>
-        <p className={`${caveat} text-[20px] text-[#1e3a5f] mb-20`}>
+        <p className={`${caveat} text-[20px] text-[var(--site-caveat)] mb-20`}>
           — récits d&apos;atelier, fragments, lumières
         </p>
 
@@ -77,21 +77,21 @@ export function V4CDuCahier() {
               </div>
 
               {/* Catégorie petits caps */}
-              <span className={`${caveat} text-[12px] text-[#1e3a5f] tracking-[0.2em] uppercase mb-3 opacity-70`}>
+              <span className={`${caveat} text-[12px] text-[var(--site-caveat)] tracking-[0.2em] uppercase mb-3 opacity-70`}>
                 {a.categorie}
               </span>
 
-              <h3 className={`${garamond} italic text-[26px] text-[#3d2817] mb-3 leading-tight`}>
+              <h3 className={`${garamond} italic text-[26px] text-[var(--site-text)] mb-3 leading-tight`}>
                 {a.titre}
               </h3>
 
-              <p className="font-[family-name:var(--font-inter)] text-[13px] font-light text-[#6b4423] leading-relaxed mb-6 flex-1">
+              <p className="font-[family-name:var(--font-inter)] text-[13px] font-light text-[var(--site-text)]/80 leading-relaxed mb-6 flex-1">
                 {a.extrait}
               </p>
 
               <Link
                 href="#"
-                className={`${garamond} italic text-[15px] text-[#3d2817] underline underline-offset-2 decoration-[#3d2817]/30 hover:decoration-[#3d2817] transition-all self-start`}
+                className={`${garamond} italic text-[15px] text-[var(--site-text)] underline underline-offset-2 decoration-[var(--site-text)]/30 hover:decoration-[var(--site-text)] transition-all self-start`}
               >
                 lire la suite
               </Link>
@@ -100,11 +100,11 @@ export function V4CDuCahier() {
         </div>
 
         <div className="mt-16 flex justify-end">
-          <span className={`${garamond} italic text-[13px] text-[#a08552]`}>p. 10</span>
+          <span className={`${garamond} italic text-[13px] text-[var(--site-accent)]`}>p. 10</span>
         </div>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 border-t-2 border-double border-[#3d2817]/15" />
+      <div className="absolute bottom-0 left-0 right-0 border-t-2 border-double border-[var(--site-text)]/15" />
     </section>
   );
 }

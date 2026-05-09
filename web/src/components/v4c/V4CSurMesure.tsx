@@ -6,30 +6,30 @@ const caveat = "font-[family-name:var(--font-caveat)]";
 
 export function V4CSurMesure() {
   return (
-    <section className="relative bg-[#ede4d5] py-24 px-8 lg:px-16">
-      <div className="absolute top-0 left-0 right-0 border-t-2 border-double border-[#3d2817]/15" />
+    <section className="relative bg-[var(--site-surface)] py-24 px-8 lg:px-16">
+      <div className="absolute top-0 left-0 right-0 border-t-2 border-double border-[var(--site-text)]/15" />
 
       <div className="mx-auto max-w-[1440px] grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div>
-          <span className={`${caveat} text-[17px] text-[#1e3a5f] block mb-6`}>
+          <span className={`${caveat} text-[17px] text-[var(--site-caveat)] block mb-6`}>
             — trois commissions par mois, pas plus
           </span>
 
-          <h2 className={`${garamond} italic text-[42px] text-[#3d2817] mb-8 leading-tight`}>
+          <h2 className={`${garamond} italic text-[42px] text-[var(--site-text)] mb-8 leading-tight`}>
             Une commande particulière ?
           </h2>
 
-          <p className="font-[family-name:var(--font-inter)] text-[15px] font-light text-[#6b4423] leading-[1.8] mb-10 max-w-md">
+          <p className="font-[family-name:var(--font-inter)] text-[15px] font-light text-[var(--site-text)]/80 leading-[1.8] mb-10 max-w-md">
             Chaque mois, nous acceptons trois commandes de pièces uniques. Écrivez-nous votre histoire, nous dessinerons la pièce qui en porte la mémoire.
           </p>
 
-          <p className={`${caveat} text-[20px] text-[#1e3a5f] leading-relaxed mb-10 max-w-sm`}>
+          <p className={`${caveat} text-[20px] text-[var(--site-caveat)] leading-relaxed mb-10 max-w-sm`}>
             Un projet commence toujours par une conversation — pas un formulaire.
           </p>
 
           <Link
             href="/fr/sur-mesure"
-            className={`${garamond} italic text-[20px] text-[#3d2817] border-b border-[#3d2817]/40 pb-1 hover:border-[#3d2817] transition-all`}
+            className={`${garamond} italic text-[20px] text-[var(--site-text)] border-b border-[var(--site-text)]/40 pb-1 hover:border-[var(--site-text)] transition-all`}
           >
             Initier une commande
           </Link>
@@ -56,10 +56,10 @@ export function V4CSurMesure() {
       </div>
 
       <div className="mt-16 flex justify-end max-w-[1440px] mx-auto">
-        <span className={`${garamond} italic text-[13px] text-[#a08552]`}>p. 13</span>
+        <span className={`${garamond} italic text-[13px] text-[var(--site-accent)]`}>p. 13</span>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 border-t-2 border-double border-[#3d2817]/15" />
+      <div className="absolute bottom-0 left-0 right-0 border-t-2 border-double border-[var(--site-text)]/15" />
     </section>
   );
 }

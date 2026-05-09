@@ -16,39 +16,39 @@ export function V4CJournal() {
   }
 
   return (
-    <section className="relative bg-[#f4ede0] py-32 px-8 lg:px-16 overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 border-t-2 border-double border-[#3d2817]/15" />
+    <section className="relative bg-[var(--site-bg)] py-32 px-8 lg:px-16 overflow-hidden">
+      <div className="absolute top-0 left-0 right-0 border-t-2 border-double border-[var(--site-text)]/15" />
 
       <div
         aria-hidden
-        className={`${garamond} italic absolute -top-4 left-0 right-0 text-center text-[#3d2817]/[0.04] leading-none pointer-events-none select-none`}
+        className={`${garamond} italic absolute -top-4 left-0 right-0 text-center text-[var(--site-text)]/[0.04] leading-none pointer-events-none select-none`}
         style={{ fontSize: "clamp(100px, 18vw, 260px)" }}
       >
         Le Cahier
       </div>
 
       <div className="relative mx-auto max-w-[700px] text-center">
-        <span className={`${caveat} text-[18px] text-[#1e3a5f] block mb-6`}>
+        <span className={`${caveat} text-[18px] text-[var(--site-caveat)] block mb-6`}>
           — pour ceux qui aiment attendre les bonnes choses
         </span>
 
         <h2
-          className={`${garamond} italic text-[#3d2817] leading-none mb-8`}
+          className={`${garamond} italic text-[var(--site-text)] leading-none mb-8`}
           style={{ fontSize: "clamp(56px, 8vw, 96px)" }}
         >
           Le Cahier
         </h2>
 
-        <p className={`${caveat} text-[22px] text-[#1e3a5f] leading-[1.6] mb-12 max-w-md mx-auto`}>
+        <p className={`${caveat} text-[22px] text-[var(--site-caveat)] leading-[1.6] mb-12 max-w-md mx-auto`}>
           une lettre rare, écrite à la main, deux fois par an
         </p>
 
         {sent ? (
           <div className="py-8">
-            <p className={`${caveat} text-[24px] text-[#1e3a5f]`}>
+            <p className={`${caveat} text-[24px] text-[var(--site-caveat)]`}>
               Votre adresse est notée. À bientôt.
             </p>
-            <span className={`${garamond} italic text-[18px] text-[#a08552] block mt-2`}>— É.</span>
+            <span className={`${garamond} italic text-[18px] text-[var(--site-accent)] block mt-2`}>— É.</span>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="flex flex-col items-center gap-6">
@@ -60,12 +60,12 @@ export function V4CJournal() {
                 placeholder="votre adresse postale électronique"
                 required
                 aria-label="Adresse email pour s'inscrire au Cahier"
-                className={`${caveat} w-full text-[18px] text-[#3d2817] bg-transparent border-b border-[#3d2817]/40 pb-3 placeholder:text-[#3d2817]/40 focus:outline-none focus:border-[#3d2817] transition-colors text-center`}
+                className={`${caveat} w-full text-[18px] text-[var(--site-text)] bg-transparent border-b border-[var(--site-text)]/40 pb-3 placeholder:text-[var(--site-text)]/40 focus:outline-none focus:border-[var(--site-text)] transition-colors text-center`}
               />
             </div>
             <button
               type="submit"
-              className={`${garamond} italic text-[18px] text-[#3d2817] border border-[#3d2817]/30 px-10 py-3 hover:bg-[#3d2817] hover:text-[#f4ede0] transition-all duration-300`}
+              className={`${garamond} italic text-[18px] text-[var(--site-text)] border border-[var(--site-text)]/30 px-10 py-3 hover:bg-[var(--site-text)] hover:text-[var(--site-bg)] transition-all duration-300`}
             >
               M&apos;inscrire
             </button>
@@ -73,7 +73,7 @@ export function V4CJournal() {
         )}
 
         <div className="mt-16">
-          <span className={`${garamond} italic text-[13px] text-[#a08552]`}>p. 14</span>
+          <span className={`${garamond} italic text-[13px] text-[var(--site-accent)]`}>p. 14</span>
         </div>
       </div>
     </section>
