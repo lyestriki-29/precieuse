@@ -17,7 +17,7 @@ export function Nav() {
   const pathname = usePathname();
   const onHero = HERO_FULLSCREEN_ROUTES.includes(pathname);
   const showLight = onHero && !scrolled;
-  const isV2 = pathname.startsWith("/fr/v2");
+  const isV2 = pathname.startsWith("/fr/v2") || pathname.startsWith("/fr/v3");
 
   useEffect(() => {
     let frame = 0;
