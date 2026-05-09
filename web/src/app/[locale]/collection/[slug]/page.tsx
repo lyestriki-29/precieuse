@@ -51,11 +51,6 @@ export default async function ProductPage({
                 aspect="portrait"
                 priority
                 wrapperClassName="rounded-md border border-black/5 bg-white"
-                style={
-                  product.imagePosition
-                    ? { objectPosition: product.imagePosition }
-                    : undefined
-                }
               />
             </Reveal>
 

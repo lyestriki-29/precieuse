@@ -17,11 +17,6 @@ export function ProductCard({ product }: Props) {
         aspect="portrait"
         wrapperClassName="rounded-md border border-black/5 bg-white"
         className="transition-transform duration-700 group-hover:scale-[1.03]"
-        style={
-          product.imagePosition
-            ? { objectPosition: product.imagePosition }
-            : undefined
-        }
       />
       <div className="mt-5 flex items-baseline justify-between gap-4">
         <h3 className="font-heading group-hover:text-raspberry text-2xl transition-colors">

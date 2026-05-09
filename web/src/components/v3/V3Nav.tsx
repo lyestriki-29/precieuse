@@ -7,14 +7,16 @@ import { useEffect, useState } from "react";
 const inter = "font-[family-name:var(--font-inter)]";
 const playfair = "font-[family-name:var(--font-playfair)]";
 
-const leftLinks = [
+type NavItem = { label: string; href: string; match?: string };
+
+const leftLinks: NavItem[] = [
   { label: "Collections", href: "/fr/collection", match: "/fr/collection" },
   { label: "Sur-Mesure", href: "/fr/sur-mesure", match: "/fr/sur-mesure" },
 ];
 
-const rightLinks = [
+const rightLinks: NavItem[] = [
   { label: "L'Atelier", href: "/fr/creatrice", match: "/fr/creatrice" },
-  { label: "Journal", href: "#", match: "/journal" },
+  { label: "Journal", href: "#" },
 ];
 
 function NavLink({
@@ -103,7 +105,7 @@ export function V3Nav() {
               key={l.label}
               label={l.label}
               href={l.href}
-              active={pathname.startsWith(l.match)}
+              active={l.match ? pathname.startsWith(l.match) : false}
             />
           ))}
         </div>
@@ -137,7 +139,7 @@ export function V3Nav() {
                 key={l.label}
                 label={l.label}
                 href={l.href}
-                active={pathname.startsWith(l.match)}
+                active={l.match ? pathname.startsWith(l.match) : false}
               />
             ))}
           </div>

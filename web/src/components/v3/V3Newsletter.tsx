@@ -1,12 +1,21 @@
+"use client";
+
+import { type FormEvent } from "react";
+
 const playfair = "font-[family-name:var(--font-playfair)]";
 
 export function V3Newsletter() {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    // TODO Phase 4 : brancher Brevo + webhook CRM
+  };
+
   return (
     <section className="mx-auto mb-24 max-w-3xl px-6 text-center sm:mb-40 sm:px-10">
       <h3 className={`${playfair} mb-12 text-[40px] sm:text-[48px] italic`}>
         Les Lettres Rares
       </h3>
-      <form className="relative group" action="#" method="post">
+      <form className="relative group" onSubmit={handleSubmit}>
         <input
           type="email"
           required

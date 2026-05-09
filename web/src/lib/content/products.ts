@@ -8,8 +8,6 @@ export type Product = {
   story: string;
   image: string;
   imageAlt: string;
-  /** object-position pour le crop CSS — utile quand la photo n'est pas centrée sur la bague */
-  imagePosition?: string;
 };
 
 export const PRODUCTS: Product[] = [

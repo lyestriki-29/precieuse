@@ -72,11 +72,6 @@ export function HomeProductsTeaser() {
                   fill
                   sizes="200px"
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  style={
-                    product.imagePosition
-                      ? { objectPosition: product.imagePosition }
-                      : undefined
-                  }
                 />
               </div>
               <div className="flex flex-1 flex-col justify-between py-1">

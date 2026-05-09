@@ -42,6 +42,11 @@ export function Nav() {
     };
   }, [open]);
 
+  // Ferme le menu mobile lors d'une navigation pour éviter de bloquer le scroll
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
+
   if (isV2) return null;
 
   return (
