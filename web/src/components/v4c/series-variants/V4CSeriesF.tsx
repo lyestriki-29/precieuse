@@ -118,7 +118,7 @@ export function V4CSeriesF() {
         </div>
 
         {/* Wrapper coverflow */}
-        <div className="relative overflow-hidden" style={{ height: "min(70vh, 600px)" }}>
+        <div className="relative overflow-hidden h-[520px] sm:h-[600px] lg:h-[660px]">
           {PRODUCTS.map((product, i) => (
             <V4CSeriesFCard
               key={product.slug}
