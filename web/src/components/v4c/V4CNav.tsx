@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -21,9 +22,17 @@ export function V4CNav() {
       <nav className="mx-auto flex max-w-[1440px] items-center justify-between px-8 py-3 lg:px-16">
         <Link
           href="/fr/v4c"
-          className={`${garamond} italic text-[28px] text-[var(--site-text)] leading-none transition-opacity hover:opacity-70`}
+          aria-label="Précieuse — accueil"
+          className="relative block transition-opacity hover:opacity-70"
         >
-          Précieuse
+          <Image
+            src="/brand/logo.png"
+            alt="Précieuse — Joaillerie artisanale, Lisboa"
+            width={420}
+            height={140}
+            priority
+            className="h-9 w-auto lg:h-10"
+          />
         </Link>
 
         <div className="hidden items-center gap-10 md:flex">

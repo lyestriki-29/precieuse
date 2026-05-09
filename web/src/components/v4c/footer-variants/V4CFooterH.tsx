@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { FOOTER_DATA, FOOTER_FONTS } from "./data";
 
@@ -24,6 +25,17 @@ export function V4CFooterH() {
   return (
     <footer className="relative bg-[var(--site-text)] text-[var(--site-bg)] py-9 px-8 lg:px-16">
       <div className="mx-auto max-w-[1100px]">
+        {/* Logo en tête, centré */}
+        <div className="flex justify-center mb-6 pb-5 border-b border-[var(--site-bg)]/15">
+          <Image
+            src="/brand/logo.png"
+            alt="Précieuse — Joaillerie artisanale, Lisboa"
+            width={420}
+            height={140}
+            className="h-12 w-auto opacity-90 [filter:brightness(0)_invert(1)]"
+          />
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-[1.2fr_auto_1fr] gap-5 md:gap-8 items-center">
           <div>
             <span className={`${caveat} text-[13px] text-[var(--site-bg)]/55 italic block leading-none mb-1`}>
