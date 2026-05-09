@@ -1,0 +1,92 @@
+import Image from "next/image";
+
+const garamond = "font-[family-name:var(--font-eb-garamond)]";
+const caveat = "font-[family-name:var(--font-caveat)]";
+
+export function V3CHero() {
+  return (
+    <section className="relative min-h-screen bg-[#f4ede0] flex items-center overflow-hidden pt-16">
+      {/* Texture overlay subtile */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 opacity-[0.03]"
+        style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E\")", backgroundSize: "256px 256px" }}
+      />
+
+      <div className="relative mx-auto grid max-w-[1440px] grid-cols-1 gap-12 px-8 py-20 lg:grid-cols-2 lg:gap-0 lg:px-16 lg:py-32">
+        {/* Texte gauche */}
+        <div className="flex flex-col justify-center">
+          {/* Annotation marginale */}
+          <span className={`${caveat} text-[18px] text-[#1e3a5f] mb-6 block`}>
+            — ouverture du carnet, printemps 2026
+          </span>
+
+          <h1 className={`${garamond} italic text-[#3d2817] leading-[0.9] mb-8 text-[72px] sm:text-[96px] lg:text-[120px]`}>
+            Le Carnet
+          </h1>
+
+          <p className={`${caveat} text-[22px] text-[#1e3a5f] mb-4 leading-relaxed`}>
+            — atelier d&apos;Eméline, Lisboa, MMXXVI
+          </p>
+
+          <p className="font-[family-name:var(--font-inter)] text-[15px] font-light text-[#6b4423] leading-relaxed max-w-sm mt-4">
+            Chaque pièce naît ici, sur cet établi, dans la lumière de Lisbonne. Ce carnet en garde la mémoire.
+          </p>
+
+          {/* Numéro de page */}
+          <span className={`${garamond} italic text-[13px] text-[#a08552] mt-16 block`}>p. 01</span>
+        </div>
+
+        {/* Image droite avec esquisse SVG superposée */}
+        <div className="relative flex items-center justify-center lg:justify-end">
+          <div className="relative w-full max-w-[520px] aspect-[3/4]">
+            <Image
+              src="/images/stitch-v3/hero-bague-portrait.jpg"
+              alt="Bague en cours de création dans l'atelier d'Eméline à Lisbonne"
+              fill
+              sizes="(max-width: 1024px) 100vw, 520px"
+              priority
+              className="object-cover"
+            />
+            {/* Overlay esquisse SVG crayon */}
+            <svg
+              aria-hidden
+              className="pointer-events-none absolute inset-0 w-full h-full"
+              viewBox="0 0 520 693"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              {/* Cadre esquisse imparfait */}
+              <rect x="12" y="18" width="496" height="657" rx="2"
+                stroke="#3d2817" strokeWidth="1" strokeDasharray="4 6"
+                strokeOpacity="0.35" />
+              {/* Trait décoratif coin haut gauche */}
+              <path d="M12 80 Q 40 60 80 18" stroke="#3d2817" strokeWidth="1.2"
+                strokeLinecap="round" strokeOpacity="0.3" />
+              {/* Trait coin bas droit */}
+              <path d="M440 675 Q 480 690 508 660" stroke="#3d2817" strokeWidth="1.2"
+                strokeLinecap="round" strokeOpacity="0.3" />
+              {/* Ellipse décorative autour de la bague — indication */}
+              <ellipse cx="260" cy="380" rx="110" ry="140"
+                stroke="#1e3a5f" strokeWidth="1" strokeDasharray="3 8"
+                strokeOpacity="0.25" />
+              {/* Flèche manuscrite */}
+              <path d="M170 280 Q 200 260 240 290" stroke="#1e3a5f" strokeWidth="1.2"
+                strokeLinecap="round" strokeOpacity="0.4" />
+              <path d="M238 288 L240 290 L236 293" stroke="#1e3a5f" strokeWidth="1"
+                strokeLinecap="round" strokeOpacity="0.4" />
+            </svg>
+          </div>
+
+          {/* Séparateur liseret double */}
+          <div className="absolute -left-6 top-1/4 hidden h-1/2 flex-col justify-center lg:flex">
+            <div className="w-px h-full border-l-2 border-double border-[#3d2817]/20" />
+          </div>
+        </div>
+      </div>
+
+      {/* Liseret bottom */}
+      <div className="absolute bottom-0 left-0 right-0 border-t-2 border-double border-[#3d2817]/15" />
+    </section>
+  );
+}
