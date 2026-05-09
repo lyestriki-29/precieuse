@@ -26,23 +26,14 @@ export function V4CMatieres2() {
       </div>
 
       {/* Bandeau défilant */}
-      <div
-        className="flex overflow-x-auto gap-0 scroll-smooth"
-        style={{
-          scrollSnapType: "x mandatory",
-          WebkitOverflowScrolling: "touch",
-          msOverflowStyle: "none",
-          scrollbarWidth: "none",
-        }}
-      >
+      <div className="flex overflow-x-auto gap-0 scroll-smooth snap-x snap-mandatory [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
         {MATIERES.map((m) => (
           <div
             key={m.slug}
-            className="flex-none w-[320px] flex flex-col bg-[#f4ede0] border-r border-[#3d2817]/10 last:border-r-0"
-            style={{ scrollSnapAlign: "start" }}
+            className="flex-none w-[320px] flex flex-col bg-[#f4ede0] border-r border-[#3d2817]/10 last:border-r-0 snap-start"
           >
             {/* Image 60% hauteur */}
-            <div className="relative w-full" style={{ height: "60vh", minHeight: "320px" }}>
+            <div className="relative w-full h-[60vh] min-h-[320px]">
               <Image
                 src={m.image}
                 alt={m.image_alt}

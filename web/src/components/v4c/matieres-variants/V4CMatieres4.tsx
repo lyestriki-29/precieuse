@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
 import { MATIERES } from "@/lib/content/matieres";
 
@@ -13,42 +13,50 @@ const AUTO_DELAY = 6000;
 export function V4CMatieres4() {
   const [current, setCurrent] = useState(0);
   const [visible, setVisible] = useState(true);
-  const prefersReducedMotion = useRef(false);
+  const [reducedMotion, setReducedMotion] = useState(false);
+  const fadeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
-    prefersReducedMotion.current = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches;
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setReducedMotion(mq.matches);
+    const handler = (e: MediaQueryListEvent) => setReducedMotion(e.matches);
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
   }, []);
 
-  const goTo = (idx: number) => {
+  const goTo = useCallback((idx: number) => {
+    if (fadeTimerRef.current) clearTimeout(fadeTimerRef.current);
     setVisible(false);
-    setTimeout(() => {
+    fadeTimerRef.current = setTimeout(() => {
       setCurrent(idx);
       setVisible(true);
     }, 350);
-  };
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      if (fadeTimerRef.current) clearTimeout(fadeTimerRef.current);
+    };
+  }, []);
 
   const prev = () => goTo((current - 1 + MATIERES.length) % MATIERES.length);
   const next = () => goTo((current + 1) % MATIERES.length);
 
   useEffect(() => {
-    if (prefersReducedMotion.current) return;
+    if (reducedMotion) return;
     const id = setInterval(() => {
       goTo((current + 1) % MATIERES.length);
     }, AUTO_DELAY);
     return () => clearInterval(id);
-  }, [current]);
+  }, [current, reducedMotion, goTo]);
 
   const m = MATIERES[current];
 
   return (
-    <section className="relative bg-[#2a1d10] overflow-hidden" style={{ minHeight: "60vh" }}>
-      {/* Layout 2 colonnes */}
+    <section className="relative bg-[#2a1d10] overflow-hidden min-h-[60vh]">
       <div
         className={`flex flex-col lg:flex-row min-h-[60vh] transition-opacity duration-700 ease-in-out ${visible ? "opacity-100" : "opacity-0"}`}
       >
-        {/* Image gauche 60% */}
         <div className="relative w-full lg:w-[60%] aspect-[4/3] lg:aspect-auto">
           <Image
             src={m.image}
@@ -56,21 +64,17 @@ export function V4CMatieres4() {
             fill
             sizes="(max-width: 1024px) 100vw, 60vw"
             className="object-cover"
-            priority
+            priority={current === 0}
           />
           <div className="absolute inset-0 bg-[#2a1d10]/20" />
         </div>
 
-        {/* Bloc texte droite 40% */}
         <div className="w-full lg:w-[40%] flex flex-col justify-center px-10 py-16 lg:px-16">
           <span className={`${garamond} italic text-[11px] text-[#a08552] mb-8 block`}>
             {m.page}
           </span>
 
-          <h2
-            className={`${garamond} italic text-[#f4ede0] leading-none mb-5`}
-            style={{ fontSize: "clamp(48px, 5vw, 80px)" }}
-          >
+          <h2 className={`${garamond} italic text-[#f4ede0] leading-none mb-5 text-[48px] sm:text-[64px] lg:text-[80px]`}>
             {m.nom}
           </h2>
 
@@ -86,7 +90,6 @@ export function V4CMatieres4() {
             — {m.annotation_caveat}
           </span>
 
-          {/* Navigation flèches + dots */}
           <div className="mt-16 flex items-center gap-6">
             <button
               onClick={prev}

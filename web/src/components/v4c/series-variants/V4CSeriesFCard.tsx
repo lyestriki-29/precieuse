@@ -20,6 +20,8 @@ interface V4CSeriesFCardProps {
   onClickPeek?: () => void;
 }
 
+const PRIORITY_INDEX = 0;
+
 const CARD_TRANSITION =
   "transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)]";
 
@@ -49,7 +51,7 @@ function FocusCardContent({ product, index }: { product: Product; index: number 
           fill
           sizes="(min-width: 1024px) 50vw, 80vw"
           className="object-cover"
-          priority
+          priority={index === PRIORITY_INDEX}
         />
       </div>
 

@@ -19,19 +19,22 @@ export function V4CMatieresFull() {
   useEffect(() => {
     const el = sectionRef.current;
     if (!el) return;
+    let cardsTimer: ReturnType<typeof setTimeout> | undefined;
     const obs = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setTitleIn(true);
-          const t = setTimeout(() => setCardsIn(true), 280);
+          cardsTimer = setTimeout(() => setCardsIn(true), 280);
           obs.disconnect();
-          return () => clearTimeout(t);
         }
       },
       { threshold: 0.15 }
     );
     obs.observe(el);
-    return () => obs.disconnect();
+    return () => {
+      obs.disconnect();
+      if (cardsTimer) clearTimeout(cardsTimer);
+    };
   }, []);
 
   const titleAnim = `${REVEAL_BASE} ${

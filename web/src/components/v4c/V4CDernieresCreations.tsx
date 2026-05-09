@@ -91,8 +91,7 @@ export function V4CDernieresCreations() {
       aria-roledescription="carousel"
     >
       <div
-        className="mx-auto max-w-[1440px] flex flex-col lg:flex-row min-h-[70vh] transition-opacity duration-[800ms] ease-in-out"
-        style={{ opacity: visible ? 1 : 0 }}
+        className={`mx-auto max-w-[1440px] flex flex-col lg:flex-row min-h-[70vh] transition-opacity duration-[800ms] ease-in-out ${visible ? "opacity-100" : "opacity-0"}`}
         aria-live="polite"
         aria-atomic="true"
       >
@@ -172,8 +171,7 @@ export function V4CDernieresCreations() {
                   aria-selected={i === current}
                   aria-label={`Création ${i + 1}`}
                   onClick={() => resetTimer(i)}
-                  className="w-2 h-2 rounded-full transition-colors"
-                  style={{ backgroundColor: i === current ? "#a08552" : "#cbb898" }}
+                  className={`w-2 h-2 rounded-full transition-colors ${i === current ? "bg-[#a08552]" : "bg-[#cbb898]"}`}
                 />
               ))}
             </div>
