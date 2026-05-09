@@ -40,22 +40,10 @@ export function V4CHeroE1() {
         }}
       />
 
-      {/* Header */}
-      <div className="relative z-10 mx-auto max-w-[1440px] w-full px-8 lg:px-16 py-6 flex items-baseline justify-between border-b border-white/20 backdrop-blur-[2px]">
-        <span className={`${inter} text-[10px] uppercase tracking-[0.4em] text-white/80`}>
-          Précieuse · joaillerie · Lisboa
-        </span>
-        <span className={`${caveat} text-[16px] text-white italic`}>chapitre I —</span>
-        <span className={`${inter} text-[10px] uppercase tracking-[0.4em] text-white/80`}>
-          MMXXVI
-        </span>
-      </div>
-
       {/* Bloc typographique — l'image NETTE est révélée à travers les lettres */}
       <div className="relative z-10 flex-1 flex items-center justify-center px-4 lg:px-12">
         <h1
-          aria-label="Précieuse"
-          className={`${garamond} italic leading-[0.78] tracking-[-0.04em] text-center select-none drop-shadow-[0_4px_24px_rgba(0,0,0,0.3)]`}
+          className={`${garamond} italic leading-[0.78] tracking-[-0.04em] text-center select-none drop-shadow-[0_4px_24px_rgba(0,0,0,0.3)] animate-[heroReveal_1.4s_cubic-bezier(0.2,0.8,0.2,1)_120ms_both]`}
           style={{
             fontSize: "clamp(80px, 14vw, 220px)",
             backgroundImage: "url(/images/gemmyo.jpg)",
@@ -70,7 +58,13 @@ export function V4CHeroE1() {
         >
           Précieuse
         </h1>
-        <span className="sr-only">Précieuse — joaillerie artisanale, Lisboa</span>
+        <style>{`
+          @keyframes heroReveal {
+            0% { opacity: 0; transform: translateY(20px) scale(0.97); clip-path: inset(0 100% 0 0); }
+            40% { opacity: 1; clip-path: inset(0 0 0 0); }
+            100% { opacity: 1; transform: translateY(0) scale(1); clip-path: inset(0 0 0 0); }
+          }
+        `}</style>
 
         {/* CTA réel sous le titre */}
         <Link
