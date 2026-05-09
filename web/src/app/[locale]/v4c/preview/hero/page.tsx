@@ -3,12 +3,12 @@
 import { useState } from "react";
 import Link from "next/link";
 import { V4CSiteTheme } from "@/components/v4c/V4CSiteTheme";
-import { V4CSeriesA } from "@/components/v4c/series-variants/V4CSeriesA";
-import { V4CSeriesB } from "@/components/v4c/series-variants/V4CSeriesB";
-import { V4CSeriesC } from "@/components/v4c/series-variants/V4CSeriesC";
-import { V4CSeriesD } from "@/components/v4c/series-variants/V4CSeriesD";
-import { V4CSeriesE } from "@/components/v4c/series-variants/V4CSeriesE";
-import { V4CSeriesF } from "@/components/v4c/series-variants/V4CSeriesF";
+import { V4CHeroA } from "@/components/v4c/hero-variants/V4CHeroA";
+import { V4CHeroB } from "@/components/v4c/hero-variants/V4CHeroB";
+import { V4CHeroC } from "@/components/v4c/hero-variants/V4CHeroC";
+import { V4CHeroD } from "@/components/v4c/hero-variants/V4CHeroD";
+import { V4CHeroE } from "@/components/v4c/hero-variants/V4CHeroE";
+import { V4CHeroF } from "@/components/v4c/hero-variants/V4CHeroF";
 
 const garamond = "font-[family-name:var(--font-eb-garamond)]";
 const caveat = "font-[family-name:var(--font-caveat)]";
@@ -16,24 +16,24 @@ const caveat = "font-[family-name:var(--font-caveat)]";
 type VariantKey = "A" | "B" | "C" | "D" | "E" | "F";
 
 const VARIANTS: { key: VariantKey; label: string; description: string }[] = [
-  { key: "A", label: "Variante A", description: "Réduction radicale — 3 produits hero + CTA global" },
-  { key: "B", label: "Variante B", description: "Carousel horizontal défilant — snap-scroll, 1 viewport" },
-  { key: "C", label: "Variante C", description: "Focus + grid — Joséphine hero 60% + 4 produits 2×2" },
-  { key: "D", label: "Variante D", description: "Tabs catégories — Solitaires / Entourage / Alliances / Statement" },
-  { key: "E", label: "Variante E", description: "Liste éditoriale — sommaire vertical type table des matières" },
-  { key: "F", label: "Variante F", description: "Coverflow premium · focus centre, peek latéral, auto-play 7s" },
+  { key: "A", label: "Variante A", description: "Éditorial Magazine — masthead, typo italique gigantesque, dossier 03 pages." },
+  { key: "B", label: "Variante B", description: "Carnet polaroid — collage tactile, scotch, écriture caveat manuscrite." },
+  { key: "C", label: "Variante C", description: "Cinematic letterbox — bandes noires, credits, B&N + flash or, un film de Eméline." },
+  { key: "D", label: "Variante D", description: "Diorama vitrine nocturne — sombre, halo radial, bague flottante, particules d'or." },
+  { key: "E", label: "Variante E", description: "Type-as-Image — lettres géantes contenant l'image (background-clip)." },
+  { key: "F", label: "Variante F", description: "Herbarium botanique — planche d'herbier vintage, étiquette manuscrite, latin." },
 ];
 
 const COMPONENTS: Record<VariantKey, React.ReactNode> = {
-  A: <V4CSeriesA />,
-  B: <V4CSeriesB />,
-  C: <V4CSeriesC />,
-  D: <V4CSeriesD />,
-  E: <V4CSeriesE />,
-  F: <V4CSeriesF />,
+  A: <V4CHeroA />,
+  B: <V4CHeroB />,
+  C: <V4CHeroC />,
+  D: <V4CHeroD />,
+  E: <V4CHeroE />,
+  F: <V4CHeroF />,
 };
 
-export default function CollectionPreviewPage() {
+export default function HeroPreviewPage() {
   const [active, setActive] = useState<VariantKey>("A");
   const current = VARIANTS.find((v) => v.key === active)!;
 
@@ -50,7 +50,7 @@ export default function CollectionPreviewPage() {
                 ← retour à v4c
               </Link>
               <span className={`${caveat} text-[14px] text-[var(--site-caveat)]`}>
-                comparateur · section Collection
+                comparateur · section Hero
               </span>
             </div>
 
@@ -89,11 +89,11 @@ export default function CollectionPreviewPage() {
           </div>
         </div>
 
-        <div className="mx-auto max-w-[1440px]">{COMPONENTS[active]}</div>
+        <div>{COMPONENTS[active]}</div>
 
         <div className="mx-auto max-w-[1440px] px-8 lg:px-16 py-8 mt-4 border-t border-[var(--site-text)]/10">
           <p className={`${caveat} text-[14px] text-[var(--site-text)]/40 text-center`}>
-            preview · non publié · Précieuse v4c
+            preview · non publié · Précieuse v4c · hero
           </p>
         </div>
       </div>
