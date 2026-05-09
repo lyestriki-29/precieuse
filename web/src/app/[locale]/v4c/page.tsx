@@ -5,7 +5,6 @@ import { V4CSeriesF } from "@/components/v4c/series-variants/V4CSeriesF";
 import { V4CMatieresFull } from "@/components/v4c/V4CMatieresFull";
 import { V4CEtabli } from "@/components/v4c/V4CEtabli";
 import { V4CLettres } from "@/components/v4c/V4CLettres";
-import { V4CDuCahier } from "@/components/v4c/V4CDuCahier";
 import { V4CVisite } from "@/components/v4c/V4CVisite";
 import { V4CSurMesure } from "@/components/v4c/V4CSurMesure";
 import { V4CTrustStrip } from "@/components/v4c/V4CTrustStrip";
@@ -44,10 +43,6 @@ export default function V4CPage() {
 
           <V4CReveal delay={60}>
             <V4CLettres />
-          </V4CReveal>
-
-          <V4CReveal delay={60}>
-            <V4CDuCahier />
           </V4CReveal>
 
           <V4CReveal delay={60}>
