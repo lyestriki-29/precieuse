@@ -63,8 +63,8 @@ export function V4CHeroE2() {
             fontSize: "clamp(80px, 14vw, 220px)",
             backgroundImage:
               "linear-gradient(180deg, rgba(245,210,138,0.5), rgba(245,210,138,0)), url(/images/gemmyo.jpg)",
-            backgroundSize: "100% 100%, 100% auto",
-            backgroundPosition: "center, center 40%",
+            backgroundSize: "100% 100%, 200% auto",
+            backgroundPosition: "center, center 42%",
             WebkitBackgroundClip: "text",
             backgroundClip: "text",
             color: "transparent",
