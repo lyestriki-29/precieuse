@@ -1,10 +1,8 @@
 import { V4CNav } from "@/components/v4c/V4CNav";
 import { V4CHero } from "@/components/v4c/V4CHero";
 import { V4CAvantPropos } from "@/components/v4c/V4CAvantPropos";
-import { V4CNouveautes } from "@/components/v4c/V4CNouveautes";
-import { V4CSeries } from "@/components/v4c/V4CSeries";
-import { V4CMatieres } from "@/components/v4c/V4CMatieres";
-import { V4CPieceDuMois } from "@/components/v4c/V4CPieceDuMois";
+import { V4CSeriesF } from "@/components/v4c/series-variants/V4CSeriesF";
+import { V4CMatieresFull } from "@/components/v4c/V4CMatieresFull";
 import { V4CEtabli } from "@/components/v4c/V4CEtabli";
 import { V4CLettres } from "@/components/v4c/V4CLettres";
 import { V4CDuCahier } from "@/components/v4c/V4CDuCahier";
@@ -34,21 +32,11 @@ export default function V4CPage() {
           <V4CAvantPropos />
         </V4CReveal>
 
-        <V4CReveal delay={80}>
-          <V4CNouveautes />
-        </V4CReveal>
-
         <V4CReveal delay={60}>
-          <V4CSeries />
+          <V4CSeriesF />
         </V4CReveal>
 
-        <V4CReveal delay={60}>
-          <V4CMatieres />
-        </V4CReveal>
-
-        <V4CReveal delay={40}>
-          <V4CPieceDuMois />
-        </V4CReveal>
+        <V4CMatieresFull />
 
         <V4CReveal delay={60}>
           <V4CEtabli />
