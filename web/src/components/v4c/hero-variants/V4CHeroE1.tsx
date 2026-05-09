@@ -58,7 +58,7 @@ export function V4CHeroE1() {
           style={{
             fontSize: "clamp(80px, 14vw, 220px)",
             backgroundImage: "url(/images/gemmyo.jpg)",
-            backgroundSize: "200% auto",
+            backgroundSize: "280% auto",
             backgroundPosition: "center 42%",
             WebkitBackgroundClip: "text",
             backgroundClip: "text",
