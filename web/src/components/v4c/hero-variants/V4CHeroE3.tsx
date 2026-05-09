@@ -68,7 +68,7 @@ export function V4CHeroE3() {
           className={`${garamond} italic leading-[0.78] tracking-[-0.04em] text-center select-none`}
           style={{
             fontSize: "clamp(120px, 22vw, 360px)",
-            backgroundImage: "url(/images/bijoux-officiels/josephine.jpg)",
+            backgroundImage: "url(/images/gemmyo.jpg)",
             backgroundSize: "115% auto",
             backgroundPosition: "center 38%",
             WebkitBackgroundClip: "text",

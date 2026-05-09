@@ -11,7 +11,7 @@ export function V4CHeroE1() {
       {/* Couche 1 — image floutée plein écran */}
       <div aria-hidden className="absolute inset-0">
         <Image
-          src="/images/bijoux-officiels/josephine.jpg"
+          src="/images/gemmyo.jpg"
           alt=""
           fill
           sizes="100vw"
@@ -57,7 +57,7 @@ export function V4CHeroE1() {
           className={`${garamond} italic leading-[0.78] tracking-[-0.04em] text-center select-none drop-shadow-[0_4px_24px_rgba(0,0,0,0.3)]`}
           style={{
             fontSize: "clamp(120px, 22vw, 360px)",
-            backgroundImage: "url(/images/bijoux-officiels/josephine.jpg)",
+            backgroundImage: "url(/images/gemmyo.jpg)",
             backgroundSize: "120% auto",
             backgroundPosition: "center 35%",
             WebkitBackgroundClip: "text",

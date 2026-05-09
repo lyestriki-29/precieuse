@@ -62,7 +62,7 @@ export function V4CHeroE2() {
           style={{
             fontSize: "clamp(120px, 22vw, 360px)",
             backgroundImage:
-              "linear-gradient(180deg, rgba(245,210,138,0.5), rgba(245,210,138,0)), url(/images/bijoux-officiels/josephine.jpg)",
+              "linear-gradient(180deg, rgba(245,210,138,0.5), rgba(245,210,138,0)), url(/images/gemmyo.jpg)",
             backgroundSize: "100% 100%, 130% auto",
             backgroundPosition: "center, center 38%",
             WebkitBackgroundClip: "text",
@@ -79,7 +79,7 @@ export function V4CHeroE2() {
         {/* Image en arrière-plan, plus présente, légèrement floutée */}
         <div aria-hidden className="absolute inset-0 -z-10 opacity-[0.18]">
           <Image
-            src="/images/bijoux-officiels/josephine.jpg"
+            src="/images/gemmyo.jpg"
             alt=""
             fill
             sizes="100vw"
