@@ -35,11 +35,6 @@ export const MANIFESTO = {
   closing:
     "De l'idée au bijou, chaque étape est une promesse. Parce que chaque création est unique, à l'image de celle ou celui qui va la porter.",
   signature: "Eméline",
-  // Image atmosphère pour la strate manifesto
-  atmosphere: {
-    src: "/images/carnet/mains-aieuls.jpg",
-    alt: "Mains de grand-mère portant les bijoux familiaux — l'origine du goût d'Eméline pour les pièces qui se transmettent",
-  },
 };
 
 export const SIGNATURES: SignaturePiece[] = [
