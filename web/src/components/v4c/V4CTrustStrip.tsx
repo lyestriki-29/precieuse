@@ -1,0 +1,87 @@
+const garamond = "font-[family-name:var(--font-eb-garamond)]";
+const caveat = "font-[family-name:var(--font-caveat)]";
+
+function IconEtoile() {
+  return (
+    <svg aria-hidden viewBox="0 0 32 32" fill="none" className="w-7 h-7 opacity-60">
+      <path
+        d="M16 4 L18.5 12 L27 12 L20 17.5 L22.5 25 L16 20.5 L9.5 25 L12 17.5 L5 12 L13.5 12Z"
+        stroke="#3d2817" strokeWidth="1.2" strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+function IconPaquet() {
+  return (
+    <svg aria-hidden viewBox="0 0 32 32" fill="none" className="w-7 h-7 opacity-60">
+      <rect x="5" y="12" width="22" height="16" rx="1" stroke="#3d2817" strokeWidth="1.2" />
+      <path d="M5 12 L16 6 L27 12" stroke="#3d2817" strokeWidth="1.2" strokeLinejoin="round" />
+      <path d="M16 6 L16 28" stroke="#3d2817" strokeWidth="0.8" strokeDasharray="2 3" />
+      <path d="M5 16 L27 16" stroke="#3d2817" strokeWidth="0.8" strokeDasharray="2 3" />
+    </svg>
+  );
+}
+
+function IconSceau() {
+  return (
+    <svg aria-hidden viewBox="0 0 32 32" fill="none" className="w-7 h-7 opacity-60">
+      <circle cx="16" cy="16" r="11" stroke="#3d2817" strokeWidth="1.2" />
+      <circle cx="16" cy="16" r="7" stroke="#3d2817" strokeWidth="0.8" strokeDasharray="2 3" />
+      <path d="M12 16 L15 19 L20 13" stroke="#3d2817" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+type TrustItem = {
+  icon: React.ReactNode;
+  titre: string;
+  corps: string;
+  annotation: string;
+};
+
+const ITEMS: TrustItem[] = [
+  {
+    icon: <IconEtoile />,
+    titre: "SAVOIR-FAIRE",
+    corps: "Atelier Lisboa, cire perdue",
+    annotation: "depuis 2019",
+  },
+  {
+    icon: <IconPaquet />,
+    titre: "LIVRAISON",
+    corps: "Coffret main, suivi inclus",
+    annotation: "partout en Europe",
+  },
+  {
+    icon: <IconSceau />,
+    titre: "GARANTIE",
+    corps: "À vie, gravure offerte",
+    annotation: "sans condition",
+  },
+];
+
+export function V4CTrustStrip() {
+  return (
+    <section className="relative bg-[#f4ede0] py-14 px-8 lg:px-16 border-t-2 border-double border-[#3d2817]/15">
+      <div className="mx-auto max-w-[1440px]">
+        <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-[#3d2817]/10">
+          {ITEMS.map((item) => (
+            <div key={item.titre} className="flex flex-col items-center gap-3 py-8 md:py-0 md:px-12 text-center">
+              {item.icon}
+              <span className={`${garamond} text-[11px] tracking-[0.2em] text-[#3d2817] uppercase`}>
+                {item.titre}
+              </span>
+              <span className="font-[family-name:var(--font-inter)] text-[13px] font-light text-[#6b4423]">
+                {item.corps}
+              </span>
+              <span className={`${caveat} text-[14px] text-[#1e3a5f]`}>
+                {item.annotation}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

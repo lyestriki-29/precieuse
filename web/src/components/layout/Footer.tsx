@@ -6,7 +6,7 @@ import { FOOTER_LINKS, SITE } from "@/lib/content/site";
 
 export function Footer() {
   const pathname = usePathname();
-  if (pathname.startsWith("/fr/v2") || pathname.startsWith("/fr/v3")) return null;
+  if (pathname.startsWith("/fr/v2") || pathname.startsWith("/fr/v3") || pathname.startsWith("/fr/v4")) return null;
 
   return (
     <footer className="bg-inverse-surface text-white pt-20">
