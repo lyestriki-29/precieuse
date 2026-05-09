@@ -8,6 +8,7 @@ const caveat = "font-[family-name:var(--font-caveat)]";
 
 const navLinks = [
   { label: "La Collection", href: "/fr/collection" },
+  { label: "Le Carnet", href: "/fr/carnet" },
   { label: "L'Atelier", href: "/fr/creatrice" },
   { label: "Sur-Mesure", href: "/fr/sur-mesure" },
 ];
