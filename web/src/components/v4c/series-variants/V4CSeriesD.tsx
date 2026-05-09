@@ -38,25 +38,25 @@ export function V4CSeriesD() {
   const displayed = filterProducts(active);
 
   return (
-    <section className="relative bg-[#f4ede0] py-14 px-8 lg:px-16">
+    <section className="relative bg-[var(--site-bg)] py-14 px-8 lg:px-16">
       <div className="mx-auto max-w-[1440px]">
         <div className="mb-8 flex items-end justify-between">
-          <h2 className={`${garamond} italic text-[40px] text-[#3d2817] leading-none`}>
+          <h2 className={`${garamond} italic text-[40px] text-[var(--site-text)] leading-none`}>
             La Collection
           </h2>
-          <span className={`${garamond} italic text-[13px] text-[#a08552]`}>p. 04</span>
+          <span className={`${garamond} italic text-[13px] text-[var(--site-accent)]`}>p. 04</span>
         </div>
 
         {/* Tabs */}
-        <div className="flex flex-wrap gap-1 mb-10 border-b border-[#3d2817]/15">
+        <div className="flex flex-wrap gap-1 mb-10 border-b border-[var(--site-text)]/15">
           {CATEGORIES.map((cat) => (
             <button
               key={cat}
               onClick={() => setActive(cat)}
               className={`${garamond} italic text-[16px] px-4 py-2 -mb-px transition-colors duration-200 ${
                 active === cat
-                  ? "text-[#3d2817] border-b-2 border-[#3d2817]"
-                  : "text-[#3d2817]/40 hover:text-[#3d2817]/70"
+                  ? "text-[var(--site-text)] border-b-2 border-[var(--site-text)]"
+                  : "text-[var(--site-text)]/40 hover:text-[var(--site-text)]/70"
               }`}
             >
               {cat}{" "}
@@ -77,7 +77,7 @@ export function V4CSeriesD() {
             <Link
               key={product.slug}
               href={`/fr/collection/${product.slug}`}
-              className="group block bg-[#ede4d5] overflow-hidden"
+              className="group block bg-[var(--site-surface)] overflow-hidden"
             >
               <div className="relative aspect-[3/4] w-full overflow-hidden">
                 <Image
@@ -87,18 +87,18 @@ export function V4CSeriesD() {
                   sizes="(max-width: 768px) 50vw, 25vw"
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <span className={`${caveat} absolute top-2 right-2 text-[12px] text-[#f4ede0]/70 bg-[#3d2817]/30 px-2 py-0.5`}>
+                <span className={`${caveat} absolute top-2 right-2 text-[12px] text-[var(--site-bg)]/70 bg-[var(--site-text)]/30 px-2 py-0.5`}>
                   {PRODUCT_CATEGORIES[product.slug]}
                 </span>
               </div>
               <div className="p-4">
-                <h3 className={`${garamond} italic text-[22px] text-[#3d2817] leading-none mb-1`}>
+                <h3 className={`${garamond} italic text-[22px] text-[var(--site-text)] leading-none mb-1`}>
                   {product.name}
                 </h3>
-                <p className={`${caveat} text-[14px] text-[#1e3a5f] mb-2`}>
+                <p className={`${caveat} text-[14px] text-[var(--site-caveat)] mb-2`}>
                   {product.tagline}
                 </p>
-                <p className={`${garamond} italic text-[13px] text-[#a08552]`}>
+                <p className={`${garamond} italic text-[13px] text-[var(--site-accent)]`}>
                   {product.price}
                 </p>
               </div>
@@ -111,7 +111,7 @@ export function V4CSeriesD() {
         `}</style>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 border-t-2 border-double border-[#3d2817]/15" />
+      <div className="absolute bottom-0 left-0 right-0 border-t-2 border-double border-[var(--site-text)]/15" />
     </section>
   );
 }

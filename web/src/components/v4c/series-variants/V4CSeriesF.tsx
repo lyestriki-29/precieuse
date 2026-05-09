@@ -149,7 +149,7 @@ export function V4CSeriesF() {
               className={`${caveat} w-8 h-8 flex items-center justify-center text-[var(--site-caveat)] hover:opacity-70 transition-opacity`}
             >
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>
-                <polyline points="10,2 4,8 10,14" stroke="#1e3a5f" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                <polyline points="10,2 4,8 10,14" stroke="var(--site-caveat)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </button>
 
@@ -177,7 +177,7 @@ export function V4CSeriesF() {
               className={`${caveat} w-8 h-8 flex items-center justify-center text-[var(--site-caveat)] hover:opacity-70 transition-opacity`}
             >
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>
-                <polyline points="6,2 12,8 6,14" stroke="#1e3a5f" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                <polyline points="6,2 12,8 6,14" stroke="var(--site-caveat)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </button>
           </div>

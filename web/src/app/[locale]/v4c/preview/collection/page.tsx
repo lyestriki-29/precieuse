@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { V4CSiteTheme } from "@/components/v4c/V4CSiteTheme";
 import { V4CSeriesA } from "@/components/v4c/series-variants/V4CSeriesA";
 import { V4CSeriesB } from "@/components/v4c/series-variants/V4CSeriesB";
 import { V4CSeriesC } from "@/components/v4c/series-variants/V4CSeriesC";
@@ -61,18 +62,19 @@ export default function CollectionPreviewPage() {
   const current = VARIANTS.find((v) => v.key === active)!;
 
   return (
-    <div className="min-h-screen bg-[#f4ede0]">
+    <V4CSiteTheme>
+    <div className="min-h-screen bg-[var(--site-bg)]">
       {/* Sticky header */}
-      <div className="sticky top-0 z-50 bg-[#f4ede0]/95 backdrop-blur-sm border-b border-[#3d2817]/20">
+      <div className="sticky top-0 z-50 bg-[var(--site-bg)]/95 backdrop-blur-sm border-b border-[var(--site-text)]/20">
         <div className="mx-auto max-w-[1440px] px-8 lg:px-16">
-          <div className="flex items-center justify-between py-3 border-b border-[#3d2817]/10 mb-0">
+          <div className="flex items-center justify-between py-3 border-b border-[var(--site-text)]/10 mb-0">
             <Link
               href="/fr/v4c"
-              className={`${garamond} italic text-[14px] text-[#3d2817]/60 hover:text-[#3d2817] transition-colors`}
+              className={`${garamond} italic text-[14px] text-[var(--site-text)]/60 hover:text-[var(--site-text)] transition-colors`}
             >
               ← retour à v4c
             </Link>
-            <span className={`${caveat} text-[14px] text-[#1e3a5f]`}>
+            <span className={`${caveat} text-[14px] text-[var(--site-caveat)]`}>
               comparateur · section Collection
             </span>
           </div>
@@ -85,8 +87,8 @@ export default function CollectionPreviewPage() {
                 onClick={() => setActive(v.key)}
                 className={`${garamond} italic text-[15px] px-5 py-2 border-b-2 transition-all duration-200 ${
                   active === v.key
-                    ? "text-[#3d2817] border-[#3d2817]"
-                    : "text-[#3d2817]/40 border-transparent hover:text-[#3d2817]/70"
+                    ? "text-[var(--site-text)] border-[var(--site-text)]"
+                    : "text-[var(--site-text)]/40 border-transparent hover:text-[var(--site-text)]/70"
                 }`}
               >
                 {v.label}
@@ -100,15 +102,15 @@ export default function CollectionPreviewPage() {
       <div className="mx-auto max-w-[1440px] px-8 lg:px-16 py-6">
         <div className="flex items-center gap-4">
           <span
-            className={`${garamond} italic text-[32px] text-[#a08552] leading-none`}
+            className={`${garamond} italic text-[32px] text-[var(--site-accent)] leading-none`}
           >
             {current.key}
           </span>
           <div>
-            <p className={`${garamond} italic text-[18px] text-[#3d2817]`}>
+            <p className={`${garamond} italic text-[18px] text-[var(--site-text)]`}>
               {current.label}
             </p>
-            <p className={`${caveat} text-[15px] text-[#1e3a5f]`}>
+            <p className={`${caveat} text-[15px] text-[var(--site-caveat)]`}>
               {current.description}
             </p>
           </div>
@@ -121,11 +123,12 @@ export default function CollectionPreviewPage() {
       </div>
 
       {/* Footer comparateur */}
-      <div className="mx-auto max-w-[1440px] px-8 lg:px-16 py-8 mt-4 border-t border-[#3d2817]/10">
-        <p className={`${caveat} text-[14px] text-[#3d2817]/40 text-center`}>
+      <div className="mx-auto max-w-[1440px] px-8 lg:px-16 py-8 mt-4 border-t border-[var(--site-text)]/10">
+        <p className={`${caveat} text-[14px] text-[var(--site-text)]/40 text-center`}>
           preview · non publié · Précieuse v4c
         </p>
       </div>
     </div>
+    </V4CSiteTheme>
   );
 }

@@ -66,7 +66,15 @@ export function V4CFooterH() {
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row items-center justify-between gap-2 mt-4 pt-3 border-t border-[var(--site-bg)]/10">
+        <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-1 mt-5 pt-4 border-t border-[var(--site-bg)]/10">
+          {FOOTER_DATA.primaryNav.map((l) => (
+            <Link key={l.label} href={l.href} className={`${garamond} italic text-[13px] text-[var(--site-bg)]/75 hover:text-[var(--site-bg)] transition-colors`}>
+              {l.label}
+            </Link>
+          ))}
+        </nav>
+
+        <div className="flex flex-col md:flex-row items-center justify-between gap-2 mt-3 pt-3 border-t border-[var(--site-bg)]/10">
           <span className={`${inter} text-[10px] tracking-wider font-light text-[var(--site-bg)]/30`}>
             {FOOTER_DATA.copyright}
           </span>

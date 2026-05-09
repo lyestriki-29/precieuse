@@ -17,7 +17,7 @@ export const FOOTER_DATA = {
     { label: "Pinterest", href: "https://pinterest.com" },
   ],
   primaryNav: [
-    { label: "La Collection", href: "/fr/collection" },
+    { label: "La Collection", href: "/fr/v4c/preview/collection" },
     { label: "Le Carnet", href: "/fr/carnet" },
     { label: "L'Atelier", href: "/fr/creatrice" },
     { label: "Sur-Mesure", href: "/fr/sur-mesure" },
