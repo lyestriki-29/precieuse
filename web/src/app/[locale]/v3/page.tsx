@@ -1,12 +1,10 @@
-import { V3Footer } from "@/components/v3/V3Footer";
-import { V3Nav } from "@/components/v3/V3Nav";
-import { V3Hero } from "@/components/v3/V3Hero";
-import { V3Series } from "@/components/v3/V3Series";
-import { V3SurMesure } from "@/components/v3/V3SurMesure";
 import { V3Creatrice } from "@/components/v3/V3Creatrice";
-import { V3Atelier } from "@/components/v3/V3Atelier";
-import { V3Testimonial } from "@/components/v3/V3Testimonial";
+import { V3Footer } from "@/components/v3/V3Footer";
+import { V3Hero } from "@/components/v3/V3Hero";
+import { V3Nav } from "@/components/v3/V3Nav";
 import { V3Newsletter } from "@/components/v3/V3Newsletter";
+import { V3Series } from "@/components/v3/V3Series";
+import { V3Testimonial } from "@/components/v3/V3Testimonial";
 
 export const metadata = {
   title: "Précieuse — Joaillerie éditoriale",
@@ -21,9 +19,7 @@ export default function V3HomePage() {
       <main>
         <V3Hero />
         <V3Series />
-        <V3SurMesure />
         <V3Creatrice />
-        <V3Atelier />
         <V3Testimonial />
         <V3Newsletter />
       </main>
