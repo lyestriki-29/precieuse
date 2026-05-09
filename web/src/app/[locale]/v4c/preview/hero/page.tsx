@@ -8,19 +8,25 @@ import { V4CHeroB } from "@/components/v4c/hero-variants/V4CHeroB";
 import { V4CHeroC } from "@/components/v4c/hero-variants/V4CHeroC";
 import { V4CHeroD } from "@/components/v4c/hero-variants/V4CHeroD";
 import { V4CHeroE } from "@/components/v4c/hero-variants/V4CHeroE";
+import { V4CHeroE1 } from "@/components/v4c/hero-variants/V4CHeroE1";
+import { V4CHeroE2 } from "@/components/v4c/hero-variants/V4CHeroE2";
+import { V4CHeroE3 } from "@/components/v4c/hero-variants/V4CHeroE3";
 import { V4CHeroF } from "@/components/v4c/hero-variants/V4CHeroF";
 
 const garamond = "font-[family-name:var(--font-eb-garamond)]";
 const caveat = "font-[family-name:var(--font-caveat)]";
 
-type VariantKey = "A" | "B" | "C" | "D" | "E" | "F";
+type VariantKey = "A" | "B" | "C" | "D" | "E" | "E1" | "E2" | "E3" | "F";
 
 const VARIANTS: { key: VariantKey; label: string; description: string }[] = [
   { key: "A", label: "Variante A", description: "Éditorial Magazine — masthead, typo italique gigantesque, dossier 03 pages." },
   { key: "B", label: "Variante B", description: "Carnet polaroid — collage tactile, scotch, écriture caveat manuscrite." },
   { key: "C", label: "Variante C", description: "Cinematic letterbox — bandes noires, credits, B&N + flash or, un film de Eméline." },
   { key: "D", label: "Variante D", description: "Diorama vitrine nocturne — sombre, halo radial, bague flottante, particules d'or." },
-  { key: "E", label: "Variante E", description: "Type-as-Image — lettres géantes contenant l'image (background-clip)." },
+  { key: "E", label: "Variante E", description: "Type-as-Image (origine) — lettres clipées, fond vélin clair." },
+  { key: "E1", label: "E1 · Window", description: "Type-as-Image — image floutée plein-fond, lettres = trou sur version nette." },
+  { key: "E2", label: "E2 · Watermark", description: "Type-as-Image — fond noir profond, halo or, watermark filigrane Numéro II." },
+  { key: "E3", label: "E3 · Atelier", description: "Type-as-Image — papier vélin riche, double-rule, watermark p.01, asterismes." },
   { key: "F", label: "Variante F", description: "Herbarium botanique — planche d'herbier vintage, étiquette manuscrite, latin." },
 ];
 
@@ -30,6 +36,9 @@ const COMPONENTS: Record<VariantKey, React.ReactNode> = {
   C: <V4CHeroC />,
   D: <V4CHeroD />,
   E: <V4CHeroE />,
+  E1: <V4CHeroE1 />,
+  E2: <V4CHeroE2 />,
+  E3: <V4CHeroE3 />,
   F: <V4CHeroF />,
 };
 
@@ -54,7 +63,7 @@ export default function HeroPreviewPage() {
               </span>
             </div>
 
-            <div className="flex gap-1 -mb-px pt-2">
+            <div className="flex flex-wrap gap-1 -mb-px pt-2">
               {VARIANTS.map((v) => (
                 <button
                   key={v.key}
