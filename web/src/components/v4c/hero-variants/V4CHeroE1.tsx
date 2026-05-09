@@ -69,7 +69,7 @@ export function V4CHeroE1() {
         {/* CTA réel sous le titre */}
         <Link
           href="/fr/v4c/preview/collection"
-          className={`${garamond} italic absolute bottom-6 left-1/2 -translate-x-1/2 inline-flex items-center gap-3 text-[15px] lg:text-[17px] text-white px-6 py-2.5 border border-white/40 backdrop-blur-[3px] bg-white/5 hover:bg-white/15 hover:border-white transition-all duration-300`}
+          className={`${garamond} italic absolute bottom-6 left-1/2 -translate-x-1/2 inline-flex items-center gap-3 text-[15px] lg:text-[17px] text-white px-6 py-2.5 border border-white/40 backdrop-blur-[3px] bg-white/5 hover:bg-white/15 hover:border-white transition-all duration-300 animate-[heroReveal_1.4s_cubic-bezier(0.2,0.8,0.2,1)_700ms_both]`}
         >
           <span>Découvrir le carnet</span>
           <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const garamond = "font-[family-name:var(--font-eb-garamond)]";
 const caveat = "font-[family-name:var(--font-caveat)]";
@@ -50,22 +51,11 @@ export function V4CHeroE3() {
       <div aria-hidden className="absolute inset-4 lg:inset-6 border border-[var(--site-text)]/20 pointer-events-none" />
       <div aria-hidden className="absolute inset-6 lg:inset-8 border border-[var(--site-text)]/10 pointer-events-none" />
 
-      {/* Header */}
-      <div className="relative z-10 mx-auto max-w-[1440px] w-full px-12 lg:px-20 py-8 flex items-baseline justify-between border-b border-[var(--site-text)]/25">
-        <span className={`${inter} text-[10px] uppercase tracking-[0.4em] text-[var(--site-text)]/65`}>
-          Précieuse · joaillerie · Lisboa
-        </span>
-        <span className={`${caveat} text-[16px] text-[var(--site-caveat)] italic`}>chapitre I —</span>
-        <span className={`${inter} text-[10px] uppercase tracking-[0.4em] text-[var(--site-text)]/65`}>
-          MMXXVI
-        </span>
-      </div>
-
       {/* Bloc typographique — image clipée nette sur papier */}
       <div className="relative z-10 flex-1 flex items-center justify-center px-8 lg:px-20">
         <h1
-          aria-label="Précieuse"
-          className={`${garamond} italic leading-[0.78] tracking-[-0.04em] text-center select-none`}
+          aria-label="Précieuse — joaillerie artisanale, Lisboa"
+          className={`${garamond} italic leading-[0.78] tracking-[-0.04em] text-center select-none animate-[heroReveal_1.4s_cubic-bezier(0.2,0.8,0.2,1)_120ms_both]`}
           style={{
             fontSize: "clamp(80px, 14vw, 220px)",
             backgroundImage: "url(/images/gemmyo.jpg)",
@@ -80,9 +70,15 @@ export function V4CHeroE3() {
         >
           Précieuse
         </h1>
-        <span className="sr-only">Précieuse — joaillerie artisanale, Lisboa</span>
+        <style>{`
+          @keyframes heroReveal {
+            0% { opacity: 0; transform: translateY(20px) scale(0.97); clip-path: inset(0 100% 0 0); }
+            40% { opacity: 1; clip-path: inset(0 0 0 0); }
+            100% { opacity: 1; transform: translateY(0) scale(1); clip-path: inset(0 0 0 0); }
+          }
+        `}</style>
 
-        {/* Petite icône asterisme décorative haut-gauche */}
+        {/* Asterismes décoratifs aux coins */}
         <span
           aria-hidden
           className={`${garamond} italic absolute top-4 left-12 lg:left-20 text-[var(--site-accent)] text-[40px] opacity-60 select-none`}
@@ -95,6 +91,15 @@ export function V4CHeroE3() {
         >
           ✦
         </span>
+
+        {/* CTA réel sous le titre */}
+        <Link
+          href="/fr/v4c/preview/collection"
+          className={`${garamond} italic absolute bottom-6 left-1/2 -translate-x-1/2 inline-flex items-center gap-3 text-[15px] lg:text-[17px] text-[var(--site-text)] px-6 py-2.5 border border-[var(--site-text)]/35 bg-[var(--site-bg)]/40 backdrop-blur-[2px] hover:bg-[var(--site-text)] hover:text-[var(--site-bg)] transition-all duration-300 animate-[heroReveal_1.4s_cubic-bezier(0.2,0.8,0.2,1)_700ms_both]`}
+        >
+          <span>Découvrir le carnet</span>
+          <span aria-hidden>→</span>
+        </Link>
       </div>
 
       {/* Sous-titre */}

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const garamond = "font-[family-name:var(--font-eb-garamond)]";
 const caveat = "font-[family-name:var(--font-caveat)]";
@@ -43,22 +44,11 @@ export function V4CHeroE2() {
         }}
       />
 
-      {/* Header */}
-      <div className="relative z-10 mx-auto max-w-[1440px] w-full px-8 lg:px-16 py-6 flex items-baseline justify-between border-b border-[#d4af37]/20">
-        <span className={`${inter} text-[10px] uppercase tracking-[0.4em] text-[#d4af37]/75`}>
-          Précieuse · joaillerie · Lisboa
-        </span>
-        <span className={`${caveat} text-[16px] text-[#d4af37] italic`}>chapitre I —</span>
-        <span className={`${inter} text-[10px] uppercase tracking-[0.4em] text-[#d4af37]/75`}>
-          MMXXVI
-        </span>
-      </div>
-
       {/* Bloc typographique — image clipée saturée or */}
       <div className="relative z-10 flex-1 flex items-center justify-center px-4 lg:px-12">
         <h1
-          aria-label="Précieuse"
-          className={`${garamond} italic leading-[0.78] tracking-[-0.04em] text-center select-none`}
+          aria-label="Précieuse — joaillerie artisanale, Lisboa"
+          className={`${garamond} italic leading-[0.78] tracking-[-0.04em] text-center select-none animate-[heroReveal_1.4s_cubic-bezier(0.2,0.8,0.2,1)_120ms_both]`}
           style={{
             fontSize: "clamp(80px, 14vw, 220px)",
             backgroundImage:
@@ -74,7 +64,22 @@ export function V4CHeroE2() {
         >
           Précieuse
         </h1>
-        <span className="sr-only">Précieuse — joaillerie artisanale, Lisboa</span>
+        <style>{`
+          @keyframes heroReveal {
+            0% { opacity: 0; transform: translateY(20px) scale(0.97); clip-path: inset(0 100% 0 0); }
+            40% { opacity: 1; clip-path: inset(0 0 0 0); }
+            100% { opacity: 1; transform: translateY(0) scale(1); clip-path: inset(0 0 0 0); }
+          }
+        `}</style>
+
+        {/* CTA réel sous le titre */}
+        <Link
+          href="/fr/v4c/preview/collection"
+          className={`${garamond} italic absolute bottom-6 left-1/2 -translate-x-1/2 inline-flex items-center gap-3 text-[15px] lg:text-[17px] text-white px-6 py-2.5 border border-[#d4af37]/50 backdrop-blur-[3px] bg-black/20 hover:bg-[#d4af37]/15 hover:border-[#d4af37] transition-all duration-300 animate-[heroReveal_1.4s_cubic-bezier(0.2,0.8,0.2,1)_700ms_both]`}
+        >
+          <span>Découvrir le carnet</span>
+          <span aria-hidden>→</span>
+        </Link>
 
         {/* Image en arrière-plan, plus présente, légèrement floutée */}
         <div aria-hidden className="absolute inset-0 -z-10 opacity-[0.18]">
