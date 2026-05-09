@@ -1,89 +1,75 @@
-# Session State — 2026-05-09 (3 directions Stitch livrées + code review)
+# Session State — 2026-05-09 18:00 (v4c LP carnet enrichi + 3 comparateurs)
 
 ## Branch
 `main`
 
 ## Completed This Session
-**Refonte UI majeure : 3 directions Stitch livrées en parallèle pour comparaison live.**
+**Construction LP `/fr/v4c` enrichie + 3 comparateurs preview avec 17 variantes au total.**
 
-- **Câblage v1 photos** (b17e0c6) : 10 photos Instagram → web/public/images/,
-  type Product enrichi, 6 sections home redesignées 2-col image+texte.
-- **Refonte Stitch S3 Raw Luxe** (c1074a5) : Bodoni Moda + JetBrains Mono,
-  tokens Stitch + 9 sections home (Hero plein écran cinématique, TrustBar,
-  ProductsTeaser asymétrique 7/5, ProcessCirePerdue dark, Materials,
-  Bespoke pull-quote, Creatrice, TestimonialCentral, Journal), Footer dark,
-  Nav transparent+blanc sur hero. 11 photos IA Stitch en placeholders.
-- **Polish** (a157c50) : Reveal animations, quote SVG luxe.
-- **Photos officielles** (e3c4f83) : packshots HD réels (Aurore, Joséphine,
-  Louise, Thelma) + dessin Eugénie + logo officiel teal/petrol.
-- **v2 Eugénie** (7fa0d84) : route /fr/v2 — fiche produit Stitch S1
-  L'Art de la Lumière (Playfair italic + purple #4f378a), V2Nav 3-col +
-  V2Footer dédiés, hero plein écran avec "Eugénie" 140px italic centré,
-  4 macros asymétriques mt-12, atelier wide, mot d'Éméline, pairing Louise.
-- **v3 Homepage S1** (c01c733) : route /fr/v3 — homepage Stitch S1, V3Nav +
-  V3Footer + 7 sub-components, hero asymétrique 5/12+7/12, "Nos Séries"
-  grid 5 produits avec offset alterné, sur-mesure, créatrice, atelier
-  Portugal, témoignage 01/09, newsletter "Les Lettres Rares".
-- **Raffinement v3** (7196112) : remplacement V3Creatrice par layout v1
-  (asymétrique 5/7 + FORMATION École Boulle / EXPERTISE Cire perdue),
-  suppression V3Atelier + V3SurMesure, **V3Nav refondu en 5-zone éditorial**
-  (top meta strip MAISON·PORTUGAL·MMXXVI, brand center "Précieuse" italic
-  48px + microcaps "JOAILLERIE·LISBOA", nav split L/R + hover underline
-  expand-from-center, scroll-aware avec compactage).
-- **Code review hardening** (b425a4e) : 4 issues fixées
-  - Critical : V3Newsletter form action#post → onSubmit preventDefault
-  - Critical : Nav body.overflow leak → useEffect([pathname]) → setOpen(false)
-  - Important : suppression inline style objectPosition (Product.imagePosition
-    plus utilisé depuis swap photos officielles)
-  - Cosmetic : V3Nav journal match orphelin → type NavItem avec match optional
+- **3 directions Stitch en parallèle** (f015f48) : v3a Édito Magazine (Bodoni
+  ivoire/rouge), v3b Galerie d'art (Cormorant blanc/or), v3c Carnet d'atelier
+  (EB Garamond + Caveat vélin/sépia). User a validé v3c.
+- **v4c carnet enrichi inspiré Gemmyo** (c9947a1) : 17 composants + 5 nouvelles
+  sections (Nouveautés, Matières, Pièce du mois, Du Cahier, MaisonEngagements,
+  TrustStrip), animations IntersectionObserver vanilla.
+- **3 comparateurs preview** :
+  - `/fr/v4c/preview/derniere-creation` : carousel auto-play 7s 3 produits
+  - `/fr/v4c/preview/collection` : 6 variantes A/B/C/D/E/F (tabs sticky)
+  - `/fr/v4c/preview/matieres` : 6 layouts différents
+- **Coverflow F retravaillé** (930b077) : layout 2 colonnes split image+info
+  panel (au lieu de overlay illisible), aspect 16/9 landscape, peek cards
+  réduites à w-24% pour bonne hiérarchie focus.
+- **V4CMatieresFull** (0028ce8 + d1fe93a) : section Matières pleine largeur
+  5 colonnes, animation cascade haut→bas (titre puis cards ensemble depuis
+  -translate-y-6), easing premium cubic-bezier(0.32,0.72,0,1) 1100ms.
+- **5 nouvelles photos premium** (7d4dd68 + 8661992) : matières podium beige
+  (alliances-demi-jonc + 4 gemmes Or/Diamants/Saphirs/Émeraudes/Rubis), alts
+  mis à jour, fichiers renommés -v2.jpg pour bust cache.
+- **Intégration finale v4c** : suppression V4CDernieresCreations (carousel
+  auto) + V4CPieceDuMois (le coverflow F joue ces rôles), V4CMatieresFull
+  remplace V4CMatieres2.
+- **Code review hardening** (c1464a4) : 6 issues fixées
+  - 2 critical : setTimeout cleanup leaks (V4CMatieresFull + V4CMatieres4)
+  - 2 high perf : priority={index===0} (avant tous focus cards préchargés)
+  - 2 medium : inline styles → Tailwind classes (V4CDernieresCreations dots
+    + V4CMatieres2 scroll-snap)
 
 ## Next Task
-**Présentation live des 3 directions et choix par l'utilisateur** :
-- v1 (S3 Raw Luxe Bodoni raspberry) : http://localhost:3000/fr
-- v2 (S1 fiche Eugénie Playfair purple) : http://localhost:3000/fr/v2
-- v3 (S1 homepage raffinée Playfair purple) : http://localhost:3000/fr/v3
-
-Une fois la direction choisie :
-1. Promouvoir la version retenue à `/fr` (homepage principale)
-2. Supprimer les 2 versions non retenues + assets associés
-3. Aligner les pages internes (/collection, fiche produit, /sur-mesure,
-   /creatrice, /contact) sur la direction validée
-4. Décider du sort de /fr/creatrice (potentiel doublon avec section home)
+**Retravailler la section "À l'établi" (`V4CEtabli`)** — process cire perdue
+4 étapes (L'Esquisse, La Cire, La Fonte, Le Polissage) sur fond sombre
+`#2a1d10`. Le user a validé l'idée mais veut améliorer visuellement cette
+section : photos, layout, peut-être animations. Voir screenshot pris en fin
+de session pour le rendu actuel.
 
 ## Blockers
-- **Push direct sur main bloqué par policy harness** — user doit faire
+- **Push direct main bloqué** — user doit faire manuellement
   `cd /Users/trikilyes/Desktop/Prive1/Precieuse && git push origin main`
-  manuellement (10 commits en attente : b17e0c6, 360f0ed, c1074a5, a157c50,
-  e3c4f83, 86a6744, 7fa0d84, c01c733, 7196112, b425a4e + cette SESSION).
-- Photos manquantes pour version finale : portrait Annabelle N&B + 4 packshots
-  HD packs studio (toujours Stitch IA en placeholders pour l'instant).
-- Logo officiel teal sur fond dark → version blanche à produire OU garder
-  typo Bodoni/Playfair "Précieuse" comme actuellement.
-- Validation copy bio Eméline + suspicion photos IA des packshots officielles ?
+  (12 commits en attente : f015f48 → c1464a4 + cette SESSION).
+- Eugénie image = sketch (eugenie.png) — packshot photo réel à produire
+  pour bien rendre dans le coverflow F
+- Photos IA encore présentes : V4CEtabli (process), V4CMaisonEngagements,
+  V4CDuCahier (3 articles mockés)
+- Articles Du Cahier mockés (titres/extraits inventés) — décision contenu
+- Adresse Lisbonne V4CVisite (Rua da Boavista, 84) à confirmer
 - Schéma webhook Propul'seo CRM (Phase 4)
 - Email officiel + WhatsApp (placeholders dans `lib/content/site.ts`)
-- Domaine `precieuse.fr` à confirmer/acheter (Phase 6)
-- ⚠️ Clé Stitch API à régénérer
 
 ## Key Context
-- Stack : Next.js 16.2.6 + Tailwind v4 + shadcn (style **base-nova**) +
-  Sanity (Phase 3 différée) + Brevo + next-intl + Vercel
-- **3 directions visuelles parallèles** :
-  - **S3 Raw Luxe** : Bodoni Moda + JetBrains Mono + raspberry framboise +
-    inverse-surface dark sections + atelier dusk cinématique
-  - **S1 L'Art de la Lumière** : Playfair Display italic + Inter + primary
-    purple #4f378a + tertiary gold #765b00 + surface #fdf7ff (light pinkish)
-- Modèle : lead-gen v1 (pas de checkout), 5 modèles 1000-7000€,
-  lancement mi-juillet 2026
-- Plan E2E : `~/.claude/plans/debut-delegated-twilight.md`
-- Mapping photos : `docs/instagram-content-mapping.md`
-- Référence Stitch S3 : `content/stitch-extracts/s3-raw-luxe-full.html`
-- Site existant exporté : `content/Précieuse _ Joaillerie Artisanale Sur Mesure*`
-- **Pattern Next.js 16** : `params` async, `LayoutProps`/`PageProps` globaux,
-  `images.qualities=[75,90]` requis pour quality=90.
-- **Convention** : main-only workflow, max 200 lignes/fichier, pas d'inline
-  styles, path aliases `@/`, TypeScript strict (jamais `any`).
-- **Routes hidden Nav/Footer** : `/fr/v2`, `/fr/v3` (composants return null
-  via usePathname check).
-- **10 commits cette session** : b17e0c6, 360f0ed, c1074a5, a157c50, e3c4f83,
-  86a6744, 7fa0d84, c01c733, 7196112, b425a4e.
+- LP active validée : **`/fr/v4c`** (carnet enrichi, 18 sections,
+  ~10 500 px scroll). Coverflow F + Matières full-width validés en live.
+- Stack : Next.js 16.2.6 + Tailwind v4 + shadcn base-nova + Sanity (Phase 3
+  différée) + Brevo + next-intl + Vercel
+- Direction esthétique : palette stricte vélin `#f4ede0` + sépia `#3d2817` +
+  bleu de roi Caveat `#1e3a5f` + or vieilli `#a08552` + papier sombre `#2a1d10`
+- **5 matières finales** : Or 19kt, Diamants GVS, Saphirs, Émeraudes, Rubis
+  (perles écartées par user). Photos -v2.jpg dans `/public/images/matieres/`
+- Routes preview à NE PAS supprimer (utiles pour itérations futures) :
+  `/fr/v4c/preview/{collection,matieres,derniere-creation}`
+- Convention `pathname.startsWith("/fr/v4")` cache la nav globale
+- **Pattern Next.js 16** : `params` async, `images.qualities=[75,90]`,
+  jamais `layout="fill"` deprecated, priority uniquement above-fold
+- **Convention** : main-only, max 200 lignes/fichier, pas d'inline styles,
+  TypeScript strict (jamais `any`), path aliases `@/`
+- **12 commits cette session** : f015f48, c9947a1, 5610eea, bf6b9a0, 930b077,
+  0028ce8, d1fe93a, 7d4dd68, 8661992, c1464a4 + 2 commits matières/page
+- Plan E2E original : `~/.claude/plans/debut-delegated-twilight.md`
