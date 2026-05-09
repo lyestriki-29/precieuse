@@ -44,9 +44,7 @@ export default function V4CPage() {
             <V4CEtabli />
           </V4CReveal>
 
-          <V4CReveal delay={60}>
-            <V4CCreations />
-          </V4CReveal>
+          <V4CCreations />
 
           <V4CReveal delay={60}>
             <V4CLettres />
