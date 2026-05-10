@@ -24,7 +24,7 @@ const VARIANTS: { key: VariantKey; label: string; description: string }[] = [
   { key: "E2", label: "E2 · Filigrane (A)", description: "Direction A line-art — calligraphie SVG + croquis bague gravée, schéma brillant, marques de poinçon." },
   { key: "E3", label: "E3 · Constellation (B)", description: "Direction B Art Nouveau — lettres parallax + vignes, volutes coup-de-fouet, fleur stylisée." },
   { key: "E4",  label: "E4 · Vitrine (C)",      description: "Direction C Art Déco — verre dépoli sans images (référence)." },
-  { key: "E4a", label: "E4a · Vitrine peuplée", description: "4 vignettes (Joséphine, Aurore, Louise, Thelma) flottantes autour de la carte titre, flou réduit." },
+  { key: "E4a", label: "E4a · Vitrine ouverte", description: "Image gemmyo nette en grand, gemmes positionnées sous le mot Précieuse, ornements Art Déco autour, sans carte givrée masquante." },
   { key: "E4b", label: "E4b · Diptyque",        description: "Split gauche/droite — Eugénie plein-cadre + carte givrée Précieuse, layout magazine." },
   { key: "E4c", label: "E4c · Mix",             description: "Eugénie en pièce maîtresse + carte titre asymétrique + 2 vignettes accents (Joséphine, Aurore)." },
   { key: "E5",  label: "E5 · Marqueterie (C)",  description: "Direction C Art Déco — 9 gemmes + sunburst, schéma brillant en filigrane, cadres aux coins, frise." },
