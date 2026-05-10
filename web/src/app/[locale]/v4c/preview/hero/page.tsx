@@ -8,20 +8,26 @@ import { V4CHeroE1 } from "@/components/v4c/hero-variants/V4CHeroE1";
 import { V4CHeroE2 } from "@/components/v4c/hero-variants/V4CHeroE2";
 import { V4CHeroE3 } from "@/components/v4c/hero-variants/V4CHeroE3";
 import { V4CHeroE4 } from "@/components/v4c/hero-variants/V4CHeroE4";
+import { V4CHeroE4a } from "@/components/v4c/hero-variants/V4CHeroE4a";
+import { V4CHeroE4b } from "@/components/v4c/hero-variants/V4CHeroE4b";
+import { V4CHeroE4c } from "@/components/v4c/hero-variants/V4CHeroE4c";
 import { V4CHeroE5 } from "@/components/v4c/hero-variants/V4CHeroE5";
 
 const garamond = "font-[family-name:var(--font-eb-garamond)]";
 const caveat = "font-[family-name:var(--font-caveat)]";
 
-type VariantKey = "E" | "E1" | "E2" | "E3" | "E4" | "E5";
+type VariantKey = "E" | "E1" | "E2" | "E3" | "E4" | "E4a" | "E4b" | "E4c" | "E5";
 
 const VARIANTS: { key: VariantKey; label: string; description: string }[] = [
   { key: "E",  label: "E · racine",        description: "Type-as-Image origine — lettres clipées sur image, fond vélin clair (sans direction graphique)." },
   { key: "E1", label: "E1 · Sceau (A)",    description: "Direction A line-art — poinçon embossé + cartouche héraldique, guilloché, marques de poinçon, bague gravée." },
   { key: "E2", label: "E2 · Filigrane (A)", description: "Direction A line-art — calligraphie SVG + croquis bague gravée, schéma brillant, marques de poinçon." },
   { key: "E3", label: "E3 · Constellation (B)", description: "Direction B Art Nouveau — lettres parallax + vignes, volutes coup-de-fouet, fleur stylisée." },
-  { key: "E4", label: "E4 · Vitrine (C)",  description: "Direction C Art Déco — verre dépoli + sunburst, schéma brillant, cadres aux coins, frise losanges." },
-  { key: "E5", label: "E5 · Marqueterie (C)", description: "Direction C Art Déco — 9 gemmes + sunburst, schéma brillant en filigrane, cadres aux coins, frise." },
+  { key: "E4",  label: "E4 · Vitrine (C)",      description: "Direction C Art Déco — verre dépoli sans images (référence)." },
+  { key: "E4a", label: "E4a · Vitrine peuplée", description: "4 vignettes (Joséphine, Aurore, Louise, Thelma) flottantes autour de la carte titre, flou réduit." },
+  { key: "E4b", label: "E4b · Diptyque",        description: "Split gauche/droite — Eugénie plein-cadre + carte givrée Précieuse, layout magazine." },
+  { key: "E4c", label: "E4c · Mix",             description: "Eugénie en pièce maîtresse + carte titre asymétrique + 2 vignettes accents (Joséphine, Aurore)." },
+  { key: "E5",  label: "E5 · Marqueterie (C)",  description: "Direction C Art Déco — 9 gemmes + sunburst, schéma brillant en filigrane, cadres aux coins, frise." },
 ];
 
 const COMPONENTS: Record<VariantKey, React.ReactNode> = {
@@ -29,12 +35,15 @@ const COMPONENTS: Record<VariantKey, React.ReactNode> = {
   E1: <V4CHeroE1 />,
   E2: <V4CHeroE2 />,
   E3: <V4CHeroE3 />,
-  E4: <V4CHeroE4 />,
-  E5: <V4CHeroE5 />,
+  E4:  <V4CHeroE4 />,
+  E4a: <V4CHeroE4a />,
+  E4b: <V4CHeroE4b />,
+  E4c: <V4CHeroE4c />,
+  E5:  <V4CHeroE5 />,
 };
 
 export default function HeroPreviewPage() {
-  const [active, setActive] = useState<VariantKey>("E1");
+  const [active, setActive] = useState<VariantKey>("E4a");
   const current = VARIANTS.find((v) => v.key === active)!;
 
   return (
