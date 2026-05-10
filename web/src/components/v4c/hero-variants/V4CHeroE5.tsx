@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ArtDecoFrieze, SunburstFan, BrilliantCutScheme, DecoCornerFrame } from "./_ornaments";
 
 const garamond = "font-[family-name:var(--font-eb-garamond)]";
 const caveat = "font-[family-name:var(--font-caveat)]";
@@ -34,14 +35,18 @@ export function V4CHeroE5() {
         }}
       />
 
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-[0.06]"
-        style={{
-          backgroundImage:
-            "repeating-linear-gradient(90deg, transparent 0 159px, #2c1f12 159px 160px)",
-        }}
+      <SunburstFan
+        className="pointer-events-none absolute left-1/2 top-[10%] -translate-x-1/2 w-[460px] max-w-full h-[280px] text-[#2c1f12] opacity-[0.10]"
+        stroke="#2c1f12"
       />
+      <BrilliantCutScheme
+        className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[480px] max-w-full h-[480px] text-[#2c1f12] opacity-[0.06]"
+        stroke="#2c1f12"
+      />
+      <DecoCornerFrame className="absolute top-20 left-6 w-10 h-10 text-[#2c1f12]/55" stroke="#2c1f12" />
+      <DecoCornerFrame className="absolute top-20 right-6 w-10 h-10 text-[#2c1f12]/55 -scale-x-100" stroke="#2c1f12" />
+      <DecoCornerFrame className="absolute bottom-32 left-6 w-10 h-10 text-[#2c1f12]/55 -scale-y-100" stroke="#2c1f12" />
+      <DecoCornerFrame className="absolute bottom-32 right-6 w-10 h-10 text-[#2c1f12]/55 rotate-180" stroke="#2c1f12" />
 
       <div className="relative mx-auto max-w-[1440px] w-full px-8 lg:px-16 py-6 flex items-baseline justify-between border-b border-[#2c1f12]/20">
         <span className={`${inter} text-[10px] uppercase tracking-[0.4em] text-[#2c1f12]/65`}>
@@ -79,6 +84,8 @@ export function V4CHeroE5() {
             </span>
           ))}
         </h1>
+
+        <ArtDecoFrieze className="w-[440px] max-w-full h-3 text-[#2c1f12] opacity-50" stroke="#2c1f12" />
 
         <div className="flex flex-wrap items-baseline justify-center gap-x-3 gap-y-1 max-w-[920px] motion-safe:animate-[gemReveal_1.4s_ease-out_1400ms_both]">
           {GEMS.map((g, i) => (

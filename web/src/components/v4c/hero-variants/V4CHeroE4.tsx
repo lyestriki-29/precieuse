@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { BrilliantCutScheme, DecoCornerFrame, ArtDecoFrieze, SunburstFan } from "./_ornaments";
 
 const garamond = "font-[family-name:var(--font-eb-garamond)]";
 const caveat = "font-[family-name:var(--font-caveat)]";
@@ -48,8 +49,22 @@ export function V4CHeroE4() {
         </span>
       </div>
 
+      <SunburstFan
+        className="pointer-events-none absolute z-[5] left-1/2 top-[8%] -translate-x-1/2 w-[420px] max-w-full h-[260px] text-[#f4d8a0] opacity-[0.10]"
+        stroke="#f4d8a0"
+      />
+      <BrilliantCutScheme
+        className="pointer-events-none absolute z-[5] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[440px] max-w-full h-[440px] text-[#f4d8a0] opacity-[0.07]"
+        stroke="#f4d8a0"
+      />
+
       <div className="relative z-10 flex-1 flex items-center justify-center px-4 lg:px-12">
         <div className="relative w-full max-w-[1100px] mx-auto motion-safe:animate-[glassRise_1.6s_cubic-bezier(0.2,0.8,0.2,1)_120ms_both]">
+          <DecoCornerFrame className="absolute -top-1 -left-1 w-12 h-12 text-[#f4d8a0]/70 z-10" stroke="#f4d8a0" />
+          <DecoCornerFrame className="absolute -top-1 -right-1 w-12 h-12 text-[#f4d8a0]/70 z-10 -scale-x-100" stroke="#f4d8a0" />
+          <DecoCornerFrame className="absolute -bottom-1 -left-1 w-12 h-12 text-[#f4d8a0]/70 z-10 -scale-y-100" stroke="#f4d8a0" />
+          <DecoCornerFrame className="absolute -bottom-1 -right-1 w-12 h-12 text-[#f4d8a0]/70 z-10 rotate-180" stroke="#f4d8a0" />
+
           <div
             className="relative px-8 py-12 lg:py-16 border border-[#f4d8a0]/25 overflow-hidden"
             style={{
@@ -70,6 +85,9 @@ export function V4CHeroE4() {
                 mixBlendMode: "screen",
               }}
             />
+
+            <ArtDecoFrieze className="absolute top-3 left-1/2 -translate-x-1/2 w-[60%] h-3 text-[#f4d8a0] opacity-50" stroke="#f4d8a0" />
+            <ArtDecoFrieze className="absolute bottom-3 left-1/2 -translate-x-1/2 w-[60%] h-3 text-[#f4d8a0] opacity-50" stroke="#f4d8a0" />
 
             <h1
               aria-label="Précieuse — joaillerie artisanale, Lisboa"

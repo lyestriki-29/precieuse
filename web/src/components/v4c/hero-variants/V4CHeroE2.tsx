@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { EngravedRing, BrilliantCutScheme, HallmarkStamps } from "./_ornaments";
 
 const garamond = "font-[family-name:var(--font-eb-garamond)]";
 const caveat = "font-[family-name:var(--font-caveat)]";
@@ -42,6 +43,15 @@ export function V4CHeroE2() {
           Lisboa, le V mai MMXXVI
         </span>
       </div>
+
+      <EngravedRing
+        className="pointer-events-none absolute left-[8%] top-[42%] w-[120px] h-[120px] text-[#2c1f12] opacity-[0.22] -rotate-12"
+        stroke="#2c1f12"
+      />
+      <BrilliantCutScheme
+        className="pointer-events-none absolute right-[10%] top-[55%] w-[110px] h-[110px] text-[#2c1f12] opacity-[0.22] rotate-6"
+        stroke="#2c1f12"
+      />
 
       <div className="relative flex-1 flex items-center justify-center px-4 lg:px-12">
         <svg
@@ -157,6 +167,7 @@ export function V4CHeroE2() {
             </span>
           </div>
         </div>
+        <HallmarkStamps className="mt-6 w-[130px] h-[26px] text-[#2c1f12] opacity-60" stroke="#2c1f12" />
       </div>
     </section>
   );

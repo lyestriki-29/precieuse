@@ -16,12 +16,12 @@ const caveat = "font-[family-name:var(--font-caveat)]";
 type VariantKey = "E" | "E1" | "E2" | "E3" | "E4" | "E5";
 
 const VARIANTS: { key: VariantKey; label: string; description: string }[] = [
-  { key: "E",  label: "E · racine",        description: "Type-as-Image origine — lettres clipées sur image, fond vélin clair." },
-  { key: "E1", label: "E1 · Sceau & Frappe", description: "Poinçon embossé sur papier ivoire — ombres internes, sceau de cire, micro-grain vergé." },
-  { key: "E2", label: "E2 · Filigrane",     description: "Calligraphie géante stroke-by-stroke — ex-libris, cachet de cire, encre humide." },
-  { key: "E3", label: "E3 · Constellation", description: "Lettres flottantes sur ciel étoilé — convergence au chargement, parallax au curseur." },
-  { key: "E4", label: "E4 · Vitrine",       description: "Verre dépoli givré sur pierre floutée — backdrop blur, lumière dorée rasante animée." },
-  { key: "E5", label: "E5 · Marqueterie",   description: "Chaque lettre une gemme — émeraude, saphir, rubis, diamant, péridot, améthyste, onyx, topaze, citrine." },
+  { key: "E",  label: "E · racine",        description: "Type-as-Image origine — lettres clipées sur image, fond vélin clair (sans direction graphique)." },
+  { key: "E1", label: "E1 · Sceau (A)",    description: "Direction A line-art — poinçon embossé + cartouche héraldique, guilloché, marques de poinçon, bague gravée." },
+  { key: "E2", label: "E2 · Filigrane (A)", description: "Direction A line-art — calligraphie SVG + croquis bague gravée, schéma brillant, marques de poinçon." },
+  { key: "E3", label: "E3 · Constellation (B)", description: "Direction B Art Nouveau — lettres parallax + vignes, volutes coup-de-fouet, fleur stylisée." },
+  { key: "E4", label: "E4 · Vitrine (C)",  description: "Direction C Art Déco — verre dépoli + sunburst, schéma brillant, cadres aux coins, frise losanges." },
+  { key: "E5", label: "E5 · Marqueterie (C)", description: "Direction C Art Déco — 9 gemmes + sunburst, schéma brillant en filigrane, cadres aux coins, frise." },
 ];
 
 const COMPONENTS: Record<VariantKey, React.ReactNode> = {
@@ -50,7 +50,7 @@ export default function HeroPreviewPage() {
                 ← retour à v4c
               </Link>
               <span className={`${caveat} text-[14px] text-[var(--site-caveat)]`}>
-                comparateur · section Hero · déclinaisons E
+                comparateur · Hero · directions A line-art · B Art Nouveau · C Art Déco
               </span>
             </div>
 

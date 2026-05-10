@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useRef } from "react";
+import { ArtNouveauVine, ArtNouveauWhip, ArtNouveauFleur } from "./_ornaments";
 
 const garamond = "font-[family-name:var(--font-eb-garamond)]";
 const caveat = "font-[family-name:var(--font-caveat)]";
@@ -89,14 +90,11 @@ export function V4CHeroE3() {
         </svg>
       </div>
 
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-[0.18] mix-blend-screen"
-        style={{
-          backgroundImage:
-            "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.4' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E\")",
-        }}
-      />
+      <ArtNouveauVine className="pointer-events-none absolute top-[12%] left-1/2 -translate-x-1/2 w-[420px] h-[60px] text-[#e8c987] opacity-30" stroke="#e8c987" />
+      <ArtNouveauVine className="pointer-events-none absolute bottom-[26%] left-1/2 -translate-x-1/2 w-[420px] h-[60px] text-[#e8c987] opacity-30 rotate-180" stroke="#e8c987" />
+      <ArtNouveauWhip className="pointer-events-none absolute left-[5%] top-1/2 -translate-y-1/2 w-[40px] h-[200px] text-[#e8c987] opacity-25" stroke="#e8c987" />
+      <ArtNouveauWhip className="pointer-events-none absolute right-[5%] top-1/2 -translate-y-1/2 w-[40px] h-[200px] text-[#e8c987] opacity-25 -scale-x-100" stroke="#e8c987" />
+      <ArtNouveauFleur className="pointer-events-none absolute right-[14%] top-[28%] w-[60px] h-[80px] text-[#e8c987] opacity-30" stroke="#e8c987" />
 
       <div className="relative mx-auto max-w-[1440px] w-full px-8 lg:px-16 py-6 flex items-baseline justify-between border-b border-[#e8c987]/15">
         <span className={`${inter} text-[10px] uppercase tracking-[0.4em] text-[#e8c987]/55`}>

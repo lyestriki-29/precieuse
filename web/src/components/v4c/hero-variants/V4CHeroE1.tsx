@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { EngravedRing, HeraldicCrest, GuillochePattern, HallmarkStamps } from "./_ornaments";
 
 const garamond = "font-[family-name:var(--font-eb-garamond)]";
 const caveat = "font-[family-name:var(--font-caveat)]";
@@ -22,16 +23,21 @@ export function V4CHeroE1() {
         }}
       />
 
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-[0.05]"
-        style={{
-          backgroundImage:
-            "repeating-linear-gradient(0deg, transparent 0 39px, #4a3a2c 39px 40px), repeating-linear-gradient(90deg, transparent 0 39px, #4a3a2c 39px 40px)",
-        }}
+      <GuillochePattern
+        className="pointer-events-none absolute top-20 left-0 w-full h-6 text-[#4a3a2c] opacity-25"
+        stroke="#4a3a2c"
+      />
+      <GuillochePattern
+        className="pointer-events-none absolute bottom-32 left-0 w-full h-6 text-[#4a3a2c] opacity-25"
+        stroke="#4a3a2c"
       />
 
-      <div className="relative mx-auto max-w-[1440px] w-full px-8 lg:px-16 py-6 flex items-baseline justify-between border-b border-[#4a3a2c]/25">
+      <HeraldicCrest
+        className="pointer-events-none absolute top-24 left-1/2 -translate-x-1/2 w-12 h-16 text-[#4a3a2c] opacity-50"
+        stroke="#4a3a2c"
+      />
+
+      <div className="relative mx-auto max-w-[1440px] w-full px-8 lg:px-16 py-6 mt-12 flex items-baseline justify-between border-b border-[#4a3a2c]/25">
         <span className={`${inter} text-[10px] uppercase tracking-[0.4em] text-[#4a3a2c]/70`}>
           Maison Précieuse · Lisboa · MMXXVI
         </span>
@@ -42,6 +48,11 @@ export function V4CHeroE1() {
           frappe à la main
         </span>
       </div>
+
+      <EngravedRing
+        className="pointer-events-none absolute right-[14%] lg:right-[18%] top-[40%] w-[140px] h-[140px] lg:w-[180px] lg:h-[180px] text-[#4a3a2c] opacity-[0.20]"
+        stroke="#4a3a2c"
+      />
 
       <div className="relative flex-1 flex items-center justify-center px-4 lg:px-12">
         <h1
@@ -133,6 +144,10 @@ export function V4CHeroE1() {
             </span>
           </div>
         </div>
+        <HallmarkStamps
+          className="mt-6 w-[130px] h-[26px] text-[#4a3a2c] opacity-65"
+          stroke="#4a3a2c"
+        />
       </div>
     </section>
   );
