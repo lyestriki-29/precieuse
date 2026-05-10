@@ -165,7 +165,7 @@ export function V4CSeriesF() {
                   className={`w-2 h-2 rounded-full transition-all duration-300 ${
                     i === current
                       ? "bg-[var(--site-accent)] w-5"
-                      : "bg-[#cbb898] hover:bg-[var(--site-accent)]/60"
+                      : "bg-[var(--site-accent)]/25 hover:bg-[var(--site-accent)]/60"
                   }`}
                 />
               ))}

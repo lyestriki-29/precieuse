@@ -34,7 +34,7 @@ export function V4CHeroE() {
       {/* Bloc typographique géant — la photo remplit les lettres */}
       <div className="relative flex-1 flex items-center justify-center px-4 lg:px-12">
         <h1
-          aria-label="Précieuse"
+          aria-label="Précieuse — joaillerie artisanale, Lisboa"
           className={`${garamond} italic leading-[0.78] tracking-[-0.04em] text-center select-none`}
           style={{
             fontSize: "clamp(120px, 22vw, 360px)",
@@ -51,10 +51,7 @@ export function V4CHeroE() {
           Précieuse
         </h1>
 
-        {/* Texte de remplacement accessible — invisible, conservé pour l'esprit */}
-        <span className="sr-only">Précieuse — joaillerie artisanale, Lisboa</span>
-
-        {/* Image décorative en-dessous (révélée hors mask, ambiance) */}
+{/* Image décorative en-dessous (révélée hors mask, ambiance) */}
         <div
           aria-hidden
           className="absolute inset-0 -z-10 opacity-[0.06]"

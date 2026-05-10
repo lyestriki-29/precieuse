@@ -32,7 +32,7 @@ export function V4CSeriesA() {
             <Link
               key={product.slug}
               href={`/fr/collection/${product.slug}`}
-              className="group relative block overflow-hidden bg-[var(--site-surface)] hover:bg-[#e8ddd0] transition-colors duration-300"
+              className="group relative block overflow-hidden bg-[var(--site-surface)] hover:bg-[var(--site-surface)]/60 transition-colors duration-300"
             >
               <div className="relative aspect-[3/4] w-full overflow-hidden">
                 <Image
