@@ -1,26 +1,29 @@
-# Session State — 2026-05-10 02:00 (E4 vitrine + 3 sous-variantes images + refonte E4a finale)
+# Session State — 2026-05-10 21:15 (Hero E4a lock + cleanup)
 
 ## Branch
 `main`
 
 ## Completed This Session
-- **5 hero variants enrichis (3 directions graphiques)** : direction A line-art (E1, E2 — cartouche héraldique, guilloché, croquis bague gravée, marques de poinçon), B Art Nouveau (E3 — vignes, volutes coup-de-fouet, fleur), C Art Déco (E4, E5 — sunburst, schéma brillant, cadres aux coins, frise losanges) ([16e1f76](https://github.com/)).
-- **Bibliothèque _ornaments.tsx** : 11 composants SVG mutualisés réutilisables (EngravedRing, HeraldicCrest, GuillochePattern, HallmarkStamps, ArtNouveauVine/Whip/Fleur, ArtDecoFrieze, SunburstFan, DecoCornerFrame, BrilliantCutScheme).
-- **Code review hardening (2 passes)** : motion-safe: prefix partout (sinon invisibilité reduced-motion), aria-hidden="true" explicite, SvgProps.stroke required, -scale-100 → rotate-180, max-w-full anti-overflow mobile, backdropFilter inline → Tailwind backdrop-blur-[Npx], priority dupliqué LCP retiré.
-- **3 sous-variantes E4 avec images** ([f7c9bc6](https://github.com/)) : E4a Vitrine peuplée (4 vignettes flottantes), E4b Diptyque (Eugénie 50%+carte 50%), E4c Mix (Eugénie+2 accents).
-- **Refonte E4a finale** ([fb98cc9](https://github.com/)) : suppression vignettes + carte givrée masquante. Image gemmyo dominante (presque nette, brightness 0.85, objectPosition center 72% pour gemmes sous le mot Précieuse). Ornements Art Déco renforcés (cadres 16x16 lg, sunburst 320px, 2x BrilliantCutScheme flanquants).
+- **Resume après crash PC** : aucune modif perdue (working tree clean au boot, dernier commit `6d2aeb8` = save de la session précédente).
+- **Lock variante hero finale = E4a** ([774fc18](https://github.com/)) : contenu de `V4CHeroE4a` copié dans `V4CHero.tsx`, devient le hero de production sur `/fr/v4c`. Triple header (Vitrine · décembre · Lisboa / derrière la vitre — / MMXXVI · I), image gemmyo dominante (gemmes alignées sous "Précieuse"), cadres Art Déco aux coins, frises haut/bas, CTA "Pousser la porte".
+- **Cleanup** : 9 variantes `V4CHeroE*.tsx` supprimées + route `/v4c/preview/hero/` supprimée. `_ornaments.tsx` remonté d'un niveau (`hero-variants/_ornaments` → `v4c/_ornaments`).
+- **Dead code purge** : 7 ornements inutilisés supprimés de `_ornaments.tsx` (EngravedRing, HeraldicCrest, GuillochePattern, HallmarkStamps, ArtNouveauVine/Whip/Fleur). Reste 4 utilisés (ArtDecoFrieze, SunburstFan, DecoCornerFrame, BrilliantCutScheme).
+- **Code review hardening** : import relatif → path alias `@/components/v4c/_ornaments`, color h1 inline → `text-[#fff8e6]` Tailwind, `aria-hidden` normalisés à `="true"`.
+- **Bilan** : 13 fichiers changés, +159 / -1699 lignes. Typecheck propre. Preview vérifié (screenshot OK).
 
 ## Next Task
-**Choix de la variante hero finale par utilisateur** parmi 9 onglets : E (racine) · E1 Sceau · E2 Filigrane · E3 Constellation · E4 Vitrine vide · **E4a Vitrine ouverte** · E4b Diptyque · E4c Mix · E5 Marqueterie. Une fois le choix fait :
-1. Lock la variante dans `/fr/v4c` — remplacer `<V4CHero />` par la variante choisie
-2. Supprimer les autres hero-variants/ + retirer onglets preview correspondants
+**Push commit `774fc18` sur origin/main** (bloqué cette session par permission Bash). Soit user l'effectue à la main (`git push origin main`), soit autorise le push une fois.
+
+Ensuite, sujets possibles :
+- Routes orphelines `/preview/collection`, `/preview/etabli`, `/preview/series` etc. — à locker pareil ou à garder en preview ? (CTA hero pointe sur `/fr/v4c/preview/collection`)
+- Audit v2 fiche Eugénie (mémoire `project_audit_v2_eugenie.md`) : 15 problèmes UX/design à traiter.
 
 ## Blockers
-- Aucun.
+- `git push origin main` refusé par permission Bash (sécurité anti-push direct). Demander autorisation au user.
 
 ## Key Context
-- Système 9 palettes via `V4CSiteTheme` exposé sur `/fr/v4c`, `/fr/carnet`, `/fr/v4c/preview/{collection,hero}`.
-- Convention : `motion-safe:animate-[...]` partout (pas de @media wrapper sur les keyframes), `aria-hidden="true"` explicite, SvgProps.stroke required.
-- Images dispo : `/images/gemmyo.jpg` + `/images/bijoux-officiels/{aurore,eugenie,josephine,louise,thelma}.{jpg,png}` (eugenie est PNG).
-- E4a (refonte) : pas de carte givrée centrale, image gemmyo en arrière-plan visible, halo radial sombre uniquement derrière le texte pour lisibilité, gemmes positionnées à 72% verticale.
-- Toutes les variantes sous 200 lignes (max V4CHeroE3=192).
+- `/fr/v4c` utilise désormais `V4CHero` dont le contenu = ancien E4a. Plus de tabs preview hero.
+- `_ornaments.tsx` à `web/src/components/v4c/_ornaments.tsx` — 4 SVG (Art Déco only).
+- CTA hero pointe sur `/fr/v4c/preview/collection` (route preview encore active, à reviewer plus tard).
+- Inline styles restants dans V4CHero (filter image, gradient overlay radial+linear, fontSize clamp, textShadow, keyframes) : différés — pas d'équivalent Tailwind propre sans config custom.
+- Dev server preview Claude actif via `.claude/launch.json` (config `web` sur port 3000).
