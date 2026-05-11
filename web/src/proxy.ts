@@ -3,7 +3,7 @@ import { NextResponse, type NextRequest } from "next/server";
 const SUPPORTED = ["fr"] as const;
 const DEFAULT_LOCALE = "fr";
 
-export function middleware(req: NextRequest) {
+export function proxy(req: NextRequest) {
   const { pathname } = req.nextUrl;
 
   if (pathname === "/" || pathname === "") {
