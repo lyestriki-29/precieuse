@@ -42,27 +42,27 @@ function PlanSVG() {
 
 export function V4CVisite() {
   return (
-    <section className="relative bg-[var(--site-bg)] py-24 px-8 lg:px-16">
+    <section className="relative bg-[var(--site-bg)] py-16 px-8 lg:px-16">
       <div className="absolute top-0 left-0 right-0 border-t-2 border-double border-[var(--site-text)]/15" />
 
-      <div className="mx-auto max-w-[1440px] grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div className="mx-auto max-w-[1440px] grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         <div className="flex justify-center">
           <PlanSVG />
         </div>
 
         <div>
-          <h2 className={`${garamond} italic text-[42px] text-[var(--site-text)] mb-6`}>
+          <h2 className={`${garamond} italic text-[42px] text-[var(--site-text)] mb-4`}>
             Venir nous voir
           </h2>
 
-          <address className={`${caveat} text-[22px] text-[var(--site-caveat)] not-italic leading-[1.8] mb-10`}>
+          <address className={`${caveat} text-[22px] text-[var(--site-caveat)] not-italic leading-[1.7] mb-6`}>
             Rua da Boavista, 84<br />
             1200-070 Lisboa<br />
             sur rendez-vous, du mardi au samedi<br />
             10h — 18h
           </address>
 
-          <p className="font-[family-name:var(--font-inter)] text-[14px] font-light text-[var(--site-text)]/80 leading-relaxed mb-10 max-w-sm">
+          <p className="font-[family-name:var(--font-inter)] text-[14px] font-light text-[var(--site-text)]/80 leading-relaxed mb-6 max-w-sm">
             L&apos;atelier n&apos;est pas une boutique. C&apos;est un lieu de travail, ouvert à celles et ceux qui viennent avec une intention.
           </p>
 
@@ -75,7 +75,7 @@ export function V4CVisite() {
         </div>
       </div>
 
-      <div className="mt-16 flex justify-end max-w-[1440px] mx-auto">
+      <div className="mt-8 flex justify-end max-w-[1440px] mx-auto">
         <span className={`${garamond} italic text-[13px] text-[var(--site-accent)]`}>p. 12</span>
       </div>
 

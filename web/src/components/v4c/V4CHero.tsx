@@ -86,7 +86,7 @@ export function V4CHero() {
         `}</style>
 
         <Link
-          href="/fr/v4c/preview/collection"
+          href="/fr/carnet"
           className={`group ${garamond} italic absolute bottom-8 left-1/2 -translate-x-1/2 inline-flex items-center gap-3 text-[15px] lg:text-[17px] text-[#fff7e3] px-7 py-3 border border-[#f4d8a0]/65 backdrop-blur-[6px] bg-black/20 hover:bg-[#f4d8a0] hover:text-[#1a0c04] transition-all duration-300 motion-safe:animate-[fadeUp_1.4s_ease-out_900ms_both]`}
         >
           <span>Pousser la porte</span>

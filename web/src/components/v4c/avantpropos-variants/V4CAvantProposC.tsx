@@ -1,8 +1,8 @@
 import Image from "next/image";
 
-const garamond = "font-[family-name:var(--font-eb-garamond)]";
-const bodoni = "font-[family-name:var(--font-bodoni)]";
 const cormorant = "font-[family-name:var(--font-cormorant)]";
+const bodoni = "font-[family-name:var(--font-bodoni)]";
+const caveat = "font-[family-name:var(--font-caveat)]";
 
 const PAIRES = [
   { roman: "i", pas: "pas de saison", mais: "Des pièces dessinées pour traverser le temps." },
@@ -36,33 +36,37 @@ function Seal() {
   );
 }
 
-export function V4CAvantPropos() {
+export function V4CAvantProposC() {
   return (
-    <section className="relative bg-[var(--site-bg)] py-20 px-8 lg:px-16">
+    <section className="relative bg-[var(--site-bg)] py-24 px-8 lg:px-16">
       <div className="absolute top-0 left-0 right-0 border-t border-[var(--site-text)]/25" />
 
-      <div className="mx-auto max-w-[1320px] grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-start">
-        <div className="relative md:order-1 order-2 mx-auto md:mx-0">
-          <div className="relative w-full max-w-[460px] aspect-[3/4] border border-[var(--site-text)]/30">
+      <div className="mx-auto max-w-[1320px] grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
+        <div className="relative mx-auto md:mx-0 -rotate-1 hover:rotate-0 transition-transform duration-500">
+          <div className="relative w-full max-w-[460px] aspect-[3/4] border-[6px] border-[var(--site-bg)] shadow-md">
             <Image
-              src="/images/emeline-portrait.jpg"
-              alt="Portrait d'Eméline Le Ray, fondatrice et joaillière de Précieuse"
+              src="/images/stitch-v3/creatrice-emeline-portrait.jpg"
+              alt="Portrait d'Eméline Le Ray, fondatrice de Précieuse"
               fill
               sizes="(min-width: 768px) 460px, 90vw"
               className="object-cover"
             />
+            <svg
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 w-full h-full"
+              viewBox="0 0 460 613"
+              fill="none"
+            >
+              <rect x="8" y="10" width="444" height="593" rx="1"
+                stroke="#3d2817" strokeWidth="0.8" strokeDasharray="3 7" strokeOpacity="0.35" />
+            </svg>
           </div>
-          <div className="mt-3 flex items-baseline justify-between max-w-[460px]">
-            <span className={`${garamond} italic text-[13px] tracking-[0.25em] uppercase text-[var(--site-text)]/70`}>
-              Eméline Le Ray
-            </span>
-            <span className={`${garamond} italic text-[12px] tracking-[0.2em] uppercase text-[var(--site-accent)]`}>
-              Lisboa · MMXXVI
-            </span>
-          </div>
+          <span className={`${caveat} text-[15px] text-[var(--site-caveat)] block text-center mt-3 opacity-80`}>
+            Eméline, Lisboa
+          </span>
         </div>
 
-        <div className="md:order-2 order-1">
+        <div>
           <span className={`${bodoni} text-[10px] tracking-[0.45em] uppercase text-[var(--site-accent)] block mb-5`}>
             Avant-propos
           </span>
