@@ -32,6 +32,12 @@ Lancement prévu : mi-juillet 2026.
 - next-intl (FR / EN / PT)
 - Vercel (hébergement, plus tard)
 
+## Staging
+
+- URL : https://precieuse.buildyourway.fr
+- Hébergement : VPS OVH + Coolify (Propul'seo infra)
+- Auto-deploy : push sur `main` → Coolify
+
 ## Direction visuelle
 
 S1 "L'Art de la Lumière" — esthétique éditoriale Vogue monograph, off-white #FBF8F5, raspberry, gold whisper, Playfair Display + Inter Light.
