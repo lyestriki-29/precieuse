@@ -27,12 +27,14 @@
 - Cert : Let's Encrypt R12, valide 90j ✅
 
 ## Next Task
-**Décider la suite parmi** :
-- **Phase 2 — Intégration Sanity** : à démarrer après cadrage avec Eméline sur les contenus qu'elle veut éditer (15-25h estimé).
-- **Audit v2 fiche Eugénie** : 15 problèmes UX/design listés dans mémoire `project_audit_v2_eugenie.md`.
-- **Cleanup routes brouillons** : `/fr/v2`, `/fr/v3*`, `/fr/preview/*`, `/dev/components` à virer du staging.
-- **Stratégie protection staging** : noindex robots.txt OU Basic Auth Traefik pour empêcher Google d'indexer.
-- **Auto-deploy** : configurer la GitHub App Coolify pour push → deploy auto (actuellement déploiements manuels via API ou bouton Coolify).
+
+**Demain — Coolify hardening** : suivre la checklist [`.planning/COOLIFY_TODO.md`](COOLIFY_TODO.md), Niveau 1 d'abord (sécurité Coolify : backup .env, 2FA, UFW).
+
+Puis :
+- **Niveau 2** (cette semaine) : GitHub App auto-deploy + Healthcheck + noindex robots.txt
+- **Phase 2 Sanity** : à démarrer après cadrage avec Eméline sur ses besoins de contenu éditables (15-25h estimé)
+- **Audit v2 fiche Eugénie** : 15 problèmes UX/design dans mémoire `project_audit_v2_eugenie.md`
+- **Cleanup routes brouillons** : `/fr/v2`, `/fr/v3*`, `/fr/preview/*`, `/dev/components` à virer du staging
 
 ## Blockers
 None.
