@@ -29,6 +29,9 @@ pnpm-debug.log*
 archive/html-templates/*.zip
 archive/v0-templates/*.zip
 
+# Content externe — export Facebook (35 Mo, archive locale uniquement)
+content/Reel produit Precieuse/
+
 # Sanity
 .sanity/
 
