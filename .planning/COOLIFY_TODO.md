@@ -1,7 +1,7 @@
 # Coolify — Checklist de ce qui reste à faire
 
 > Liste créée le 2026-05-12 après le premier déploiement réussi de Précieuse sur Coolify.
-> URL staging live : https://precieuse.buildyourway.fr
+> URL staging live : https://precieuse.propulseo-site.com (migré le 2026-05-13 depuis precieuse.buildyourway.fr)
 
 ## Rappel : c'est quoi Coolify ?
 

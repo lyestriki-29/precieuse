@@ -34,7 +34,7 @@ Lancement prévu : mi-juillet 2026.
 
 ## Staging
 
-- URL : https://precieuse.buildyourway.fr
+- URL : https://precieuse.propulseo-site.com
 - Hébergement : VPS OVH + Coolify (Propul'seo infra)
 - Auto-deploy : push sur `main` → Coolify
 
